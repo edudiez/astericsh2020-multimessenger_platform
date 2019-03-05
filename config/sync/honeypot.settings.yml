@@ -16,6 +16,5 @@ form_settings:
   contact_message_personal_form: true
   node_article_form: false
   node_page_form: false
-  comment_comment_form: false
 _core:
   default_config_hash: 9bVDfWSa_In6VzTXmy04jJ_3ZQobihKjO9isuuUCPaw

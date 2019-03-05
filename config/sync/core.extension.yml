@@ -16,7 +16,6 @@ module:
   captcha: 0
   ckeditor: 0
   color: 0
-  comment: 0
   config: 0
   contact: 0
   contextual: 0
@@ -63,7 +62,6 @@ module:
   text: 0
   token: 0
   toolbar: 0
-  tour: 0
   transliterate_filenames: 0
   twig_field_value: 0
   ultimate_cron: 0
