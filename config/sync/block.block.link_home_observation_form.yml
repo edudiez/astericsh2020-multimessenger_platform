@@ -1,0 +1,31 @@
+uuid: 7df7a269-cd57-4c03-acce-71c2f4fd8efe
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:571212ed-1fd7-437e-8c40-66a210d4dc63'
+  module:
+    - block_content
+    - system
+  theme:
+    - asterics
+id: link_home_observation_form
+theme: asterics
+region: content
+weight: -3
+provider: null
+plugin: 'block_content:571212ed-1fd7-437e-8c40-66a210d4dc63'
+settings:
+  id: 'block_content:571212ed-1fd7-437e-8c40-66a210d4dc63'
+  label: 'Ask For Observation'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
