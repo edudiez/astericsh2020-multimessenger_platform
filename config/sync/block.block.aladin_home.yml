@@ -1,23 +1,23 @@
-uuid: 7df7a269-cd57-4c03-acce-71c2f4fd8efe
+uuid: e0b781c3-27a3-44ac-a9e4-ddfe881c62bd
 langcode: en
 status: true
 dependencies:
   content:
-    - 'block_content:basic:571212ed-1fd7-437e-8c40-66a210d4dc63'
+    - 'block_content:basic:b40091cf-300d-4565-bb5d-28ecfe9f044a'
   module:
     - block_content
     - system
   theme:
     - asterics
-id: link_home_observation_form
+id: aladin_home
 theme: asterics
 region: content
-weight: -2
+weight: -3
 provider: null
-plugin: 'block_content:571212ed-1fd7-437e-8c40-66a210d4dc63'
+plugin: 'block_content:b40091cf-300d-4565-bb5d-28ecfe9f044a'
 settings:
-  id: 'block_content:571212ed-1fd7-437e-8c40-66a210d4dc63'
-  label: 'Ask For Observation'
+  id: 'block_content:b40091cf-300d-4565-bb5d-28ecfe9f044a'
+  label: 'Aladin Home'
   provider: block_content
   label_display: '0'
   status: true
