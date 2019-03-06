@@ -11,7 +11,7 @@ id: node.event.field_event_schedule_n
 field_name: field_event_schedule_n
 entity_type: node
 bundle: event
-label: Horari
+label: Hours
 description: 'Horari de l''esdeveniment'
 required: false
 translatable: false

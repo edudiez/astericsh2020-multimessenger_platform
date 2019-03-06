@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.new.body
-    - field.field.node.new.field_event_categoria_n
+    - field.field.node.new.field_event_category_n
     - field.field.node.new.field_new_date_n
     - node.type.new
   module:
@@ -31,7 +31,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_event_categoria_n:
+  field_event_category_n:
     weight: 0
     settings:
       match_operator: CONTAINS

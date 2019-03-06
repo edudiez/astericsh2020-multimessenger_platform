@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.new.body
-    - field.field.node.new.field_event_categoria_n
+    - field.field.node.new.field_event_category_n
     - field.field.node.new.field_new_date_n
     - node.type.new
   module:
@@ -23,7 +23,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
-  field_event_categoria_n:
+  field_event_category_n:
     weight: 103
     label: above
     settings:
