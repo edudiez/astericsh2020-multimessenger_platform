@@ -1,0 +1,29 @@
+uuid: ec1b2b16-6ec9-4656-865d-dc0e62306c3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_categoria_n
+    - node.type.new
+    - taxonomy.vocabulary.observatories
+id: node.new.field_event_categoria_n
+field_name: field_event_categoria_n
+entity_type: node
+bundle: new
+label: Categoría
+description: 'Categoría de classificació de la Noticia'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      observatories: observatories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
