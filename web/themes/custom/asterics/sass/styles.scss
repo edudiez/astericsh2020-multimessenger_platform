@@ -1,0 +1,28 @@
+@import "mixins.scss";
+
+//***************************************//
+//************* GENERICS ****************//
+//***************************************//
+
+body {
+	padding:0; margin:0; font-family:'Open Sans'; font-size:20px; color: $blanc;
+	p {margin:0 0 25px 0; line-height:2em;}
+	a {text-decoration:none; color:inherit; transition:.3s;}
+	a:hover {text-decoration:none; cursor: pointer;}
+	ul {margin:0; padding:0;
+            li {list-style:none;}
+	}
+	ol li {line-height:22px;}
+	b, strong { font-family:'Open Sans'; font-weight:700;}
+	* {box-sizing: border-box;}
+	img {max-width:100%; height:auto;}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 126px 64px;
+        }
+        .field-item {
+            line-height:2em;
+        }
+        h2 {font-size:1.8em}
+}

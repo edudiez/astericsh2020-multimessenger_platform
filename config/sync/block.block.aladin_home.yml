@@ -1,0 +1,31 @@
+uuid: e0b781c3-27a3-44ac-a9e4-ddfe881c62bd
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b40091cf-300d-4565-bb5d-28ecfe9f044a'
+  module:
+    - block_content
+    - system
+  theme:
+    - asterics
+id: aladin_home
+theme: asterics
+region: content
+weight: -3
+provider: null
+plugin: 'block_content:b40091cf-300d-4565-bb5d-28ecfe9f044a'
+settings:
+  id: 'block_content:b40091cf-300d-4565-bb5d-28ecfe9f044a'
+  label: 'Aladin Home'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

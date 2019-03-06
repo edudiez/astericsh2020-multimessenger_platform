@@ -1,0 +1,14 @@
+name: Custom Theme
+description: Theme
+type: theme
+core: 8.x
+libraries: 
+  - asterics/global-css
+  - asterics/aladin
+
+regions:
+    header : 'Header'
+    navigation : 'Navigation'
+    content : 'Content'
+    footer : 'Footer'
+    wrapperbottom: 'Wrapper Bottom'
