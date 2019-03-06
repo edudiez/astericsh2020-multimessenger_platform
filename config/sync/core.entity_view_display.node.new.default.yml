@@ -1,0 +1,48 @@
+uuid: b158b876-9e0a-435a-b2b2-ed3bb2a872d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.new.body
+    - field.field.node.new.field_event_categoria_n
+    - field.field.node.new.field_new_date_n
+    - node.type.new
+  module:
+    - datetime
+    - text
+    - user
+id: node.new.default
+targetEntityType: node
+bundle: new
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_event_categoria_n:
+    weight: 103
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_new_date_n:
+    weight: 102
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }
