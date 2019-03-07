@@ -5,7 +5,7 @@
 //***************************************//
 
 body {
-	padding:0; margin:0; font-family:'Open Sans'; font-size:20px; color: $blanc;
+	padding:0; margin:0; font-family:'Open Sans'; font-size:20px; color: $blanc;font-weight:400;
 	p {margin:0 0 25px 0; line-height:2em;}
 	a {text-decoration:none; color:inherit; transition:.3s;}
 	a:hover {text-decoration:none; cursor: pointer;}
@@ -26,4 +26,25 @@ body {
         }
         h2 {font-size:1.8em}
         @include editor();
+        
+        // PARAGRAPH REGULAR 24 //
+        .paragraph--view-mode--regular-24 {
+            font-size:24px;
+        }
+        
+        // PARAGRAPH LINK //
+        .paragraph--type--link {
+            margin:40px 0;
+            a {
+                display:inline-block;
+                width:auto;
+                padding:20px 30px;
+                border-radius:30px;
+                color:$blanc;
+                font-weight: 300;
+                font-size:14px;
+                text-transform:uppercase;
+                background-color:$buttonlink;
+            }
+        }
 }
