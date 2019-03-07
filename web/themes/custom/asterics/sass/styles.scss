@@ -25,4 +25,5 @@ body {
             line-height:2em;
         }
         h2 {font-size:1.8em}
+        @include editor();
 }

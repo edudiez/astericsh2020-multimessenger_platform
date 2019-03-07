@@ -71,11 +71,11 @@
  */
 #}
 <article{{ attributes.addClass('teaser') }}>
-  <div{{ content_attributes }}>
+  <div{{ content_attributes.addClass('teaser-wrapper') }}>
       <div class="category">{{ content.field_event_category_n }}</div>
       <a href="{{url}}">
       <div class="title">{{ label }}</div>
-      <div class="date">{{ content.field_new_date_n }}</div>
+      <div class="info">{{ content.field_new_date_n }}</div>
       </a>
   </div>
 </article>

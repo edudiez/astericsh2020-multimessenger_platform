@@ -185,6 +185,7 @@ display:
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
+      css_class: news
     cache_metadata:
       max-age: -1
       contexts:
@@ -202,7 +203,8 @@ display:
       display_extenders: {  }
       display_description: 'Vista EVA per a les noticies i esdeveniments de la Home'
       entity_type: paragraph
-      bundles: {  }
+      bundles:
+        - views_eva
     cache_metadata:
       max-age: -1
       contexts:

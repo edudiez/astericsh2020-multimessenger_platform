@@ -71,7 +71,7 @@
  */
 #}
 <article{{ attributes.addClass('teaser') }}>
-  <div{{ content_attributes }}>
+  <div{{ content_attributes.addClass('teaser-wrapper') }}>
       <div class="category">{{ content.field_event_category_n }}</div>
       <div class="title">{{ label }}</div>
       <div class="info"><label>Date</label>&nbsp;(<div class="wrapper">{{ content.field_event_date_n }}</div>)</div>

@@ -2,6 +2,8 @@ uuid: df71b7ba-a0ef-48a8-8ee9-fe17bdb8ba6b
 langcode: en
 status: true
 dependencies:
+  module:
+    - system
   theme:
     - asterics
 _core:
@@ -17,4 +19,9 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }
