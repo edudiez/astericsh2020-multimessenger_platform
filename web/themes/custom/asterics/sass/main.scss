@@ -1,6 +1,7 @@
 @import "mixins.scss";
 
 main {
+    background-color:$blaufons;
     #block-link-home-observation-form {
         padding:50px 0;
         text-align:center;
@@ -24,4 +25,35 @@ main {
     #aladin-lite-div {
         margin:0 auto;
     }
+    // TEASERS NEWS & EVENTS //
+    article.teaser {
+        .category {
+            @include genericlink($buttonlink);
+        }
+        .title {
+            padding:36px 0;
+            font-weight:900;
+            font-size:30px;
+        }
+        .info {
+            font-weight:300;
+            font-size:18px;
+            .wrapper {
+                display:inline;
+                .date-item {
+                    display:inline;
+                    &:after {
+                        content:"-";
+                    }
+                }
+                .date-item:last-child {
+                    &:after {
+                        content:"";
+                    }
+                }
+                
+            }
+        }
+    }
+    // TEASERS NEWS & EVENTS //
 }
