@@ -1,0 +1,91 @@
+@import "mixins.scss";
+ header {
+        background-color:$blaufons;
+        height:120px;
+        .container {
+            padding:15px 35px 0 70px;
+        }
+        #block-logo {
+            float:left;
+            img {
+                width:120px;
+            }
+        }
+        #block-headermenu {
+            float:right;
+            padding-right:95px;
+            ul {
+                margin-top:10px;
+            }
+            li {
+                display:inline;
+                a{
+                    font-size:14px;
+                    margin:0 10px;
+                    border:1px solid $blanc;
+                    padding:10px 20px;
+                    border-radius:20px;
+                    &:hover {
+                        color:$buttonlink;
+                        border:1px solid $buttonlink;
+                    }
+                }
+            }
+        }
+        .right {
+            /*width:100%;*/
+            /*display: inline-block;
+            vertical-align: middle;*/
+            clear:right;
+            float:right;
+            .top {
+                position:relative; /*top:40px; right:30px;*/
+                bottom:25px;
+                text-align:right;
+                .ico-search {
+                    background:url($images+"lupa-01.svg") no-repeat 0 0 transparent;
+                    width:24px;
+                    height:30px;
+                    cursor:pointer;display:inline-block; vertical-align:middle;
+                }
+                .ico-menu {
+                    cursor:pointer;display:inline-block; vertical-align:middle; margin-left:20px; width: 35px; height: 20px; position: relative; -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); -webkit-transform-origin: center; transform-origin: center;
+                    span {
+                        height: 2px; 
+                        width: 100%;
+                        background: $blanc;
+                        border-radius: 5px;
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        -webkit-transition: inherit;
+                        transition: inherit;
+                        -webkit-transform: inherit;
+                        transform: inherit;
+                            &:nth-child(1) {}
+                            &:nth-child(2) {-webkit-transform: translateY(8px); transform: translateY(8px);}
+                            &:nth-child(3) {-webkit-transform: translateY(16px); transform: translateY(16px);}
+                    }
+                    /*
+                    &:hover {
+                        span {
+                            width: 100%!important;
+                                &:nth-child(1),
+                                &:nth-child(2) { -webkit-transform: translateY(9px) rotate(45deg); transform: translateY(9px) rotate(45deg);}
+                                &:nth-child(3) {-webkit-transform: translateY(9px) rotate(-45deg); transform: translateY(9px) rotate(-45deg);}
+                        }
+                    }
+                    */
+                    &.active {
+                        span {
+                            width: 100%!important;
+                            &:nth-child(1),
+                            &:nth-child(2) { -webkit-transform: translateY(9px) rotate(45deg); transform: translateY(9px) rotate(45deg);}
+                            &:nth-child(3) {-webkit-transform: translateY(9px) rotate(-45deg); transform: translateY(9px) rotate(-45deg);}
+                        }
+                    }
+                }
+            }
+        }
+ }
