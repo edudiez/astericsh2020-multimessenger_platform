@@ -6,3 +6,38 @@ $negre: #000;
 $blanc: #fff;
 $blaufons: #071c47;
 $buttonlink: #f2644c;
+
+@mixin genericlink($color) {
+    font-size:16px;
+    color: $color;
+}
+
+@mixin editor() {
+    .contextual-region {
+        position: relative;
+    }
+    #block-asterics-local-tasks {
+        position: fixed; z-index: 999; top: 400px; right: 0;
+        ul {
+            margin: 0;
+            text-align: right;
+            border: none;
+            padding: 0;
+            li {display: block;margin: 5px 0;
+                a { margin: 0;
+                    padding: 10px 20px;
+                    display: inline-block;
+                    background: rgba(30,30,30,.85);
+                    color: #fff;
+                    border: none;
+                    font-weight: 300;
+                    box-shadow: 0 0 60px rgba(0,0,0,.3);
+                    transition: .3s;
+                    -webkit-transition: .3s;
+                    &.active {background: #fff; color: #333;}
+                    &:hover { padding-right: 50px;  background: #fff; color: #333;}
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+uuid: eb0edc0d-d6c5-4e24-96b3-d424bddc07f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.news
+    - paragraphs.paragraphs_type.views_eva
+id: paragraph.views_eva.news
+targetEntityType: paragraph
+bundle: views_eva
+mode: news
+content:
+  news_entity_view_1:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

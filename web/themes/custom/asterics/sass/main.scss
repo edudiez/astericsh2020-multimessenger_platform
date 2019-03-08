@@ -1,6 +1,13 @@
 @import "mixins.scss";
 
 main {
+    background-color:$blaufons;
+    .paragraph--view-mode--home-inferior {
+        background-color:$blanc;
+        color:$blaufons;
+        text-align:center;
+        padding:50px 0 10px 0;
+    }
     #block-link-home-observation-form {
         padding:50px 0;
         text-align:center;
@@ -9,19 +16,62 @@ main {
             font-weight:400;
             font-size:24px;
         }
-        a {
-            display:inline-block;
-            width:auto;
-            padding:20px 30px;
-            border-radius:30px;
-            color:$blanc;
-            font-weight: 300;
-            font-size:14px;
-            text-transform:uppercase;
-            background-color:$buttonlink;
-        }
+        
     }
     #aladin-lite-div {
         margin:0 auto;
     }
+    // VISTA NEWS & EVENTS //
+    .views-element-container {
+        .news {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-evenly;
+        }
+    }
+    // TEASERS NEWS & EVENTS //
+    article.teaser {
+        width:290px;
+        padding:40px 0 100px 0;
+        margin-left:50px;
+        background: -moz-linear-gradient(top, rgba(35,95,135,1) 0%, rgba(35,95,135,0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(35,95,135,1) 0%,rgba(35,95,135,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(35,95,135,1) 0%,rgba(35,95,135,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#235f87', endColorstr='#00235f87',GradientType=0 );
+        .teaser-wrapper {
+            position:relative;
+            right:50px;
+            .category {
+                @include genericlink($buttonlink);
+            }
+            .title {
+                padding:36px 0;
+                font-weight:900;
+                font-size:30px;
+            }
+            .info {
+                font-weight:300;
+                font-size:18px;
+                display:inline-block;
+                .wrapper {
+                    display:inline;
+                    display:inline-block;
+                    .date-item {
+                        display:inline;
+                        &:after {
+                            content:"-";
+                        }
+                    }
+                    .date-item:last-child {
+                        &:after {
+                            content:"";
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }
+    // TEASERS NEWS & EVENTS //
 }
