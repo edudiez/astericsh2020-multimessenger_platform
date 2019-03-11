@@ -16,3 +16,16 @@ function _asterics_user_login_form_submit($form, FormStateInterface $form_state)
   // Set redirect to login form.
   $form_state->setRedirect('<front>'); // REDIRECT A L'AREA QUE ENS INTERESSI
 }
+
+/*
+ * Implements Hook paragraph preprocess
+ */
+function asterics_preprocess_paragraph(&$variables) {
+    if ($variables['paragraph']->getType() == 'aladin'){
+        $variables['#attached']['drupalSettings']['aladin'] = array (
+          'survey'=>$variables['content']['field_aladin_survey'][0]['#context']['value'],
+          'fov'=>$variables['content']['field_aladin_fov'][0]['#markup']
+        );
+         
+    }
+}
