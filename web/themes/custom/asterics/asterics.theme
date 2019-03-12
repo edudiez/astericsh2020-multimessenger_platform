@@ -1,8 +1,10 @@
 <?php
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\Role;
+
 /**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_form_user_login_form_alter().
  */
 function asterics_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Alter login form and add own custom submit handler.
@@ -17,6 +19,26 @@ function _asterics_user_login_form_submit($form, FormStateInterface $form_state)
   $form_state->setRedirect('<front>'); // REDIRECT A L'AREA QUE ENS INTERESSI
 }
 
+/**
+ * Implements hook_form_user_register_form_alter()
+ */
+function asterics_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    /* MAQUETACIO */
+    $form['#attributes']['class'][] = 'container';
+    /* ROLS ELEGIBLES */
+    $form['roles'] = array (
+      '#type' => 'checkboxes',
+      '#options' => array (
+        'amateur' => 'amateur',
+        'profesional' => 'profesional',
+      )
+    );
+    $form['roles']['amateur'] = array (
+      '#disabled' => TRUE;
+    );
+}
+
+
 /*
  * Implements Hook paragraph preprocess
  */
@@ -29,3 +51,5 @@ function asterics_preprocess_paragraph(&$variables) {
          
     }
 }
+
+
