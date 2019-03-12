@@ -34,7 +34,7 @@ function asterics_form_user_register_form_alter(&$form, FormStateInterface $form
       )
     );
     $form['roles']['amateur'] = array (
-      '#disabled' => TRUE;
+      '#disabled' => TRUE,
     );
 }
 
