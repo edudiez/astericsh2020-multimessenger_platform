@@ -64,8 +64,11 @@ main {
         }
         
     }
-    #aladin-lite-div {
-        margin:0 auto;
+    .paragraph--type--aladin {
+        padding:50px 0;
+            #aladin-lite-div {
+                margin:0 auto;
+            }
     }
     // VISTA NEWS & EVENTS //
     .views-element-container {
