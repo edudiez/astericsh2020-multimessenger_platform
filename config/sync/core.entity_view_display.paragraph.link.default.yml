@@ -14,7 +14,7 @@ mode: default
 content:
   field_pr_link:
     weight: 11
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
