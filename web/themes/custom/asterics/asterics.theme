@@ -7,8 +7,10 @@ use Drupal\user\Entity\Role;
  * Implements hook_form_user_login_form_alter().
  */
 function asterics_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  // Alter login form and add own custom submit handler.
-  $form['#submit'][] = '_uab_invfest_user_login_form_submit';
+    /* MAQUETACIO */
+    $form['#attributes']['class'][] = 'container';
+    $form['#attributes']['class'][] = 'form-background';
+    // Alter login form and add own custom submit handler.
 }
 
 /**
@@ -19,37 +21,75 @@ function _asterics_user_login_form_submit($form, FormStateInterface $form_state)
   $form_state->setRedirect('<front>'); // REDIRECT A L'AREA QUE ENS INTERESSI
 }
 
+/*
+ * Implements hook_form_user_pass_reset_alter
+ * Permet un autoclick en validacio de mail i recuperacio de password
+ */
+
+function asterics_form_user_pass_reset_alter(&$form, FormStateInterface $form_state) {
+    /* MAQUETACIO */
+    $form['#attributes']['class'][] = 'container';
+    $form['#attributes']['class'][] = 'form-background';
+    $form['message']['#markup'] = '<div class="extrabold-40">'.t('You are been redirected to your reset password page, please wait...').'</div>';
+    unset($form['help']);
+    /* LOGIN DIRECTE */
+    $form['#attached']['drupalSettings']['passreset'] = TRUE;
+}
+
+/*
+ * Implements asterics_form_user_form_alter
+ */
+function asterics_form_user_form_alter(&$form, FormStateInterface $form_state) {
+    /* MAQUETACIO */
+    $form['#attributes']['class'][] = 'container';
+    $form['#attributes']['class'][] = 'form-background';
+    /* FORM CLEAN */
+    _asterics_user_form($form);
+}
+
 /**
  * Implements hook_form_user_register_form_alter()
  */
 function asterics_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     /* MAQUETACIO */
     $form['#attributes']['class'][] = 'container';
+    $form['#attributes']['class'][] = 'form-background';
     /* ROLS ELEGIBLES */
     $form['roles'] = array (
-      '#type' => 'checkboxes',
-      '#options' => array (
-        'amateur' => 'amateur',
-        'profesional' => 'profesional',
-      )
+        '#type' => 'radios',
+        '#options' => array (
+            'amateur' => 'amateur',
+            'profesional' => 'profesional',
+          ),
+        '#default_value' => 'profesional',
+        '#markup' => t('Select your type of user'),
+        '#weight' => -99,
     );
     $form['roles']['amateur'] = array (
       '#disabled' => TRUE,
     );
+          
+    /* FORM CLEAN */
+    _asterics_user_form($form);
+    
 }
 
-
-/*
- * Implements Hook paragraph preprocess
- */
 function asterics_preprocess_paragraph(&$variables) {
     if ($variables['paragraph']->getType() == 'aladin'){
+       /* $variables['#attached']['library'][] = 'asterics/aladin';*/
         $variables['#attached']['drupalSettings']['aladin'] = array (
           'survey'=>$variables['content']['field_aladin_survey'][0]['#context']['value'],
           'fov'=>$variables['content']['field_aladin_fov'][0]['#markup']
         );
-         
+        kint($variables); 
     }
+}
+
+function _asterics_user_form(&$form) {
+    unset($form['account']['mail']['#description']);
+    unset($form['account']['name']['#description']);
+    $form['account']['notify']['#access'] = FALSE;
+    $form['contact']['#access'] = FALSE;
 }
 
 
