@@ -47,6 +47,7 @@
         "drupal/field_formatter": "1.2",
         "drupal/field_group": "1.0",
         "drupal/follow_unfollow": "1.1",
+        "drupal/geolocation": "1.11",
         "drupal/honeypot": "1.29",
         "drupal/http_cache_control": "1.0",
         "drupal/lang_dropdown": "2.0-beta3",
@@ -72,7 +73,9 @@
         "prashantchaudhary/ddslick": "^2.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3"
+        "webmozart/path-util": "^2.3",
+        
+        "twig/twig": "1.37.1"
     },
     "require-dev": {
         "webflo/drupal-core-require-dev": "^8.6.0"
