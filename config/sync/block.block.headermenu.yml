@@ -6,6 +6,7 @@ dependencies:
     - system.menu.header-menu
   module:
     - system
+    - user
   theme:
     - asterics
 id: headermenu
@@ -21,4 +22,16 @@ settings:
   label_display: '0'
   level: 1
   depth: 0
-visibility: {  }
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      anonymous: anonymous
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: '/user/reset/*'
+    negate: true
+    context_mapping: {  }
