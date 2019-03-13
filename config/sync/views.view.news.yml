@@ -205,6 +205,13 @@ display:
       entity_type: paragraph
       bundles:
         - views_eva
+      pager:
+        type: some
+        options:
+          items_per_page: 3
+          offset: 0
+      defaults:
+        pager: false
     cache_metadata:
       max-age: -1
       contexts:

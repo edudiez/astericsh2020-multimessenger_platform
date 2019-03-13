@@ -11,6 +11,12 @@ function asterics_form_user_login_form_alter(&$form, FormStateInterface $form_st
     $form['#attributes']['class'][] = 'container';
     $form['#attributes']['class'][] = 'form-background';
     // Alter login form and add own custom submit handler.
+    $config = \Drupal::config('rename_admin_paths.settings');
+    $user_path_value = $config->get('user_path_value');
+    $form['reset-password'] = array (
+        '#type' => 'item',
+        '#markup' => '<a href="/'.$user_path_value.'/password">'.t('Lost your password?').'</a>'
+    );
 }
 
 /**
@@ -80,8 +86,7 @@ function asterics_preprocess_paragraph(&$variables) {
         $variables['#attached']['drupalSettings']['aladin'] = array (
           'survey'=>$variables['content']['field_aladin_survey'][0]['#context']['value'],
           'fov'=>$variables['content']['field_aladin_fov'][0]['#markup']
-        );
-        kint($variables); 
+        ); 
     }
 }
 
@@ -89,7 +94,8 @@ function _asterics_user_form(&$form) {
     unset($form['account']['mail']['#description']);
     unset($form['account']['name']['#description']);
     $form['account']['notify']['#access'] = FALSE;
-    $form['contact']['#access'] = FALSE;
+    /*$form['contact']['#access'] = FALSE;*/
 }
+
 
 
