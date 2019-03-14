@@ -2,8 +2,12 @@ uuid: a6cbeda1-a0df-4050-8e9e-5ffd25b660cb
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.user.user.field_user_observatory
+    - field.field.user.user.field_user_photo
+    - image.style.thumbnail
   module:
-    - path
+    - svg_image
     - user
 _core:
   default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
@@ -13,21 +17,23 @@ bundle: user
 mode: default
 content:
   account:
-    weight: -10
-    region: content
-  contact:
-    weight: 5
-    region: content
-  language:
     weight: 0
-    region: content
-  path:
-    type: path
-    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_user_photo:
+    weight: 7
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
   timezone:
     weight: 6
     region: content
-hidden: {  }
+hidden:
+  contact: true
+  field_user_observatory: true
+  language: true
+  path: true

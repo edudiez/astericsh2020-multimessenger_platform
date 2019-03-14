@@ -10,17 +10,19 @@ global-css:
     js/jquery.hoverIntent.js: {}
     js/functions.js: {}
   dependencies:
-    - core/drupal
     - core/jquery
+    - core/drupal
     - core/drupalSettings
+    - core/jquery.once
 aladin:
   css:
     theme:
-        '//aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css': { type: external,minified:true }
+      '//aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css': { type: external,minified:true }
   js:
     //aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js: { type: external,minified:true }
     js/aladin.js : {}
   dependencies:
-      - core/drupal
-      - core/jquery
-      - core/drupalSettings
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

@@ -6,4 +6,8 @@ id: profesional
 label: Profesional
 weight: 3
 is_admin: null
-permissions: {  }
+permissions:
+  - 'create event content'
+  - 'create terms in observatories'
+  - 'edit own event content'
+  - 'edit terms in observatories'
