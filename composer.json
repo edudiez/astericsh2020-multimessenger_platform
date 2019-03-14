@@ -39,7 +39,7 @@
         "drupal/config_filter": "1.4",
         "drupal/config_split": "1.4",
         "drupal/console": "^1.0.2",
-        "drupal/core": "8.6.10",
+        "drupal/core": "8.6.11",
         "drupal/ctools": "3.2",
         "drupal/devel": "2.0",
         "drupal/entity_reference_revisions": "1.6",
@@ -68,14 +68,13 @@
         "drupal/twig_tweak": "2.1",
         "drupal/ultimate_cron": "2.0-alpha4",
         "drupal/view_mode_selector": "1.x-dev",
+        "drupal/webform": "5.1",
         "drupal/xmlsitemap": "1.0-alpha3",
         "drush/drush": "^9.0.0",
         "prashantchaudhary/ddslick": "^2.0",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3",
-        
-        "twig/twig": "1.37.1"
+        "webmozart/path-util": "^2.3"
     },
     "require-dev": {
         "webflo/drupal-core-require-dev": "^8.6.0"
@@ -147,18 +146,18 @@
         },
         "patches": {
             "drupal/core": {
-                "Views ajax modal for setting content view mode broken with entity reference relationship": "https://www.drupal.org/files/issues/2754011-fix-relationship-arg.patch",
-                "ManyToOneHelper ignores group configuration for some cases and forces INNER joins": "https://www.drupal.org/files/issues/2018-08-02/manytoonehelper_ignores-2559961-44-8.5.x.patch",
-                "Broken title in modal dialog when title is a render array": "https://www.drupal.org/files/issues/2018-07-06/2663316-52.patch",
-                "Media library widget + Paragraphs broken: validation error on required field in paragraphs subform": "https://www.drupal.org/files/issues/2018-12-05/drupal-media-library-paragraphs-3003150-19-8.x.patch",
-                "PHP 7.2: Warning: count(): Parameter must be an array or an object that implements Countable n": "https://www.drupal.org/files/issues/2018-11-09/entity-argument-validator-fix-php72-2969262-12.patch"
+                "#2754011. Views ajax modal for setting content view mode broken with entity reference relationship": "https://www.drupal.org/files/issues/2754011-fix-relationship-arg.patch",
+                "#2559961. ManyToOneHelper ignores group configuration for some cases and forces INNER joins": "https://www.drupal.org/files/issues/2018-08-02/manytoonehelper_ignores-2559961-44-8.5.x.patch",
+                "#2663316. Broken title in modal dialog when title is a render array": "https://www.drupal.org/files/issues/2018-07-06/2663316-52.patch",
+                "#3003150. Media library widget + Paragraphs broken: validation error on required field in paragraphs subform": "https://www.drupal.org/files/issues/2018-12-05/drupal-media-library-paragraphs-3003150-19-8.x.patch",
+                "#2969262. PHP 7.2: Warning: count(): Parameter must be an array or an object that implements Countable n": "https://www.drupal.org/files/issues/2018-11-09/entity-argument-validator-fix-php72-2969262-12.patch"
             },
             "drupal/better_exposed_filters": {
-                "PHP Notice on ajax request prevents settings from loading in Views UI": "https://www.drupal.org/files/issues/2019-03-06/better_exposed_filters-php_notice-3038114-3.patch",
-                "AJAX error. Notice: Undefined index: bef when editing view": "https://www.drupal.org/files/issues/2018-06-07/undefined-index-bef-2956222-2.patch"
+                "#3038114. PHP Notice on ajax request prevents settings from loading in Views UI": "https://www.drupal.org/files/issues/2019-03-06/better_exposed_filters-php_notice-3038114-3.patch",
+                "#2956222. AJAX error. Notice: Undefined index: bef when editing view": "https://www.drupal.org/files/issues/2018-06-07/undefined-index-bef-2956222-2.patch"
             },
             "drupal/lang_dropdown": {
-                "ddSlick skin not working": "https://www.drupal.org/files/issues/2018-03-24/lang_dropdown-ddSlick-skin-not-working-2941640-7-8.x.patch"
+                "#2941640. ddSlick skin not working": "https://www.drupal.org/files/issues/2018-03-24/lang_dropdown-ddSlick-skin-not-working-2941640-7-8.x.patch"
             }
         }
     }
