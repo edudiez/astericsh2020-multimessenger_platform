@@ -4,7 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.user.user.field_user_observatory
+    - field.field.user.user.field_user_photo
   module:
+    - svg_image
     - user
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
@@ -20,6 +22,19 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_user_photo:
+    weight: 7
+    label: above
+    settings:
+      svg_attributes:
+        width: ''
+        height: ''
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
   member_for:
     weight: 5
