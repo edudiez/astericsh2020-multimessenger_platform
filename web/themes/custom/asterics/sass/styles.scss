@@ -28,16 +28,16 @@ body {
         @include editor();
         
         // PARAGRAPH REGULAR 20 //
-        .paragraph--view-mode--regular-20 {
+        .regular-20, .paragraph--view-mode--regular-20 {
             font-size:20px;
         }
         
         // PARAGRAPH REGULAR 24 //
-        .paragraph--view-mode--regular-24 {
+        .regular-24, .paragraph--view-mode--regular-24 {
             font-size:24px;
         }
         // PARAGRAPH EXTRABOLD 40 //
-        .paragraph--view-mode--extrabold-40 {
+        .extrabold-40, .paragraph--view-mode--extrabold-40 {
             font-size:40px;
             font-weight:900;
             letter-spacing:1.5px;
