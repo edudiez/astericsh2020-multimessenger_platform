@@ -11,7 +11,7 @@ dependencies:
 id: logo
 theme: asterics
 region: header
-weight: -9
+weight: -10
 provider: null
 plugin: 'block_content:adb5dda4-7859-44dd-9912-d1a4f112af5b'
 settings:

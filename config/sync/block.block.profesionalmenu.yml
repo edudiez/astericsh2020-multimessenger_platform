@@ -1,23 +1,23 @@
-uuid: 80feb820-6553-46b5-bf77-4dc8edbd6d55
+uuid: f14e5fd9-586f-42a8-b697-91c9a0689687
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.header-menu
+    - system.menu.profesional-menu
   module:
     - system
     - user
   theme:
     - asterics
-id: headermenu
+id: profesionalmenu
 theme: asterics
 region: header
-weight: -8
+weight: -9
 provider: null
-plugin: 'system_menu_block:header-menu'
+plugin: 'system_menu_block:profesional-menu'
 settings:
-  id: 'system_menu_block:header-menu'
-  label: 'Header Menu'
+  id: 'system_menu_block:profesional-menu'
+  label: 'Profesional Menu'
   provider: system
   label_display: '0'
   level: 1
@@ -26,12 +26,7 @@ visibility:
   user_role:
     id: user_role
     roles:
-      anonymous: anonymous
+      profesional: profesional
     negate: false
     context_mapping:
       user: '@user.current_user_context:current_user'
-  request_path:
-    id: request_path
-    pages: '/user/reset/*'
-    negate: true
-    context_mapping: {  }

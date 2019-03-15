@@ -6,3 +6,50 @@ function demoasterics_user_presave(Drupal\Core\Entity\EntityInterface $entity) {
       $entity->addRole('profesional');
     }
 }
+
+function demoasterics_link_alter(&$item) {
+    /**
+   * The URL of the link.
+   *
+   * @var Url
+   */
+  $url = $item['url'];
+
+  // Return early where possible.
+  if ($url->isExternal()) {
+    return;
+  } else {
+    $current_user = \Drupal::currentUser();
+    $roles = $current_user->getRoles(TRUE);
+    if(in_array('profesional',$roles)) {
+        switch($item['text']) {
+            case 'Create Observatory': // AIXO ES MOLT CHUNGU HA DIT EL JOSE
+                $user = user_load($current_user->id());
+                if($user->get('field_user_observatory')->get(0)) {
+                  $item['options']['attributes']['class'][] = 'disabled';
+                } else {
+                    $item['options']['attributes']['class'][] = 'highlighted';
+                }
+                break;
+            case 'Events': // AIXO ES MOLT CHUNGU HA DIT EL JOSE
+                $user = user_load($current_user->id());
+                if(!$user->get('field_user_observatory')->get(0)) {
+                  $item['options']['attributes']['class'][] = 'disabled';
+                }
+                break;
+        }
+    } else {
+        return;
+    }
+  }
+    
+}
+
+//* CREACIO DE OBSERVATORI PER USUARI PROFESSIONAL *//
+function demoasterics_form_taxonomy_term_observatories_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    $current_user = \Drupal::currentUser();
+    $roles = $current_user->getRoles(TRUE);
+    if(in_array('profesional',$roles)) {
+        kint($form);
+    }
+}

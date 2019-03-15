@@ -11,7 +11,7 @@ header {
             width:120px;
         }
     }
-    #block-headermenu {
+    #block-headermenu, #block-asterics-account-menu {
         float:right;
         padding-right:25px;
         ul {
@@ -29,6 +29,25 @@ header {
                     color:$buttonlink;
                     border:1px solid $buttonlink;
                 }
+            }
+        }
+    }
+    #block-profesionalmenu {
+        float:left;
+        ul {
+            margin-top:10px;
+        }
+        li{
+            display:inline;
+            a {
+                font-size:16px;
+                padding:6px;
+            }
+            .disabled {
+                    display:none;
+            }
+            .highlighted {
+                font-weight:700;
             }
         }
     }
