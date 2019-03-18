@@ -25,3 +25,5 @@
 
 /private
 **/.DS_Store
+
+web/themes/custom/asterics/node_modules/

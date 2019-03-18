@@ -1,5 +1,5 @@
 // Global variables
-$images: '/themes/custom/asterics/images/';
+$images: '../images/';
 
 // Colores
 $negre: #000;
@@ -43,7 +43,7 @@ $buttonlink: #f2644c;
 }
 
 @mixin defaultBackground() {
-        background-image: url(/themes/custom/asterics/images/assets-03.svg);
+        background-image: url(../images/assets-03.svg);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         content: "";

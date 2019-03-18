@@ -23,7 +23,7 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
-<div{{ attributes.addClass('observatory') }}>
+<div{{ attributes.addClass('observatory',view_mode) }}>
   {{ title_prefix }}
   {% if not page %}
     <h2>{{ name }}</h2>

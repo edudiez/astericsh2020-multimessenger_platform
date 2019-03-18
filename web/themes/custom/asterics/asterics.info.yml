@@ -2,16 +2,16 @@ name: Custom Theme
 description: Theme
 type: theme
 core: 8.x
-libraries: 
+libraries:
   - asterics/global-css
   - asterics/aladin
 libraries-override:
   geolocation/geolocation.commonmap:
     js:
-      js/geolocation-common-map.js: js/geolocation-common-map.js
+      js/geolocation-common-map.js: src/js/geolocation-common-map.js
   geolocation/geolocation.googlemapsapi:
     js:
-      js/geolocation-google-maps-api.js: js/geolocation-google-maps-api.js
+      js/geolocation-google-maps-api.js: src/js/geolocation-google-maps-api.js
 regions:
     header : 'Header'
     navigation : 'Navigation'
