@@ -1,8 +1,9 @@
-uuid: b1e63eb4-2b0a-4f3c-8ff9-d3de5db390f6
+uuid: 665bee00-e698-4ec8-b144-48f7ae493a04
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.full
     - field.field.taxonomy_term.observatories.field_observatory_address
     - field.field.taxonomy_term.observatories.field_observatory_geolocation
     - field.field.taxonomy_term.observatories.field_observatory_observacio
@@ -12,14 +13,53 @@ dependencies:
     - taxonomy.vocabulary.observatories
   module:
     - entity_reference_revisions
+    - field_group
     - geolocation
     - link
     - text
     - webform
-id: taxonomy_term.observatories.default
+third_party_settings:
+  field_group:
+    group_rrss:
+      children:
+        - field_observatory_rrss
+        - field_observatory_website
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: RRSS
+    group_location_contact:
+      children:
+        - field_observatory_geolocation
+        - field_observatory_address
+        - field_observatory_phone
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        label: 'Location and Contact'
+        element: div
+        show_label: true
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: ''
+      label: 'Location and Contact'
+id: taxonomy_term.observatories.full
 targetEntityType: taxonomy_term
 bundle: observatories
-mode: default
+mode: full
 content:
   description:
     label: hidden
@@ -29,56 +69,56 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_observatory_address:
-    weight: 5
-    label: above
+    weight: 4
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_observatory_geolocation:
-    weight: 1
+    weight: 3
     label: hidden
     settings:
-      title: ''
       set_marker: '1'
-      common_map: ''
+      title: ''
       info_text: ''
-      use_overridden_map_settings: 0
       google_map_settings:
+        height: 100px
+        width: 100px
         type: ROADMAP
         zoom: '10'
-        minZoom: 0
         maxZoom: 18
-        rotateControl: 0
+        minZoom: 0
         mapTypeControl: 1
         streetViewControl: 1
         zoomControl: 1
-        fullscreenControl: 0
         scrollwheel: 1
-        disableDoubleClickZoom: 0
+        gestureHandling: auto
         draggable: 1
-        height: 400px
-        width: 100%
+        style: ''
         info_auto_display: 1
         marker_icon_path: ''
         disableAutoPan: 1
-        style: ''
+        rotateControl: 0
+        fullscreenControl: 0
         preferScrollingToZooming: 0
-        gestureHandling: auto
+        disableDoubleClickZoom: 0
+      use_overridden_map_settings: 0
+      common_map: ''
     third_party_settings: {  }
     type: geolocation_map
     region: content
   field_observatory_observacio:
-    weight: 7
-    label: above
+    weight: 3
+    label: hidden
     settings:
       source_entity: true
     third_party_settings: {  }
     type: webform_entity_reference_entity_view
     region: content
   field_observatory_phone:
-    weight: 6
-    label: above
+    weight: 5
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -86,16 +126,16 @@ content:
     region: content
   field_observatory_rrss:
     type: entity_reference_revisions_entity_view
-    weight: 3
-    label: above
+    weight: 1
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
   field_observatory_website:
-    weight: 4
-    label: above
+    weight: 2
+    label: hidden
     settings:
       trim_length: 80
       url_only: false

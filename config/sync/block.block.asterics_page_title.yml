@@ -22,6 +22,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: "<front>\r\n/user/reset/*\r\n/admin/structure/taxonomy/manage/observatories/add"
+    pages: "<front>\r\n/user/reset/*\r\n/observatory/*\r\n/admin/structure/taxonomy/manage/observatories/add"
     negate: true
     context_mapping: {  }

@@ -3,11 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.taxonomy_term.field_observatory_address
     - field.storage.taxonomy_term.field_observatory_geolocation
     - taxonomy.vocabulary.observatories
   module:
     - geolocation
     - taxonomy
+    - text
     - user
 id: obervatories_map
 label: 'Obervatories Map'
@@ -58,14 +60,14 @@ display:
         type: maps_common
         options:
           geolocation_field: field_observatory_geolocation
-          title_field: none
+          title_field: name
           centre:
             fit_bounds:
               enable: true
               weight: 0
             first_row:
-              enable: true
               weight: 0
+              enable: false
             fixed_value:
               enable: true
               weight: 0
@@ -79,6 +81,8 @@ display:
                 update_map: '0'
           show_raw_locations: 0
           even_empty: 0
+          marker_scroll_to_result: 0
+          id_field: none
           marker_row_number: 0
           context_popup_content: ''
           marker_clusterer: 0
@@ -107,7 +111,74 @@ display:
             disableAutoPan: 1
       row:
         type: fields
+        options:
+          default_field_elements: false
+          inline: {  }
+          separator: ''
+          hide_empty: false
       fields:
+        field_observatory_address:
+          id: field_observatory_address
+          table: taxonomy_term__field_observatory_address
+          field: field_observatory_address
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
         name:
           id: name
           table: taxonomy_term_field_data
@@ -116,10 +187,10 @@ display:
           group_type: group
           admin_label: ''
           label: ''
-          exclude: false
+          exclude: true
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "<strong>{{ name }}</strong>\r\n{{ field_observatory_address }}\r\nclick marker to enlarge "
             make_link: false
             path: ''
             absolute: false
@@ -144,8 +215,8 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: h2
-          element_class: ''
+          element_type: div
+          element_class: popup
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
@@ -159,7 +230,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -236,6 +307,72 @@ display:
           separator: ', '
           field_api_classes: false
           plugin_id: geolocation_field
+        tid:
+          id: tid
+          table: taxonomy_term_field_data
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: taxonomy_term
+          entity_field: tid
+          plugin_id: field
       filters:
         status:
           value: '1'
@@ -272,6 +409,7 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags:
+        - 'config:field.storage.taxonomy_term.field_observatory_address'
         - 'config:field.storage.taxonomy_term.field_observatory_geolocation'
   map:
     display_plugin: page
@@ -288,4 +426,5 @@ display:
         - 'languages:language_interface'
         - user.permissions
       tags:
+        - 'config:field.storage.taxonomy_term.field_observatory_address'
         - 'config:field.storage.taxonomy_term.field_observatory_geolocation'

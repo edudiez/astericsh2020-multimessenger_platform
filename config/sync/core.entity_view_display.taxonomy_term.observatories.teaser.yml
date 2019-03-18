@@ -1,8 +1,9 @@
-uuid: b1e63eb4-2b0a-4f3c-8ff9-d3de5db390f6
+uuid: f98f0f2f-c15f-4a2f-bbf2-c4f8ab6f9b48
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.taxonomy_term.teaser
     - field.field.taxonomy_term.observatories.field_observatory_address
     - field.field.taxonomy_term.observatories.field_observatory_geolocation
     - field.field.taxonomy_term.observatories.field_observatory_observacio
@@ -16,10 +17,10 @@ dependencies:
     - link
     - text
     - webform
-id: taxonomy_term.observatories.default
+id: taxonomy_term.observatories.teaser
 targetEntityType: taxonomy_term
 bundle: observatories
-mode: default
+mode: teaser
 content:
   description:
     label: hidden
