@@ -53,6 +53,13 @@ function demoasterics_form_taxonomy_term_observatories_form_alter(&$form, FormSt
     $current_user = \Drupal::currentUser();
     $roles = $current_user->getRoles(TRUE);
     if(in_array('profesional',$roles)) {
-        kint($form);
+        $form['relations']['#access'] = FALSE;
+        $form['field_observatory_observacio']['#access'] = FALSE;
+        $form['uid'] = array (
+          '#type' => 'hidden',
+          '#value' => $current_user->id(),
+         );
     }
 }
+
+/* PREPROCESS USER */

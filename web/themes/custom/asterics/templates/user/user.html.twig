@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+<article{{ attributes.addClass('profesional') }}>
+  {% if content %}
+      <div id="forms-wrapper"></div>
+      <a href="/db_member/{{ user.uid.value }}/edit?destination=/db_member/{{ user.uid.value }}">Edit</a>
+      <h1>{{ user.name.value }}</h1>
+    {{ content.field_user_photo }}
+    {{ content.field_user_description }}
+    <div id="usertabs" class="ui-tabs">
+        <ul>
+            <li><a href="#observatories">Observatories</a></li>
+            <li><a href="#observations">Observations</a></li>
+            <li><a href="#newsevents">News & Events</a></li>
+        </ul>
+    
+    <div id="observatories">
+        <ul>
+            <li><a href="#following">Following</a></li>
+            <li><a href="#followers">Followers</a></li>
+            <li><a href="#myobservatory">My Observatory</a></li>
+            <li><button id="newobservatori">New Observatory</button></li>
+        </ul>
+            <div id="following">FOLLOWING</div>
+            <div id="followers">FOLLOWERS</div>
+            <div id="myobservatory">MY OBSERVATORY</div>
+    </div>
+    <div id="observations">
+        <ul>
+            <li><a href="#demandades">Observations demanded</a></li>
+            <li><a href="#demananes">Observations that have asked for me</a></li>
+            <li><button id="askobervation">Ask for a new observation</button></li>
+        </ul>
+        <div id="demandades">OBSERVACIONS DEMANDADES</div>
+        <div id="demanades">OBSERVACIONS DEMANADES</div>
+    </div>
+    <div id="newsevents">
+        <ul>
+            <li><a href="#myevents">MY EVENTS</a></li>
+            <li><button id="newevent">New Event</button></li>
+        </ul>
+        <div id="myevents">NEWS AND EVENTS</div>
+    </div>
+    </div>
+  {% endif %}
+</article>

@@ -1,8 +1,0 @@
-uuid: c021a177-4acd-4603-bee7-65f3175a64d2
-langcode: en
-status: true
-dependencies: {  }
-id: profesional-menu
-label: 'Profesional Menu'
-description: 'Menú usuario profesional'
-locked: false
