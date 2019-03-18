@@ -1,6 +1,6 @@
-active: true
+active: false
 css:
-  max: 4
+  max: 0
   logic: 1
 js:
   max: 0
