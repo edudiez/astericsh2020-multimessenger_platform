@@ -1,7 +1,10 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+
 //* ASIGNACIO DIRECTA DE ROLE PROFESIONAL *//
-function demoasterics_user_presave(Drupal\Core\Entity\EntityInterface $entity) {
+function demoasterics_user_presave(EntityInterface $entity) {
     if($entity->isNew()) {
       $entity->addRole('profesional');
     }
