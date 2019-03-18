@@ -21,7 +21,7 @@ aladin:
     theme:
       '//aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.css': { type: external, minified:true }
   js:
-    //aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js: { type: external, minified:true}
+    //aladin.u-strasbg.fr/AladinLite/api/v2/latest/aladin.min.js: { type: external, minified:true, weight:0}
     js/aladin.js : {}
   dependencies:
     - core/jquery
