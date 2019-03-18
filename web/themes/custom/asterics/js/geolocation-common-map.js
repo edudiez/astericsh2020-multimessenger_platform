@@ -393,11 +393,18 @@
               $('.geolocation-common-map-locations').show();
               $('[data-location-tid="' + location.data('location-tid') +'"]').show();
               $(location.children('.close')).click(function(){
-                  $(location.children('.location-content')).attr('src','about:blank');
+                  $(location.children('.location-content')).empty();
+                  //$(location.children('.location-content')).attr('src','about:blank');
                    $('.geolocation-common-map-locations').hide();
-              $('[data-location-tid="' + location.data('location-tid') +'"]').hide();
+                    $('[data-location-tid="' + location.data('location-tid') +'"]').hide();
               })
-              $(location.children('.location-content')).attr('src','/observatory/'+location.data('location-tid'));
+              
+              $(location.children('.location-content')).append($('iframe'));
+              var iframe = $($(location.children('.location-content')).children('iframe'));
+              iframe.attr('width','100%');
+              iframe.attr('height','100%');
+              iframe.attr('src','/observatory/'+location.data('location-tid'));
+              //$(location.children('.location-content')).attr('src','/observatory/'+location.data('location-tid'));
 
               
               
