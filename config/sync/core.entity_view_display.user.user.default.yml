@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_user_description
     - field.field.user.user.field_user_observatory
     - field.field.user.user.field_user_photo
   module:
@@ -15,17 +16,25 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_user_description:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_user_observatory:
-    weight: 6
-    label: above
+    weight: 1
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
   field_user_photo:
-    weight: 7
-    label: above
+    weight: 0
+    label: hidden
     settings:
       svg_attributes:
         width: ''
@@ -36,7 +45,5 @@ content:
     third_party_settings: {  }
     type: image
     region: content
-  member_for:
-    weight: 5
-    region: content
-hidden: {  }
+hidden:
+  member_for: true
