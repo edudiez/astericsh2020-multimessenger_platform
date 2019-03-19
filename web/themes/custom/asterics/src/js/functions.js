@@ -41,7 +41,7 @@
                 var frame = $($('#myevents').children('iframe'));
                 frame.attr('width','100%');
                 frame.attr('height','100%');
-                frame.attr('src','/form/observacion');
+                frame.attr('src','/node/add/event');
                 $('#myevents').show();
             });
         }
@@ -58,8 +58,5 @@
         }
     }
     /** PASWORD RESET BEHAVIOUR **/
-    
-    
-    
     
 })(jQuery, Drupal, drupalSettings);

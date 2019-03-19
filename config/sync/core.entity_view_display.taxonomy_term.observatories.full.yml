@@ -72,5 +72,10 @@ content:
     third_party_settings: {  }
     type: link
     region: content
+  observation_list_entity_view_1:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   field_observatory_geolocation: true
