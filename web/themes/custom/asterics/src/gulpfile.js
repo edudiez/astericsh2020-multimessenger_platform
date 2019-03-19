@@ -20,7 +20,7 @@ if (comp_images)
 gulp.task('sync', () =>{
 	 browserSync.init({
 		 proxy: {
-	     target: "http://git.fourg"
+	     target: "http://git.asterix"
 		 },
 		 open: false
 	 })

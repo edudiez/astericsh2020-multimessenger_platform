@@ -23,11 +23,28 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
-<div{{ attributes.addClass('observatory',view_mode) }}>
-  {{ title_prefix }}
-  {% if not page %}
-    <h2>{{ name }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {{ content }}
+<div{{ attributes.addClass('taxonomy','observatory',view_mode) }}>
+  <div class="container">
+    <div class="cols">
+      <div class="col">
+        {{ title_prefix }}
+            <h2>{{ name|field_value }}</h2>
+        {{ title_suffix }}
+        {{ content.description }}
+      </div>
+      <div class="col">
+        {{ content.field_observatory_rrss }}
+        {{ content.field_observatory_website }}
+      </div>
+    </div>
+    <div class="box">
+      <div class="address">
+        <h3> {{ 'Location & contact'|t }} </h3>
+        {{ content.field_observatory_address }}
+        {{ content.field_observatory_phone }}
+        {{ content.field_observatory_website }}
+      </div>
+      {{ content.field_observatory_observacio }}
+    </div>
+  </div>
 </div>

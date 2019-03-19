@@ -26,12 +26,12 @@ body {
         h1 {margin:0}
         h2 {font-size:1.8em}
         @include editor();
-        
+
         // PARAGRAPH REGULAR 20 //
         .regular-20, .paragraph--view-mode--regular-20 {
             font-size:20px;
         }
-        
+
         // PARAGRAPH REGULAR 24 //
         .regular-24, .paragraph--view-mode--regular-24 {
             font-size:24px;
@@ -42,7 +42,7 @@ body {
             font-weight:900;
             letter-spacing:1.5px;
         }
-        
+
         // PARAGRAPH LINK //
         .paragraph--type--link {
             margin:40px 0;
@@ -67,30 +67,36 @@ body {
     }
 }
 .geolocation-common-map-locations {
-    /*display:block !important;*/   
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    background: rgba(0,0,0,0.5);
-    width: 100%;
-    height: 100%;
-    .geolocation {
-        display:none;
-        height:100%;
-        overflow:hidden;
-        .hidden {
-            display:none;
-        }
-        .location-content {
-            overflow:hidden;
-            border:none;
-            
-        }
-    }
-    
+  /*display:block !important;*/
+  position: fixed; top: 0; left: 0; z-index: 1; background: rgba(0,0,0,0.7); width: 100%; height: 100%; padding: 60px;
+  .geolocation {
+    display:none; height:100%; overflow:hidden;
+    .hidden {display:none;}
+    .location-content {overflow:hidden; border:none;}
+  }
 }
 .gm-style-iw-d {
     color:#000;
+}
+
+/* TAXONOMIA */
+.taxonomy {
+	&.observatory {
+		&.full {
+			color: black; padding: 60px;
+			h2 {font-size: 40px; line-height: normal;}
+			p {line-height: normal;}
+			.cols {
+				display: flex;
+				.col {
+					flex: 1 0 50%;
+					&:nth-child(1) {padding-right: 20px;}
+					&:nth-last-child(1) {padding-left: 20px;}
+				}
+			}
+			.box {width: 100%; display: inline-block;}
+		}
+	}
 }
 
 /* USER */
