@@ -74,10 +74,10 @@ function asterics_form_user_register_form_alter(&$form, FormStateInterface $form
     $form['roles']['amateur'] = array (
       '#disabled' => TRUE,
     );
-          
+
     /* FORM CLEAN */
     _asterics_user_form($form);
-    
+
 }
 
 function asterics_preprocess_paragraph(&$variables) {
@@ -86,7 +86,7 @@ function asterics_preprocess_paragraph(&$variables) {
         $variables['#attached']['drupalSettings']['aladin'] = array (
           'survey'=>$variables['content']['field_aladin_survey'][0]['#context']['value'],
           'fov'=>$variables['content']['field_aladin_fov'][0]['#markup']
-        ); 
+        );
     }
 }
 
@@ -95,6 +95,3 @@ function _asterics_user_form(&$form) {
     unset($form['account']['name']['#description']);
     $form['account']['notify']['#access'] = FALSE;
 }
-
-
-

@@ -4,7 +4,7 @@ main {
     background-color:$blaufons;
     min-height:calc( 100vh - 200px );
     .paragraph--view-mode--home-superior:before {
-        background-image: url(/themes/custom/asterics/images/assets-01.svg);
+        background-image: url(../images/assets-01.svg);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         content: "";
@@ -35,7 +35,7 @@ main {
         }
     }
     .paragraph--view-mode--home-inferior:before {
-        background-image: url(/themes/custom/asterics/images/assets-02.svg);
+        background-image: url(../images/assets-02.svg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position-x: right;
@@ -46,7 +46,7 @@ main {
         width: 50%;
         height: 100%;
         z-index: 1;
-    
+
     }
     .paragraph--view-mode--home-inferior {
         position: relative;
@@ -63,7 +63,7 @@ main {
             font-weight:400;
             font-size:24px;
         }
-        
+
     }
     .paragraph--type--aladin {
         padding:50px 0;
@@ -135,7 +135,7 @@ main {
     &:before {
         @include defaultBackground();
     }
-    
+
 }
 .user-pass-reset {
     text-align: center;

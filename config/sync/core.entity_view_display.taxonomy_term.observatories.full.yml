@@ -13,49 +13,9 @@ dependencies:
     - taxonomy.vocabulary.observatories
   module:
     - entity_reference_revisions
-    - field_group
-    - geolocation
     - link
     - text
     - webform
-third_party_settings:
-  field_group:
-    group_rrss:
-      children:
-        - field_observatory_rrss
-        - field_observatory_website
-      parent_name: ''
-      weight: 1
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: ''
-        element: div
-        show_label: false
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: RRSS
-    group_location_contact:
-      children:
-        - field_observatory_geolocation
-        - field_observatory_address
-        - field_observatory_phone
-      parent_name: ''
-      weight: 2
-      format_type: html_element
-      format_settings:
-        label: 'Location and Contact'
-        element: div
-        show_label: true
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-        id: ''
-        classes: ''
-      label: 'Location and Contact'
 id: taxonomy_term.observatories.full
 targetEntityType: taxonomy_term
 bundle: observatories
@@ -75,41 +35,8 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-  field_observatory_geolocation:
-    weight: 3
-    label: hidden
-    settings:
-      set_marker: '1'
-      title: ''
-      info_text: ''
-      google_map_settings:
-        height: 100px
-        width: 100px
-        type: ROADMAP
-        zoom: '10'
-        maxZoom: 18
-        minZoom: 0
-        mapTypeControl: 1
-        streetViewControl: 1
-        zoomControl: 1
-        scrollwheel: 1
-        gestureHandling: auto
-        draggable: 1
-        style: ''
-        info_auto_display: 1
-        marker_icon_path: ''
-        disableAutoPan: 1
-        rotateControl: 0
-        fullscreenControl: 0
-        preferScrollingToZooming: 0
-        disableDoubleClickZoom: 0
-      use_overridden_map_settings: 0
-      common_map: ''
-    third_party_settings: {  }
-    type: geolocation_map
-    region: content
   field_observatory_observacio:
-    weight: 3
+    weight: 7
     label: hidden
     settings:
       source_entity: true
@@ -145,4 +72,5 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-hidden: {  }
+hidden:
+  field_observatory_geolocation: true
