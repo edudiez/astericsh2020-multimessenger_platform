@@ -52,13 +52,17 @@ function demoasterics_link_alter(&$item) {
 function demoasterics_form_taxonomy_term_observatories_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $current_user = \Drupal::currentUser();
     $roles = $current_user->getRoles(TRUE);
+    kint($form);
     if(in_array('profesional',$roles)) {
+        
         $form['relations']['#access'] = FALSE;
         $form['field_observatory_observacio']['#access'] = FALSE;
         $form['uid'] = array (
           '#type' => 'hidden',
           '#value' => $current_user->id(),
          );
+        
+        
     }
 }
 

@@ -94,7 +94,6 @@ function _asterics_user_form(&$form) {
     unset($form['account']['mail']['#description']);
     unset($form['account']['name']['#description']);
     $form['account']['notify']['#access'] = FALSE;
-    /*$form['contact']['#access'] = FALSE;*/
 }
 
 

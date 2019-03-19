@@ -1,7 +1,13 @@
 uuid: 1904497d-b639-4efa-a748-964ea6c402d0
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - honeypot
+third_party_settings:
+  honeypot:
+    honeypot: true
+    time_restriction: true
 open: null
 close: null
 weight: 0
@@ -9,14 +15,14 @@ uid: 1
 template: false
 archive: false
 id: observacion
-title: Observacion
+title: 'Observation petition'
 description: 'Petici&oacute; d&#39;observaci&oacute;'
 category: Observatories
 elements: "ra:\n  '#type': textfield\n  '#title': RA\ndec:\n  '#type': textfield\n  '#title': DEC\nfrom:\n  '#type': datetime\n  '#title': From\n  '#date_date_min': today\n  '#date_date_datepicker_button': false\n  '#date_year_range': '0:+3'\n  '#date_time_step': '1800'\nto:\n  '#type': datetime\n  '#title': To\n  '#date_date_min': today\n  '#date_date_datepicker_button': false\n  '#date_year_range': '0:+3'\n  '#date_time_step': '1800'\nobservatory:\n  '#type': webform_entity_select\n  '#title': Observatory\n  '#target_type': taxonomy_term\n  '#selection_handler': 'default:taxonomy_term'\n  '#selection_settings':\n    target_bundles:\n      observatories: observatories\n    sort:\n      field: name\n      direction: ASC"
 css: ''
 javascript: ''
 settings:
-  ajax: false
+  ajax: true
   ajax_scroll_top: form
   page: true
   page_submit_path: ''

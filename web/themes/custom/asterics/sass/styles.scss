@@ -103,3 +103,8 @@ body {
     height: 100%;
     display:none;
 }
+#observation-form-wrapper {
+    position:absolute;
+    z-index:1;
+    display:none;
+}
