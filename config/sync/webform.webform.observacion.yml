@@ -1,13 +1,7 @@
 uuid: 1904497d-b639-4efa-a748-964ea6c402d0
 langcode: en
 status: open
-dependencies:
-  module:
-    - honeypot
-third_party_settings:
-  honeypot:
-    honeypot: true
-    time_restriction: true
+dependencies: {  }
 open: null
 close: null
 weight: 0
@@ -18,15 +12,15 @@ id: observacion
 title: 'Observation petition'
 description: 'Petici&oacute; d&#39;observaci&oacute;'
 category: Observatories
-elements: "ra:\n  '#type': textfield\n  '#title': RA\ndec:\n  '#type': textfield\n  '#title': DEC\nfrom:\n  '#type': datetime\n  '#title': From\n  '#date_date_min': today\n  '#date_date_datepicker_button': false\n  '#date_year_range': '0:+3'\n  '#date_time_step': '1800'\nto:\n  '#type': datetime\n  '#title': To\n  '#date_date_min': today\n  '#date_date_datepicker_button': false\n  '#date_year_range': '0:+3'\n  '#date_time_step': '1800'\nobservatory:\n  '#type': webform_entity_select\n  '#title': Observatory\n  '#target_type': taxonomy_term\n  '#selection_handler': 'default:taxonomy_term'\n  '#selection_settings':\n    target_bundles:\n      observatories: observatories\n    sort:\n      field: name\n      direction: ASC"
+elements: "ra:\n  '#type': textfield\n  '#title': RA\ndec:\n  '#type': textfield\n  '#title': DEC\nfrom:\n  '#type': datetime\n  '#title': From\n  '#date_date_min': today\n  '#date_date_datepicker_button': false\n  '#date_year_range': '0:+3'\n  '#date_time_step': '1800'\nto:\n  '#type': datetime\n  '#title': To\n  '#date_date_min': today\n  '#date_date_datepicker_button': false\n  '#date_year_range': '0:+3'\n  '#date_time_step': '1800'\nobservatory:\n  '#type': webform_entity_select\n  '#title': Observatory\n  '#target_type': taxonomy_term\n  '#selection_handler': 'default:taxonomy_term'\n  '#selection_settings':\n    target_bundles:\n      observatories: observatories\n    sort:\n      field: name\n      direction: ASC\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#access_create_roles':\n    - authenticated\n  '#access_update_roles':\n    - authenticated"
 css: ''
 javascript: ''
 settings:
-  ajax: true
-  ajax_scroll_top: form
+  ajax: false
+  ajax_scroll_top: ''
   page: true
   page_submit_path: ''
-  page_confirm_path: ''
+  page_confirm_path: /db_member
   form_title: both
   form_submit_once: false
   form_exception_message: ''
@@ -98,9 +92,9 @@ settings:
   draft_auto_save: false
   draft_saved_message: ''
   draft_loaded_message: ''
-  confirmation_type: page
-  confirmation_title: ''
-  confirmation_message: ''
+  confirmation_type: modal
+  confirmation_title: 'Your observation has been sent'
+  confirmation_message: 'Your observation has been sent and soon will be scheduled'
   confirmation_url: ''
   confirmation_attributes: {  }
   confirmation_back: true
@@ -128,20 +122,22 @@ settings:
 access:
   create:
     roles:
-      - anonymous
       - authenticated
     users: {  }
     permissions: {  }
   view_any:
-    roles: {  }
+    roles:
+      - profesional
     users: {  }
     permissions: {  }
   update_any:
-    roles: {  }
+    roles:
+      - administrator
     users: {  }
     permissions: {  }
   delete_any:
-    roles: {  }
+    roles:
+      - administrator
     users: {  }
     permissions: {  }
   purge_any:
@@ -149,11 +145,13 @@ access:
     users: {  }
     permissions: {  }
   view_own:
-    roles: {  }
+    roles:
+      - profesional
     users: {  }
     permissions: {  }
   update_own:
-    roles: {  }
+    roles:
+      - profesional
     users: {  }
     permissions: {  }
   delete_own:
@@ -161,7 +159,8 @@ access:
     users: {  }
     permissions: {  }
   administer:
-    roles: {  }
+    roles:
+      - administrator
     users: {  }
     permissions: {  }
   test:
