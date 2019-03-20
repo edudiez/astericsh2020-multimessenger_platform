@@ -74,9 +74,11 @@ main {
     // VISTA NEWS & EVENTS //
     .views-element-container {
         .news {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content:space-evenly;
+            .view-content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content:space-evenly;
+            }
         }
     }
     // TEASERS NEWS & EVENTS //

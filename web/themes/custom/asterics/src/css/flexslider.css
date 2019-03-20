@@ -1,4 +1,6 @@
-/*------------------------------------* Estilos base para un flexslider ------------------------------------*/
+/*------------------------------------*
+  Estilos base para un flexslider
+------------------------------------*/
 ol.flex-control-nav { list-style: none; text-align: left; padding: 0; }
 
 ol.flex-control-nav li { display: inline-block; margin: 0 5px; }
