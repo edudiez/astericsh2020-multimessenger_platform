@@ -2,6 +2,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\Role;
+use Drupal\views\Views;
 
 /**
  * Implements hook_form_user_login_form_alter().
@@ -55,6 +56,24 @@ function asterics_preprocess_user(&$variables) {
         $my_observatory = views_embed_view('observatories_list_user_page','default',$ovid);
         $variables['my_observatory'] = $my_observatory;
     }
+    
+    // OBSERVATIONS - DEMANADES - ASKED FOR //
+    $view = Views::getView('observacions_demanades'); 
+    $view->build('askedto');
+    $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
+    $count = reset($q);
+    $variables['total_observations_askedto'] = $count;
+    $ovaskedfor = views_embed_view('observacions_demanades','askedto',$user->id());
+    $variables['observations_askedto'] = $ovaskedfor;
+    
+    // OBSERVATIONS - DEMANADES - ASKED TO //
+    $view = Views::getView('observacions_demanades'); 
+    $view->build('askedfor');
+    $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
+    $count = reset($q);
+    $variables['total_observations_askedfor'] = $count;
+    $ovaskedto = views_embed_view('observacions_demanades','askedfor',$user->id());
+    $variables['observations_askedfor'] = $ovaskedto;
     
     
     

@@ -48,15 +48,15 @@
     </div>
     <div id="observations">
         <ul>
-            <li><a href="#demandades">Observations demanded</a></li>
-            <li><a href="#demanades">Observations that have asked for me</a></li>
+            <li><a href="#demandades">Observations demanded ({{ total_observations_askedto }})</a></li>
+            <li><a href="#demanades">Observations that have asked for me ({{ total_observations_askedfor }})</a></li>
             <li>
                 <button id="askobervation">Ask for a new observation</button>
                 <div id="observation-form-wrapper">{{ observation_form }}</div>
             </li>
-        </ul>
-        <div id="demandades">OBSERVACIONS DEMANDADES</div>
-        <div id="demanades">OBSERVACIONS DEMANADES</div>
+        </ul>Observations that have asked for me
+        <div id="demandades">{{ observations_askedto }}</div>
+        <div id="demanades">{{ observations_askedfor }}</div>
         
     </div>
     <div id="newsevents">
