@@ -23,6 +23,7 @@
  * @see template_preprocess_taxonomy_term()
  */
 #}
+
 <div{{ attributes.addClass('taxonomy','observatory',view_mode) }}>
     {% if view_mode == 'user_page_view' %}
         <div class="imatge">{{ content.field_observatory_fotografia }}</div>
@@ -34,29 +35,29 @@
             {{ content.field_observatory_website }}
         </div>
     {% else %}
-    <div class="container">
-        <div class="cols">
-            <div class="col">
-                {{ title_prefix }}
-                <h2>{{ name|field_value }}</h2>
-                {{ title_suffix }}
-                {{ content.description }}
-            </div>
-            <div class="col">
-                {{ content.field_observatory_rrss }}
-                {{ content.field_observatory_website }}
-            </div>
-        </div>
-        <div class="box">
-            <div class="address">
-                <h3> {{ 'Location & contact'|t }} </h3>
-                {{ content.field_observatory_address }}
-                {{ content.field_observatory_phone }}
-                {{ content.field_observatory_website }}
-            </div>
-            {{ content|without('description','field_observatory_rrss','field_observatory_website','field_observatory_address','field_observatory_phone') }}
-            {{ attach_library('asterics/flexslider') }}
-        </div>
-    </div>
+      <div class="container">
+          <div class="cols">
+              <div class="col">
+                  {{ title_prefix }}
+                  <h2>{{ name|field_value }}</h2>
+                  {{ title_suffix }}
+                  {{ content.description }}
+              </div>
+              <div class="col">
+                  {{ content.field_observatory_rrss }}
+                  {{ content.field_observatory_website }}
+              </div>
+          </div>
+          <div class="box {{ (content.field_observatory_observacio|render|striptags('<form>')|trim) ? 'hasform' : 'notform' }} ">
+              <div class="address">
+                  <h3> {{ 'Location & contact'|t }} </h3>
+                  {{ content.field_observatory_address }}
+                  {{ content.field_observatory_phone }}
+                  {{ content.field_observatory_website }}
+              </div>
+              {{ content|without('description','field_observatory_rrss','field_observatory_website','field_observatory_address','field_observatory_phone') }}
+              {{ attach_library('asterics/flexslider') }}
+          </div>
+      </div>
     {% endif %}
 </div>
