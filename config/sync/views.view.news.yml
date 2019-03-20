@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - core.entity_view_mode.node.visualizacion_1
     - node.type.event
     - node.type.new
@@ -200,34 +201,6 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  entity_view_1:
-    display_plugin: entity_view
-    id: entity_view_1
-    display_title: 'EVA Home News'
-    position: 2
-    display_options:
-      display_extenders: {  }
-      display_description: 'Vista EVA per a les noticies i esdeveniments de la Home'
-      entity_type: paragraph
-      bundles:
-        - views_eva
-      pager:
-        type: some
-        options:
-          items_per_page: 3
-          offset: 0
-      defaults:
-        pager: false
-        header: false
-      header: {  }
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-        - 'user.node_grants:view'
-        - user.permissions
-      tags: {  }
   entity_view_2:
     display_plugin: entity_view
     id: entity_view_2
@@ -276,6 +249,8 @@ display:
       defaults:
         arguments: false
         header: false
+        style: false
+        row: false
       entity_type: taxonomy_term
       bundles:
         - observatories
@@ -296,12 +271,58 @@ display:
             value: '<h3>News</h3>'
             format: basic_html
           plugin_id: text
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: visualizacion_1
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  news:
+    display_plugin: entity_view
+    id: news
+    display_title: 'EVA Home News'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: 'Vista EVA per a les noticies i esdeveniments de la Home'
+      entity_type: paragraph
+      bundles:
+        - views_eva
+      pager:
+        type: some
+        options:
+          items_per_page: 3
+          offset: 0
+      defaults:
+        pager: false
+        header: false
+        style: false
+        row: false
+      header: {  }
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -316,6 +337,16 @@ display:
       header: {  }
       defaults:
         header: false
+        style: false
+        row: false
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
     cache_metadata:
       max-age: -1
       contexts:
