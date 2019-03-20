@@ -24,27 +24,38 @@
  */
 #}
 <div{{ attributes.addClass('taxonomy','observatory',view_mode) }}>
-  <div class="container">
-    <div class="cols">
-      <div class="col">
-        {{ title_prefix }}
-            <h2>{{ name|field_value }}</h2>
-        {{ title_suffix }}
-        {{ content.description }}
-      </div>
-      <div class="col">
-        {{ content.field_observatory_rrss }}
-        {{ content.field_observatory_website }}
-      </div>
+    {% if view_mode == 'user_page_view' %}
+        <div class="imatge">{{ content.field_observatory_fotografia }}</div>
+        <div class="informacion">
+            <div class="title"><h2>{{ name|field_value }}</h2><span class="unfollow">Unfollow</span><span class="followsyou">It follows you</span></div>
+            {{ content.description }}
+            {{ content.field_observatory_address }}
+            {{ content.field_observatory_phone }}
+            {{ content.field_observatory_website }}
+        </div>
+    {% else %}
+    <div class="container">
+        <div class="cols">
+            <div class="col">
+                {{ title_prefix }}
+                <h2>{{ name|field_value }}</h2>
+                {{ title_suffix }}
+                {{ content.description }}
+            </div>
+            <div class="col">
+                {{ content.field_observatory_rrss }}
+                {{ content.field_observatory_website }}
+            </div>
+        </div>
+        <div class="box">
+            <div class="address">
+                <h3> {{ 'Location & contact'|t }} </h3>
+                {{ content.field_observatory_address }}
+                {{ content.field_observatory_phone }}
+                {{ content.field_observatory_website }}
+            </div>
+            {{ content.field_observatory_observacio }}
+        </div>
     </div>
-    <div class="box">
-      <div class="address">
-        <h3> {{ 'Location & contact'|t }} </h3>
-        {{ content.field_observatory_address }}
-        {{ content.field_observatory_phone }}
-        {{ content.field_observatory_website }}
-      </div>
-      {{ content.field_observatory_observacio }}
-    </div>
-  </div>
+    {% endif %}
 </div>

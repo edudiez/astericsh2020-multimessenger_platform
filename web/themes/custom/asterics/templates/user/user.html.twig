@@ -32,14 +32,19 @@
     
     <div id="observatories">
         <ul>
-            <li><a href="#following">Following</a></li>
-            <li><a href="#followers">Followers</a></li>
-            <li><a href="#myobservatory">My Observatory</a></li>
-            <li><button id="newobservatori">New Observatory</button></li>
+            <li><a href="#following">Following ({{ following }})</a></li>
+            <li><a href="#followers">Followers ({{ followers }})</a></li>
+            {% if user.field_user_observatory %}
+                <li><a href="#myobservatory">My Observatory</a></li>
+            {% else %}
+                <li><button id="newobservatori">New Observatory</button></li>
+            {% endif %}
         </ul>
-            <div id="following">FOLLOWING</div>
-            <div id="followers">FOLLOWERS</div>
-            <div id="myobservatory">MY OBSERVATORY</div>
+            <div id="following">{{ observatories_list }}</div>
+            <div id="followers">{{ observatories_list }}</div>
+            {% if user.field_user_observatory %}
+                <div id="myobservatory"></div>
+            {% endif %}    
     </div>
     <div id="observations">
         <ul>
