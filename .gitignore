@@ -26,3 +26,5 @@
 /private
 **/.DS_Store
 **/node_modules/
+
+**/themes/**/gulpfile\.js
