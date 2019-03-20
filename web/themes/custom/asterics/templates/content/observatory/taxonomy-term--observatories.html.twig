@@ -54,7 +54,8 @@
                 {{ content.field_observatory_phone }}
                 {{ content.field_observatory_website }}
             </div>
-            {{ content.field_observatory_observacio }}
+            {{ content|without('description','field_observatory_rrss','field_observatory_website','field_observatory_address','field_observatory_phone') }}
+            {{ attach_library('asterics/flexslider') }}
         </div>
     </div>
     {% endif %}
