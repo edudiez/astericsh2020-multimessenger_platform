@@ -12,33 +12,7 @@
         // controlNav: true,
         directionNav: false,
         start: function(slider){
-          slider.fadeIn();
-        }
-      })
-    }
-
-    // PR - SLIDER
-    if ($('.ptype_slider').length) {
-      $('.ptype_slider').flexslider({
-        selector: ".field_g_paragraphs > .field-item",
-        animation: "slide",
-        controlNav: false,
-        start: function(slider){
-          slider.fadeIn();
-        }
-      })
-    }
-
-    // CAROUSEl PRODUCTO
-    if ($('.node.producto.full .wrapper').length) {
-      $('.wrapper').flexslider({
-        selector: ".slides li",
-        animation: "fade",
-        directionNav: false,
-        slideshow: false,
-        controlNav: 'thumbnails',
-        start: function(slider){
-          slider.fadeIn();
+          slider.css('opacity',1);
         }
       })
     }
