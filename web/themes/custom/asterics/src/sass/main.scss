@@ -134,19 +134,19 @@ main {
     display: inline-block;
     a {display: inline-block; width: 30px; height: 30px; overflow: hidden; text-indent: -999px; background: transparent none no-repeat center;}
     &.facebook a {
-      @include getSocialIcon('facebook', '#fff');
-      &:hover {@include getSocialIcon('facebook', $buttonlink);}
+      @include getSocialIcon('facebook', '%23c72e2e');
+      &:hover {@include getSocialIcon('facebook', '%23c72e2e');}
     }
     &.youtube a {
-      @include getSocialIcon('youtube', '#fff');
+      @include getSocialIcon('youtube', 'white');
       &:hover {@include getSocialIcon('youtube', $buttonlink);}
     }
     &.instagram a {
-      @include getSocialIcon('instagram', '#fff');
+      @include getSocialIcon('instagram', 'white');
       &:hover {@include getSocialIcon('instagram', $buttonlink);}
     }
     &.twitter a {
-      @include getSocialIcon('twitter', '#fff');
+      @include getSocialIcon('twitter', 'white');
       &:hover {@include getSocialIcon('twitter', $buttonlink);}
     }
   }

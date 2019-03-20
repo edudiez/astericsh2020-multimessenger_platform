@@ -5,10 +5,12 @@ dependencies:
   config:
     - field.field.node.new.body
     - field.field.node.new.field_event_category_n
+    - field.field.node.new.field_g_media
     - field.field.node.new.field_new_date_n
     - node.type.new
   module:
     - datetime
+    - media_library
     - path
     - text
 id: node.new.default
@@ -39,6 +41,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_g_media:
+    type: media_library_widget
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
     region: content
   field_new_date_n:
     weight: 2
