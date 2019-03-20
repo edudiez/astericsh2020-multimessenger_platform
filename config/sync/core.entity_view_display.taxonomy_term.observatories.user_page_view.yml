@@ -1,81 +1,76 @@
-uuid: 665bee00-e698-4ec8-b144-48f7ae493a04
+uuid: c66c54ef-f6f9-442a-af7c-3c94300358e0
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.taxonomy_term.full
+    - core.entity_view_mode.taxonomy_term.user_page_view
     - field.field.taxonomy_term.observatories.field_observatory_address
+    - field.field.taxonomy_term.observatories.field_observatory_fotografia
     - field.field.taxonomy_term.observatories.field_observatory_geolocation
     - field.field.taxonomy_term.observatories.field_observatory_observacio
     - field.field.taxonomy_term.observatories.field_observatory_phone
     - field.field.taxonomy_term.observatories.field_observatory_rrss
     - field.field.taxonomy_term.observatories.field_observatory_website
+    - image.style.medium
     - taxonomy.vocabulary.observatories
   module:
-    - entity_reference_revisions
     - link
+    - svg_image
     - text
-    - webform
-id: taxonomy_term.observatories.full
+id: taxonomy_term.observatories.user_page_view
 targetEntityType: taxonomy_term
 bundle: observatories
-mode: full
+mode: user_page_view
 content:
   description:
     label: hidden
     type: text_default
-    weight: 0
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
   field_observatory_address:
-    weight: 4
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
-  field_observatory_observacio:
-    weight: 7
+  field_observatory_fotografia:
+    weight: 0
     label: hidden
     settings:
-      source_entity: true
+      image_style: medium
+      image_link: ''
+      svg_render_as_image: '1'
+      svg_attributes:
+        width: ''
+        height: ''
     third_party_settings: {  }
-    type: webform_entity_reference_entity_view
+    type: image
     region: content
   field_observatory_phone:
-    weight: 5
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
-  field_observatory_rrss:
-    type: entity_reference_revisions_entity_view
-    weight: 1
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
   field_observatory_website:
-    weight: 2
+    weight: 4
     label: hidden
     settings:
-      trim_length: 80
+      trim_length: 255
+      target: _blank
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
     third_party_settings: {  }
     type: link
     region: content
-  observation_list_entity_view_1:
-    weight: 10
-    settings: {  }
-    third_party_settings: {  }
-    region: content
 hidden:
   field_observatory_geolocation: true
+  field_observatory_observacio: true
+  field_observatory_rrss: true
+  observation_list_entity_view_1: true
