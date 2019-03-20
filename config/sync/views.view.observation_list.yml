@@ -7,6 +7,7 @@ dependencies:
   module:
     - eva
     - webform
+    - webform_views
 id: observation_list
 label: 'Observation list'
 module: views
@@ -66,6 +67,110 @@ display:
           hide_empty: false
           default_field_elements: true
       fields:
+        webform_submission_value_1:
+          id: webform_submission_value_1
+          table: webform_submission_field_observacion_ra
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: RA
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: div
+          element_wrapper_class: 'inline ra'
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: value
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
+        webform_submission_value:
+          id: webform_submission_value
+          table: webform_submission_field_observacion_dec
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: DEC
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: div
+          element_wrapper_class: 'inline dec'
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          webform_element_format: value
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
         completed:
           id: completed
           table: webform_submission
@@ -117,8 +222,8 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: medium
-            custom_date_format: ''
+            date_format: custom
+            custom_date_format: 'F d, Y'
             timezone: ''
           group_column: value
           group_columns: {  }
@@ -159,8 +264,34 @@ display:
           entity_type: webform_submission
           entity_field: completed
           plugin_id: date
-      header: {  }
-      footer: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h3>Working on</h3>'
+            format: basic_html
+          plugin_id: text
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<a href="#">All Observations</a>'
+            format: basic_html
+          plugin_id: text
       empty: {  }
       relationships: {  }
       arguments:
@@ -178,8 +309,10 @@ display:
             title: All
           title_enable: false
           title: ''
-          default_argument_type: node
-          default_argument_options: {  }
+          default_argument_type: raw
+          default_argument_options:
+            index: 1
+            use_alias: false
           default_argument_skip_url: false
           summary_options:
             base_path: ''
@@ -223,7 +356,7 @@ display:
       entity_type: taxonomy_term
       bundles:
         - observatories
-      argument_mode: id
+      argument_mode: None
       default_argument: null
     cache_metadata:
       max-age: -1

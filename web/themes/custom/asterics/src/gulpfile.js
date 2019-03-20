@@ -101,7 +101,7 @@ gulp.task('watch', ['sync', 'sass_pre'], (cb)=>{
 	gulp.watch([
 		'./sass/*.scss',
 		'!./sass/_*.scss',
-	], ['sass_pre', 'sass_pro'])
+	], ['sass_pre'])//, 'sass_pro'
 	/*gulp.watch([
 		'./js/*.js',
 	], ['minifyjs'])*/

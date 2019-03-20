@@ -115,6 +115,8 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .taxonomy.observatory.full .view-observation-list .views-field-completed { width: 100%; display: inline-block; max-width: none; }
 
+.taxonomy.observatory.full .view-id-news.view-display-id-entity_view_2 { opacity: 0; -webkit-transition: .5s; transition: .5s; }
+
 .taxonomy.observatory.full .field_observatory_observacio { background-color: #6a7791; color: white; padding: 20px; -webkit-box-flex: 1; -ms-flex: 1 0 25%; flex: 1 0 25%; margin-top: 80px; }
 
 .taxonomy.observatory.full .field_observatory_observacio input, .taxonomy.observatory.full .field_observatory_observacio textarea { background-color: #c3c9d3; color: white; }

@@ -29,10 +29,41 @@ function _asterics_user_login_form_submit($form, FormStateInterface $form_state)
 
 
 function asterics_preprocess_user(&$variables) {
+    // USER //
+    $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    $ovid = (isset($user->field_user_observatory->getValue()[0])) ? $user->field_user_observatory->getValue()[0]['target_id'] : null;
+    // FOLLOWING - FOLLOWERS - FAKE //
+    $vid = 'observatories';
+    $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
+    // LISTA OBSERVATORIES //
+    
+    // >>>>>>> TODO - VARIAR UNA MICA EL LLISTAT //
+    $ovlist = array();
+    foreach($terms as $term) {
+        if($term->tid!=$ovid) {
+            $ovlist[] = $term->tid;
+        }
+    }
+    $variables['following'] = count($ovlist);
+    $variables['followers'] = count($ovlist);
+    $list = views_embed_view('observatories_list_user_page','default',implode('+',$ovlist));
+    $variables['observatories_list'] = $list;
+    // >>>>>>> TODO - VARIAR UNA MICA EL LLISTAT //
+    
+    // MY OBSERVATORI - NEW OBSERVATORI //
+    if($ovid) {
+        $my_observatory = views_embed_view('observatories_list_user_page','default',$ovid);
+        $variables['my_observatory'] = $my_observatory;
+    }
+    
+    
+    
+    
     // FORM PETICIO OBERVACIO PER A LA PAGINA USUARI PROFESSIONAL //
     $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('observacion');
     $webform = $webform->getSubmissionForm();
     $variables['observation_form'] = $webform;
+    
     // FROM EVENT PER A LA PAGINA USUARI PROFESSIONAL //
     $node = \Drupal\node\Entity\Node::create(['type' => 'event']);
     $form = \Drupal::service('entity.form_builder')->getForm($node);

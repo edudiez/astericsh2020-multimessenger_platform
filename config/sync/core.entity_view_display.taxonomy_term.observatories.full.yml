@@ -29,14 +29,14 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_observatory_address:
-    weight: 4
+    weight: 3
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_observatory_observacio:
-    weight: 7
+    weight: 6
     label: hidden
     settings:
       source_entity: true
@@ -44,7 +44,7 @@ content:
     type: webform_entity_reference_entity_view
     region: content
   field_observatory_phone:
-    weight: 5
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false
@@ -72,10 +72,15 @@ content:
     third_party_settings: {  }
     type: link
     region: content
-  observation_list_entity_view_1:
-    weight: 10
+  news_entity_view_2:
+    weight: 7
+    region: content
     settings: {  }
     third_party_settings: {  }
+  observation_list_entity_view_1:
+    weight: 5
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_observatory_geolocation: true

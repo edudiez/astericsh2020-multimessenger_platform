@@ -15,22 +15,22 @@ bundle: rrss_link_item
 mode: default
 content:
   field_pr_link:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       trim_length: 80
+      target: _blank
       url_only: false
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
     third_party_settings: {  }
     type: link
     region: content
   field_rrss_list:
-    weight: 0
+    type: list_key
+    weight: 1
+    region: content
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: list_default
-    region: content
 hidden: {  }
