@@ -126,6 +126,32 @@ main {
     // TEASERS NEWS & EVENTS //
 }
 
+/* RRSS LINKS */
+.ptype_rrss-link-item {
+  display: inline-block; margin: 0 20px 0 0;
+  // & + :not(.ptype_rrss-link-item) {margin-right: 0;}
+  .link {
+    display: inline-block;
+    a {display: inline-block; width: 30px; height: 30px; overflow: hidden; text-indent: -999px; background: transparent none no-repeat center;}
+    &.facebook a {
+      @include getSocialIcon('facebook', '#fff');
+      &:hover {@include getSocialIcon('facebook', $buttonlink);}
+    }
+    &.youtube a {
+      @include getSocialIcon('youtube', '#fff');
+      &:hover {@include getSocialIcon('youtube', $buttonlink);}
+    }
+    &.instagram a {
+      @include getSocialIcon('instagram', '#fff');
+      &:hover {@include getSocialIcon('instagram', $buttonlink);}
+    }
+    &.twitter a {
+      @include getSocialIcon('twitter', '#fff');
+      &:hover {@include getSocialIcon('twitter', $buttonlink);}
+    }
+  }
+}
+
 /** FORMS **/
 .form-background {
     .form-item, .captcha, input {

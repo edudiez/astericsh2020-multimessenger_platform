@@ -1,5 +1,7 @@
 @import "mixins.scss";
-footer {
+
+
+footer[role="contentinfo"] {
     height:80px;
     font-weight: 300;
     font-size: 14px;

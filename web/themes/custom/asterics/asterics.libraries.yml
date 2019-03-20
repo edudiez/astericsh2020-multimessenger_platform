@@ -7,7 +7,7 @@ global-css:
       src/css/footer.css: {}
       src/css/styles.css: {}
   js:
-    src/js/jquery.hoverIntent.js: {}
+    src/js/libraries/jquery.hoverIntent.js: {}
     src/js/functions.js: {}
   dependencies:
     - core/jquery
@@ -16,6 +16,15 @@ global-css:
     - core/drupalSettings
     - core/jquery.once
     - core/jquery.ui.tabs
+flexslider:
+  css:
+    theme:
+      src/css/flexslider.css: {}
+  js:
+    src/js/flexslider.js : {}
+    src/js/libraries/jquery.flexslider.js : {}
+  dependencies:
+    - core/jquery
 aladin:
   css:
     theme:
