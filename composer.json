@@ -69,6 +69,7 @@
         "drupal/ultimate_cron": "2.0-alpha4",
         "drupal/view_mode_selector": "1.x-dev",
         "drupal/webform": "5.1",
+        "drupal/webform_views": "5.0-alpha6",
         "drupal/xmlsitemap": "1.0-alpha3",
         "drush/drush": "^9.0.0",
         "prashantchaudhary/ddslick": "^2.0",
