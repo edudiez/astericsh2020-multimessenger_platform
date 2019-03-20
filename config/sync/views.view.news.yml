@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.visualizacion_1
     - node.type.event
     - node.type.new
   module:
@@ -220,13 +221,122 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
-  news_and_events_user_list:
-    display_plugin: embed
-    id: news_and_events_user_list
-    display_title: Embed
+  entity_view_2:
+    display_plugin: entity_view
+    id: entity_view_2
+    display_title: 'EVA - TX - Observatorio'
     position: 3
     display_options:
       display_extenders: {  }
+      display_description: ''
+      arguments:
+        field_event_category_n_target_id:
+          id: field_event_category_n_target_id
+          table: node__field_event_category_n
+          field: field_event_category_n_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: raw
+          default_argument_options:
+            index: 1
+            use_alias: false
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
+          plugin_id: numeric
+      defaults:
+        arguments: false
+        header: false
+        style: false
+        row: false
+      entity_type: taxonomy_term
+      bundles:
+        - observatories
+      argument_mode: None
+      default_argument: null
+      title: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<h3>News</h3>'
+            format: basic_html
+          plugin_id: text
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: visualizacion_1
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  news:
+    display_plugin: entity_view
+    id: news
+    display_title: 'EVA Home News'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: 'Vista EVA per a les noticies i esdeveniments de la Home'
+      entity_type: paragraph
+      bundles:
+        - views_eva
+      pager:
+        type: some
+        options:
+          items_per_page: 3
+          offset: 0
+      defaults:
+        pager: false
+        header: false
+        style: false
+        row: false
+      header: {  }
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
     cache_metadata:
       max-age: -1
       contexts:
@@ -243,6 +353,19 @@ display:
     display_options:
       display_extenders: {  }
       path: news
+      header: {  }
+      defaults:
+        header: false
+        style: false
+        row: false
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
     cache_metadata:
       max-age: -1
       contexts:
