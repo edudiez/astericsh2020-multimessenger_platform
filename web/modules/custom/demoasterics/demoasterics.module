@@ -48,22 +48,73 @@ function demoasterics_link_alter(&$item) {
     
 }
 
-//* CREACIO DE OBSERVATORI PER USUARI PROFESSIONAL *//
+//************************* CREACIO DE OBSERVATORI PER USUARI PROFESSIONAL ********************************************//
 function demoasterics_form_taxonomy_term_observatories_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $current_user = \Drupal::currentUser();
-    $roles = $current_user->getRoles(TRUE);
-    kint($form);
+    $roles = $current_user->getRoles(TRUE); 
+        
     if(in_array('profesional',$roles)) {
         
         $form['relations']['#access'] = FALSE;
         $form['field_observatory_observacio']['#access'] = FALSE;
-        $form['uid'] = array (
-          '#type' => 'hidden',
-          '#value' => $current_user->id(),
-         );
-        
+
+        foreach (array_keys($form['actions']) as $action) {
+            if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+                $form['actions'][$action]['#submit'][] = 'demoasterics_form_taxonomy_term_submit_handler';
+            }
+        }
+  
+    }
+}
+
+function demoasterics_form_taxonomy_term_submit_handler(array $form, FormStateInterface $form_state) {
+    
+    // Create a new user
+    $values = $form_state->getValues();
+
+    // Load the current user.
+    $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    $user->set('field_user_observatory',$values['tid']);
+    $user->save();
+    
+    $url = \Drupal\Core\Url::fromRoute('entity.user.canonical', ['user' => $user->id()]);
+    return $form_state->setRedirectUrl($url);
+}
+//************************* CREACIO DE OBSERVATORI PER USUARI PROFESSIONAL ********************************************//
+
+//************************* CREACIO DE EVENT PER USUARI PROFESSIONAL ********************************************//
+function demoasterics_form_node_event_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    $current_user = \Drupal::currentUser();
+    $roles = $current_user->getRoles(TRUE);
+   
+    if(in_array('profesional',$roles)) {
+       
+            $form['field_event_category_n']['#access'] = FALSE;
+            $form['field_event_place_n']['#access'] = FALSE;
+
+            foreach (array_keys($form['actions']) as $action) {
+                if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+                    $form['actions'][$action]['#submit'][] = 'demoasterics_form_node_event_submit_handler';
+                }
+            }
         
     }
 }
 
-/* PREPROCESS USER */
+function demoasterics_form_node_event_submit_handler(array $form, FormStateInterface $form_state) {
+    
+    // Create a new user
+    $values = $form_state->getValues();
+
+    // Load the current user.
+    $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    $observatory = $user->get('field_user_observatory');
+    $observatory = $observatory->referencedEntities();
+    $event = node_load($values['nid']);
+    $event->set('field_event_category_n',$observatory);
+    $event->set('field_event_place_n',$observatory);
+    $event->save();
+    
+    $url = \Drupal\Core\Url::fromRoute('entity.user.canonical', ['user' => $user->id()]);
+    return $form_state->setRedirectUrl($url);
+}

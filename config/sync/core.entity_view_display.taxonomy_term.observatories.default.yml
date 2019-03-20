@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.observatories.field_observatory_address
+    - field.field.taxonomy_term.observatories.field_observatory_fotografia
     - field.field.taxonomy_term.observatories.field_observatory_geolocation
     - field.field.taxonomy_term.observatories.field_observatory_observacio
     - field.field.taxonomy_term.observatories.field_observatory_phone
@@ -14,6 +15,7 @@ dependencies:
     - entity_reference_revisions
     - geolocation
     - link
+    - svg_image
     - text
     - webform
 id: taxonomy_term.observatories.default
@@ -34,6 +36,19 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
+  field_observatory_fotografia:
+    weight: 11
+    label: above
+    settings:
+      svg_attributes:
+        width: ''
+        height: ''
+      svg_render_as_image: true
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
     region: content
   field_observatory_geolocation:
     weight: 1
@@ -105,4 +120,9 @@ content:
     third_party_settings: {  }
     type: link
     region: content
+  observation_list_entity_view_1:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

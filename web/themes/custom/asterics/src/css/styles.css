@@ -85,4 +85,6 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 #observation-form-wrapper { position: absolute; z-index: 1; display: none; }
 
+#node-event-form { color: #fff; background: #000; }
+
 /*# sourceMappingURL=maps/styles.css.map */

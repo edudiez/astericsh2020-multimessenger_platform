@@ -27,6 +27,20 @@ function _asterics_user_login_form_submit($form, FormStateInterface $form_state)
   $form_state->setRedirect('<front>'); // REDIRECT A L'AREA QUE ENS INTERESSI
 }
 
+
+function asterics_preprocess_user(&$variables) {
+    // FORM PETICIO OBERVACIO PER A LA PAGINA USUARI PROFESSIONAL //
+    $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('observacion');
+    $webform = $webform->getSubmissionForm();
+    $variables['observation_form'] = $webform;
+    // FROM EVENT PER A LA PAGINA USUARI PROFESSIONAL //
+    $node = \Drupal\node\Entity\Node::create(['type' => 'event']);
+    $form = \Drupal::service('entity.form_builder')->getForm($node);
+    $variables['event_form'] = $form; // {{ event_form }} //
+       
+}
+
+
 /*
  * Implements hook_form_user_pass_reset_alter
  * Permet un autoclick en validacio de mail i recuperacio de password

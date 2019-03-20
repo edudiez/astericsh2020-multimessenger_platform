@@ -32,22 +32,27 @@
     
     <div id="observatories">
         <ul>
-            <li><a href="#following">Following</a></li>
-            <li><a href="#followers">Followers</a></li>
-            <li><a href="#myobservatory">My Observatory</a></li>
-            <li><button id="newobservatori">New Observatory</button></li>
+            <li><a href="#following">Following ({{ following }})</a></li>
+            <li><a href="#followers">Followers ({{ followers }})</a></li>
+            {% if user.field_user_observatory %}
+                <li><a href="#myobservatory">My Observatory</a></li>
+            {% else %}
+                <li><button id="newobservatori">New Observatory</button></li>
+            {% endif %}
         </ul>
-            <div id="following">FOLLOWING</div>
-            <div id="followers">FOLLOWERS</div>
-            <div id="myobservatory">MY OBSERVATORY</div>
+            <div id="following">{{ observatories_list }}</div>
+            <div id="followers">{{ observatories_list }}</div>
+            {% if user.field_user_observatory %}
+                <div id="myobservatory"></div>
+            {% endif %}    
     </div>
     <div id="observations">
         <ul>
             <li><a href="#demandades">Observations demanded</a></li>
-            <li><a href="#demananes">Observations that have asked for me</a></li>
+            <li><a href="#demanades">Observations that have asked for me</a></li>
             <li>
                 <button id="askobervation">Ask for a new observation</button>
-                <div id="observation-form-wrapper"></div>
+                <div id="observation-form-wrapper">{{ observation_form }}</div>
             </li>
         </ul>
         <div id="demandades">OBSERVACIONS DEMANDADES</div>
@@ -57,9 +62,10 @@
     <div id="newsevents">
         <ul>
             <li><a href="#myevents">MY EVENTS</a></li>
-            <li><button id="newevent">New Event</button></li>
+            <li><a href="#newevent">New Event</a></li>
         </ul>
         <div id="myevents">NEWS AND EVENTS</div>
+        <div id="newevent">{{ event_form }}</div>
     </div>
     </div>
   {% endif %}
