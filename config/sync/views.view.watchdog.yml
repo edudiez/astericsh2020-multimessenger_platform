@@ -407,7 +407,7 @@ display:
             alter_text: false
             text: ''
             make_link: true
-            path: 'admin/reports/dblog/event/{{ wid }}'
+            path: 'db_backend/reports/dblog/event/{{ wid }}'
             absolute: false
             external: false
             replace_spaces: false
