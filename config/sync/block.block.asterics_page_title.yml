@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
+    - ctools
     - system
   theme:
     - asterics
@@ -25,3 +26,10 @@ visibility:
     pages: "<front>\r\n/user/reset/*\r\n/user/*\r\n/observatory/*\r\n/admin/structure/taxonomy/manage/observatories/add"
     negate: true
     context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      new: new
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'
