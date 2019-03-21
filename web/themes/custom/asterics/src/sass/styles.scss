@@ -11,7 +11,7 @@
 
 body {
 	padding:0; margin:0; font-family:'Open Sans'; font-size:20px; color: $blanc;font-weight:400;
-	p {margin:0 0 25px 0; line-height:2em;}
+	p {margin:0 0 25px 0; line-height:1.5em;}
 	a {text-decoration:none; color:inherit; transition:.3s;}
 	a:hover {text-decoration:none; cursor: pointer;}
 	ul {margin:0; padding:0;
@@ -180,8 +180,24 @@ body {
 			.field_media_image {text-align: center;}
 			h2 {font-size: 20px; font-weight: bold;}
 		}
+		&.full {
+			padding: 80px 0 0;
+			.container {padding: 0 10px;}
+			.field_event_category_n {color: $buttonlink; font-size: 16px; font-weight: 400; margin-bottom: 20px;}
+			h1 {font-size: 40px; font-weight: 700; margin: 0 0 20px;}
+			.white_box {
+				position: relative; padding-bottom: 60px;
+				&:before {background-color: white; content: ''; position: absolute; z-index: 0; width: 100%; height: calc(100% - 200px); display: inline-block; left: 0; top: 200px;}
+				.container {position: relative; z-index: 1;}
+			}
+			.field_g_media.background {width: 100%; height: 400px; background: transparent none no-repeat center;}
+			.creation_date {font-size: 18px; font-weight: 300; margin-bottom: 40px;}
+			.share {margin-bottom: 60px;}
+			.body {display: inline-block; width: 100%; margin-top: 80px; color: black;}
+		}
 	}
 }
+
 
 /* MESSAGES */
 .messages {

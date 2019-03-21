@@ -17,7 +17,6 @@ main {
         z-index: 0;
     }
     .paragraph--view-mode--home-superior {
-        text-align:center;
         padding:45px 0;
         .paragraph--type--text {
             text-align:left;
@@ -79,6 +78,7 @@ main {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content:space-evenly;
+                width: 100%;
             }
         }
     }
