@@ -61,8 +61,7 @@ display:
       row:
         type: 'entity:node'
         options:
-          relationship: none
-          view_mode: visualizacion_1
+          view_mode: teaser
       fields:
         title:
           id: title
@@ -181,18 +180,39 @@ display:
             label: ''
           granularity: second
       title: News
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          plugin_id: text
+      header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments: {  }
       display_extenders: {  }
       css_class: news
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  entity_view_1:
+    display_plugin: entity_view
+    id: entity_view_1
+    display_title: 'EVA Home News'
+    position: 2
+    display_options:
+      display_extenders: {  }
+      display_description: 'Vista EVA per a les noticies i esdeveniments de la Home'
+      entity_type: paragraph
+      bundles:
+        - views_eva
+      pager:
+        type: some
+        options:
+          items_per_page: 3
+          offset: 0
+      defaults:
+        pager: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -284,7 +304,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

@@ -20,7 +20,7 @@ main .paragraph--type--aladin { padding: 50px 0; }
 
 main .paragraph--type--aladin #aladin-lite-div { margin: 0 auto; }
 
-main .views-element-container .news { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
+main .views-element-container .news .view-content { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
 
 main article.teaser { width: 290px; padding: 40px 0 100px 0; margin-left: 50px; /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ background: -webkit-gradient(linear, left top, left bottom, from(#235f87), to(rgba(35, 95, 135, 0))); background: linear-gradient(to bottom, #235f87 0%, rgba(35, 95, 135, 0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#235f87', endColorstr='#00235f87',GradientType=0 ); }
 
