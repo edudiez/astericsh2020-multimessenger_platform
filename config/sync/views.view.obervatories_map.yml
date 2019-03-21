@@ -410,7 +410,20 @@ display:
             value: "<h4>Map title lorem ipsum dolor set</h4>\r\n<h1>All observations over lorem ipsum</h1>\r\n<a href=\"#\">OBSERVATION SEARCH</a>\r\n<a href=\"#\">ASK FOR A COORINATED OBSERVATION</a>"
             format: full_html
           plugin_id: text
-      footer: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: '<div class="image"></div>'
+            format: full_html
+          plugin_id: text
       empty: {  }
       relationships: {  }
       arguments: {  }

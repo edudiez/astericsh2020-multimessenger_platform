@@ -17,6 +17,8 @@ body ul { margin: 0; padding: 0; }
 
 body ul li { list-style: none; }
 
+body.no_scroll { height: 100vh; overflow: hidden; }
+
 body ol li { line-height: 22px; }
 
 body b, body strong { font-family: 'Open Sans'; font-weight: 700; }
@@ -77,13 +79,17 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .taxonomy.observatory.full p { line-height: normal; margin: 5px 0; }
 
-.taxonomy.observatory.full .cols { display: -webkit-box; display: -ms-flexbox; display: flex; }
+.taxonomy.observatory.full .cols { display: -webkit-box; display: -ms-flexbox; display: flex; margin-bottom: 40px; }
 
 .taxonomy.observatory.full .cols .col { -webkit-box-flex: 1; -ms-flex: 1 0 50%; flex: 1 0 50%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
 
 .taxonomy.observatory.full .cols .col:nth-child(1) { padding-right: 20px; }
 
 .taxonomy.observatory.full .cols .col:nth-last-child(1) { padding-left: 20px; -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
+
+.taxonomy.observatory.full .cols .follow { -webkit-box-flex: 0; -ms-flex: none; flex: none; }
+
+.taxonomy.observatory.full .cols .follow a { width: auto; padding: 10px 25px; border-radius: 20px; background-color: #f2644c; color: white; text-transform: uppercase; font-family: 'rob_l'; display: inline-block; margin-top: 40px; }
 
 .taxonomy.observatory.full .cols .field_observatory_website a { font-size: 13px; }
 
@@ -123,6 +129,8 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .taxonomy.observatory.full .view-observation-list .dec { padding-left: 5px; }
 
+.taxonomy.observatory.full .view-observation-list .name { display: inline-block; width: 100%; font-weight: bold; max-width: none; }
+
 .taxonomy.observatory.full .view-observation-list .views-field-completed { width: 100%; display: inline-block; max-width: none; }
 
 .taxonomy.observatory.full .view-id-news.view-display-id-entity_view_2 { opacity: 0; -webkit-transition: .5s; transition: .5s; }
@@ -136,6 +144,8 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 .taxonomy.observatory.full .field_observatory_observacio .js-form-type-datetime, .taxonomy.observatory.full .field_observatory_observacio .form-item-observatory { display: none !important; }
 
 /* VISTAS */
+.view.view_obervatories-map.view_display_map .view-content { width: 1500px; max-width: 100%; margin: 0 auto; }
+
 .view.view_obervatories-map.view_display_map .view-header { text-align: center; margin-bottom: 60px; }
 
 .view.view_obervatories-map.view_display_map .view-header h4 { display: inline-block; width: 100%; font-size: 20px; font-weight: 400; margin: 0 0 20px; }
@@ -150,11 +160,25 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .view.view_obervatories-map.view_display_map .view-header a:hover { background-color: #53d6f9; }
 
+.view.view_obervatories-map.view_display_map .view-footer .image { width: 1500px; max-width: 100%; margin: 0 auto; height: 494px; background: transparent url("../images/timeline.png") no-repeat center; }
+
+/* CONTENT */
 .node.new.visualizacion-1 { text-align: left; }
 
 .node.new.visualizacion-1 .field_media_image { text-align: center; }
 
 .node.new.visualizacion-1 h2 { font-size: 20px; font-weight: bold; }
+
+/* MESSAGES */
+.messages { width: 700px; max-width: 100%; margin: 0 auto; padding: 100px 30px 10px; text-align: center; z-index: 1; position: relative; font-size: 17px; font-weight: 700; background: transparent none no-repeat top center / 70px; }
+
+.messages li { margin: 5px 0px; }
+
+.messages.error { background-image: url("../images/error.svg"); }
+
+.messages.warning { background-image: url("../images/warning.svg"); }
+
+.messages.status { background-image: url("../images/status.svg"); }
 
 /* USER */
 #forms-wrapper { position: absolute; top: 0; z-index: 99; background: rgba(0, 0, 0, 0.5); width: 100%; height: 100%; display: none; }
@@ -162,14 +186,58 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 #observation-form-wrapper { position: absolute; z-index: 1; display: none; }
 
 /* FORMS */
-form .form-item { margin: 5px 0; width: 100%; display: inline-block; }
+form .form-item { margin: 10px 0; width: 100%; display: inline-block; }
 
 form .form-actions { text-align: center; margin-top: 30px; }
 
 form input, form textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; border: 0px; padding: 7px 10px; width: 100%; font-size: 16px; }
 
-form input[type="submit"] { width: auto; padding: 10px 25px; border-radius: 20px; background-color: #f2644c; color: white; text-transform: uppercase; font-family: 'rob_l'; }
+form input[type="submit"] { width: auto; padding: 10px 25px; border-radius: 20px; background-color: #f2644c; color: white; text-transform: uppercase; font-family: 'rob_l'; cursor: pointer; -webkit-transition: background-color .3s; transition: background-color .3s; }
+
+form input[type="submit"]:hover { background-color: #53d6f9; }
+
+form input[type="checkbox"], form input[type="radio"] { width: 20px; height: 20px; background: white; cursor: pointer; padding: 0px; vertical-align: middle; outline: none; }
+
+form input[type="checkbox"]:checked, form input[type="radio"]:checked { background-color: red; }
+
+form input[type="radio"] { border-radius: 100%; -webkit-appearance: radio; -moz-appearance: radio; appearance: radio; }
 
 form label { font-size: 18px; font-weight: bold; }
+
+form .captcha { margin-top: 40px; }
+
+form .password-strength { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; margin-top: 20px; }
+
+form .password-strength .password-strength__meter { -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; height: 10px; }
+
+form .password-strength .password-strength__meter .is-weak { background-color: #b90101; }
+
+form .password-strength .password-strength__meter .is-good { background-color: #003e00; }
+
+form .password-strength .password-strength__meter .is-strong { background-color: green; }
+
+form .password-strength .password-strength__meter .is-fair { background-color: orange; }
+
+form .password-strength .password-strength__title { -webkit-box-ordinal-group: 1; -ms-flex-order: 0; order: 0; font-size: 14px; font-weight: 400; }
+
+form .password-confirm { font-size: 14px; font-weight: 400; }
+
+form .password-suggestions { display: none !important; }
+
+form#user-login-form, form#user-register-form, form#user-form, form#user-pass { width: 700px; max-width: 100%; margin: 0 auto; padding-top: 100px; }
+
+form#user-login-form .description, form#user-register-form .description, form#user-form .description, form#user-pass .description { font-size: 14px; }
+
+form#user-login-form label, form#user-register-form label, form#user-form label, form#user-pass label { font-weight: 500; margin-bottom: 10px; display: inline-block; }
+
+form#user-login-form .js-form-type-radio label, form#user-register-form .js-form-type-radio label, form#user-form .js-form-type-radio label, form#user-pass .js-form-type-radio label { margin: 0; }
+
+form#user-login-form .js-form-type-radio + .js-form-type-radio, form#user-register-form .js-form-type-radio + .js-form-type-radio, form#user-form .js-form-type-radio + .js-form-type-radio, form#user-pass .js-form-type-radio + .js-form-type-radio { margin-top: 0; }
+
+form#user-login-form > p, form#user-register-form > p, form#user-form > p, form#user-pass > p { font-size: 14px; margin-bottom: 0; margin-top: -14px; }
+
+form#user-login-form #edit-reset-password, form#user-register-form #edit-reset-password, form#user-form #edit-reset-password, form#user-pass #edit-reset-password { font-size: 16px; }
+
+form#user-login-form #edit-actions, form#user-register-form #edit-actions, form#user-form #edit-actions, form#user-pass #edit-actions { margin-top: 60px; }
 
 /*# sourceMappingURL=maps/styles.css.map */

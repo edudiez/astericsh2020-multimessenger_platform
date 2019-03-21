@@ -103,25 +103,61 @@ header[role="banner"] {
         }
     }
     #main-menu {
-        display:none;
-        position: absolute;
-        width: 100%;
-        top: 100px;
-        /* padding-top: 46px; */
-        background-color: $blaufons;
-        z-index: 1;
-        .menu {
-            margin:0 auto;
-            color:$blanc;
-            font-size:2em;
-            font-weight:700;
-            text-align:center;
-            li {
-                width:auto;
-                margin: 0 33% 1em;
-                line-height: 1em;
-            }
+      display:none;
+      justify-content: center;
+      flex-direction: column;
+      padding-bottom: 100px;
+      position: absolute;
+      width: 100%;
+      height: calc(100vh - 100px);
+      top: 100px;
+      /* padding-top: 46px; */
+      background-color: $blaufons;
+      z-index: 9;
+      &:before {@include defaultBackground();}
+      > div {position: relative; z-index: 1;}
+      #block-mainnavigation .menu {
+        margin:0 auto;
+        color:$blanc;
+        font-size:2em;
+        font-weight:700;
+        text-align:center;
+        li {
+          width:auto;
+          margin: 20px 0;
         }
+      }
+      #block-observationmenu {
+        ul.menu li {
+          text-align: center;
+          a {width: auto; padding: 15px 30px; border-radius: 30px; background-color: $buttonlink; color: white; text-transform: uppercase; font-family: 'rob_l'; display: inline-block; margin-top: 40px; font-size: 14px; font-weight: 300;}
+        }
+      }
+      #block-sociallinks {
+        margin-top: 70px;
+        .body {
+          text-align: center;
+          a {overflow: hidden; text-indent: -999px; display: inline-block; width: 20px; height: 20px; background: transparent none no-repeat center;}
+          li {
+            display: inline-block; margin: 0 10px;
+            &:nth-child(1) a {
+              transition: none;
+              @include getSocialIcon('twitter', 'white');
+              &:hover {@include getSocialIcon('twitter', $buttonlink);}
+            }
+            &:nth-child(2) a {
+              transition: none;
+              @include getSocialIcon('linkedin', 'white');
+              &:hover {@include getSocialIcon('linkedin', $buttonlink);}
+            }
+            &:nth-child(3) a {
+              transition: none;
+              @include getSocialIcon('vimeo', 'white');
+              &:hover {@include getSocialIcon('vimeo', $buttonlink);}
+            }
+          }
+        }
+      }
     }
 
 }
