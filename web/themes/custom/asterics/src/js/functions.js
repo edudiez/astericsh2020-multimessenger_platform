@@ -1,8 +1,14 @@
 ( function ($, Drupal, drupalSettings) {
     $(document).ready(function() {
         $('header .right .top .ico-menu').click(function() {
-            $(this).toggleClass("active");
-            $('#main-menu').fadeToggle();
+          $(this).toggleClass("active");
+          $('body').toggleClass('no_scroll');
+          // $('#main-menu').fadeToggle();
+          if ($('#main-menu').is(':visible')){
+            $('#main-menu').fadeOut();
+          } else {
+            $('#main-menu').fadeIn().css('display', 'flex');
+          }
         });
         //* USER TABS */
         if($('#usertabs')) {
@@ -11,7 +17,7 @@
             $('#observations').tabs();
             $('#newsevents').tabs();
         }
-        
+
         if($('#forms-wrapper')) {
             $('#newobservatori').click(function() {
                 $('#forms-wrapper').empty();
@@ -41,10 +47,10 @@
             });
         }
         */
-        
-        
+
+
     });
-    
+
     /** PASWORD RESET BEHAVIOUR **/
     Drupal.behaviors.PasswordReset = {
         attach : function (context,settings) {
@@ -54,5 +60,5 @@
         }
     }
     /** PASWORD RESET BEHAVIOUR **/
-    
+
 })(jQuery, Drupal, drupalSettings);

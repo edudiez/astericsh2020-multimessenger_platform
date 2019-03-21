@@ -2,6 +2,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\Role;
+use Drupal\views\Views;
 
 /**
  * Implements hook_form_user_login_form_alter().
@@ -27,6 +28,16 @@ function _asterics_user_login_form_submit($form, FormStateInterface $form_state)
   $form_state->setRedirect('<front>'); // REDIRECT A L'AREA QUE ENS INTERESSI
 }
 
+function asterics_preprocess_html(&$variables) {
+    
+    $current_path = \Drupal::service('path.current')->getPath();
+    $path_args = explode('/', $current_path);
+    if(count($path_args) == 3 && $path_args[1] == 'user' && $path_args[2] == \Drupal::currentUser()->id()) {
+        $variables['attributes']['class'][] = 'user-page';
+    }
+    
+    
+}
 
 function asterics_preprocess_user(&$variables) {
     // USER //
@@ -50,19 +61,44 @@ function asterics_preprocess_user(&$variables) {
     $variables['observatories_list'] = $list;
     // >>>>>>> TODO - VARIAR UNA MICA EL LLISTAT //
     
-    // MY OBSERVATORI - NEW OBSERVATORI //
+    // MY OBSERVATORI - NEW OBSERVATORI PER A LA PAGINA USUARI PROFESSIONAL //
     if($ovid) {
         $my_observatory = views_embed_view('observatories_list_user_page','default',$ovid);
         $variables['my_observatory'] = $my_observatory;
     }
     
+    // OBSERVATIONS - DEMANADES - ASKED FOR PER A LA PAGINA USUARI PROFESSIONAL //
+    $view = Views::getView('observacions_demanades'); 
+    $view->build('askedto');
+    $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
+    $count = reset($q);
+    $variables['total_observations_askedto'] = $count;
+    $ovaskedfor = views_embed_view('observacions_demanades','askedto',$user->id());
+    $variables['observations_askedto'] = $ovaskedfor;
     
-    
+    // OBSERVATIONS - DEMANADES - ASKED TO PER A LA PAGINA USUARI PROFESSIONAL //
+    $view = Views::getView('observacions_demanades'); 
+    $view->build('askedfor');
+    $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
+    $count = reset($q);
+    $variables['total_observations_askedfor'] = $count;
+    $ovaskedto = views_embed_view('observacions_demanades','askedfor',$user->id());
+    $variables['observations_askedfor'] = $ovaskedto;
     
     // FORM PETICIO OBERVACIO PER A LA PAGINA USUARI PROFESSIONAL //
     $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('observacion');
     $webform = $webform->getSubmissionForm();
     $variables['observation_form'] = $webform;
+    
+    // LISTAT DE NEWS & EVENTS PER A LA PAGINA USUARI PROFESSIONAL //
+    $view = Views::getView('news'); 
+    $view->build('user_news_events');
+    //$view->setArguments(array($user->id()));
+    $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
+    $count = reset($q);
+    $variables['total_myevents'] = $count;
+    $myevents = views_embed_view('news','user_news_events',$user->id());
+    $variables['my_events'] = $myevents;
     
     // FROM EVENT PER A LA PAGINA USUARI PROFESSIONAL //
     $node = \Drupal\node\Entity\Node::create(['type' => 'event']);
@@ -119,7 +155,8 @@ function asterics_form_user_register_form_alter(&$form, FormStateInterface $form
     $form['roles']['amateur'] = array (
       '#disabled' => TRUE,
     );
-
+    $form['field_user_description']['#access'] = FALSE;
+    $form['field_user_photo']['#access'] = FALSE;
     /* FORM CLEAN */
     _asterics_user_form($form);
 
@@ -139,4 +176,5 @@ function _asterics_user_form(&$form) {
     unset($form['account']['mail']['#description']);
     unset($form['account']['name']['#description']);
     $form['account']['notify']['#access'] = FALSE;
+    $form['field_user_observatory']['#access'] = FALSE;
 }

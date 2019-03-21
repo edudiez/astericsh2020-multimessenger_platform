@@ -6,6 +6,7 @@ global-css:
       src/css/main.css: {}
       src/css/footer.css: {}
       src/css/styles.css: {}
+      src/css/usuari.css: {}
   js:
     src/js/libraries/jquery.hoverIntent.js: {}
     src/js/functions.js: {}
