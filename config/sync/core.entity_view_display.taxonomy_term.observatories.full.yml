@@ -99,4 +99,5 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  field_observatory_fotografia: true
   field_observatory_geolocation: true
