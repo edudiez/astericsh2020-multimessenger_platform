@@ -33,17 +33,16 @@
             <ul>
                 <li><a href="#observatories">Observatories</a></li>
                 <li><a href="#observations">Observations</a></li>
-                <li><a href="#newsevents">News & Events</a></li>
+                <li><a href="#newsevents">News & Events</a></li>        
             </ul>
-
             <div id="observatories">
-                <ul>
+                <ul class="main-tabs-nav">
                     <li><a href="#following">Following ({{ following }})</a></li>
                     <li><a href="#followers">Followers ({{ followers }})</a></li>
                         {% if user.field_user_observatory.value %}
                         <li><a href="#myobservatory">My Observatory</a></li>
                         {% else %}
-                        <li><button id="newobservatori">New Observatory</button></li>
+                        <li class="button"><button id="newobservatori">New Observatory</button></li>
                         {% endif %}
                 </ul>
                 <div id="following">{{ observatories_list }}</div>
@@ -56,19 +55,18 @@
                 <ul>
                     <li><a href="#demandades">Observations demanded ({{ total_observations_askedto }})</a></li>
                     <li><a href="#demanades">Observations that have asked for me ({{ total_observations_askedfor }})</a></li>
-                    <li>
+                    <li class="button">
                         <button id="askobervation">Ask for a new observation</button>
                         <div id="observation-form-wrapper">{{ observation_form }}</div>
                     </li>
-                </ul>Observations that have asked for me
+                </ul>
                 <div id="demandades">{{ observations_askedto }}</div>
                 <div id="demanades">{{ observations_askedfor }}</div>
-
             </div>
             <div id="newsevents">
                 <ul>
                     <li><a href="#myevents">My events ({{ total_myevents }})</a></li>
-                    <li><a href="#newevent">New Event</a></li>
+                    <li class="button"><a href="#newevent">New Event</a></li>
                 </ul>
                 <div id="myevents">{{ my_events }}</div>
                 <div id="newevent">{{ event_form }}</div>

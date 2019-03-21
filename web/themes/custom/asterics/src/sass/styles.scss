@@ -12,13 +12,13 @@
 body {
 	padding:0; margin:0; font-family:'Open Sans'; font-size:20px; color: $blanc;font-weight:400;
 	p {margin:0 0 25px 0; line-height:2em;}
-	a {text-decoration:none; color:inherit; transition:.3s;}
-	a:hover {text-decoration:none; cursor: pointer;}
+	a {text-decoration:none; color:inherit; transition:.3s; outline:none}
+	a:hover {text-decoration:none; cursor: pointer; }
 	ul {margin:0; padding:0;
             li {list-style:none;}
 	}
 	&.no_scroll {height: 100vh; overflow: hidden;}
-	ol li {line-height:22px;}
+	ol li {line-height:22px;outline:none;}
 	b, strong { font-family:'Open Sans'; font-weight:700;}
 	* {box-sizing: border-box;}
 	img {max-width:100%; height:auto;}
