@@ -28,6 +28,16 @@ function _asterics_user_login_form_submit($form, FormStateInterface $form_state)
   $form_state->setRedirect('<front>'); // REDIRECT A L'AREA QUE ENS INTERESSI
 }
 
+function asterics_preprocess_html(&$variables) {
+    
+    $current_path = \Drupal::service('path.current')->getPath();
+    $path_args = explode('/', $current_path);
+    if(count($path_args) == 3 && $path_args[1] == 'user' && $path_args[2] == \Drupal::currentUser()->id()) {
+        $variables['attributes']['class'][] = 'user-page';
+    }
+    
+    
+}
 
 function asterics_preprocess_user(&$variables) {
     // USER //
@@ -147,7 +157,6 @@ function asterics_form_user_register_form_alter(&$form, FormStateInterface $form
     );
     $form['field_user_description']['#access'] = FALSE;
     $form['field_user_photo']['#access'] = FALSE;
-    $form['field_user_observatory']['#access'] = FALSE;
     /* FORM CLEAN */
     _asterics_user_form($form);
 
@@ -167,4 +176,5 @@ function _asterics_user_form(&$form) {
     unset($form['account']['mail']['#description']);
     unset($form['account']['name']['#description']);
     $form['account']['notify']['#access'] = FALSE;
+    $form['field_user_observatory']['#access'] = FALSE;
 }
