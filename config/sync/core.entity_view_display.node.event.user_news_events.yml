@@ -1,8 +1,9 @@
-uuid: fe045a69-1672-47cb-9fca-98574cbdba8e
+uuid: f60820f1-9c51-4ded-b354-ccd23f7a1bb3
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.user_news_events
     - field.field.node.event.body
     - field.field.node.event.field_event_category_n
     - field.field.node.event.field_event_date_n
@@ -14,10 +15,10 @@ dependencies:
     - datetime_range
     - text
     - user
-id: node.event.default
+id: node.event.user_news_events
 targetEntityType: node
 bundle: event
-mode: default
+mode: user_news_events
 content:
   body:
     label: hidden
@@ -63,7 +64,7 @@ content:
     region: content
   links:
     weight: 100
-    region: content
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden: {  }

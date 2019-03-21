@@ -9,10 +9,5 @@ id: paragraph.views_eva.news
 targetEntityType: paragraph
 bundle: views_eva
 mode: news
-content:
-  news_entity_view_1:
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
+content: {  }
 hidden: {  }
