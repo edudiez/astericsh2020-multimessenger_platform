@@ -5,15 +5,18 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.full
     - field.field.taxonomy_term.observatories.field_observatory_address
+    - field.field.taxonomy_term.observatories.field_observatory_fotografia
     - field.field.taxonomy_term.observatories.field_observatory_geolocation
     - field.field.taxonomy_term.observatories.field_observatory_observacio
     - field.field.taxonomy_term.observatories.field_observatory_phone
     - field.field.taxonomy_term.observatories.field_observatory_rrss
     - field.field.taxonomy_term.observatories.field_observatory_website
+    - image.style.large
     - taxonomy.vocabulary.observatories
   module:
     - entity_reference_revisions
     - link
+    - svg_image
     - text
     - webform
 id: taxonomy_term.observatories.full
@@ -29,14 +32,27 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_observatory_address:
-    weight: 3
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
+  field_observatory_fotografia:
+    type: image
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      image_style: large
+      image_link: ''
+      svg_render_as_image: '1'
+      svg_attributes:
+        width: ''
+        height: ''
+    third_party_settings: {  }
   field_observatory_observacio:
-    weight: 6
+    weight: 7
     label: hidden
     settings:
       source_entity: true
@@ -44,7 +60,7 @@ content:
     type: webform_entity_reference_entity_view
     region: content
   field_observatory_phone:
-    weight: 4
+    weight: 5
     label: hidden
     settings:
       link_to_entity: false
@@ -61,7 +77,7 @@ content:
     third_party_settings: {  }
     region: content
   field_observatory_website:
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       trim_length: 80
@@ -73,12 +89,12 @@ content:
     type: link
     region: content
   news_entity_view_2:
-    weight: 7
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   observation_list_entity_view_1:
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }

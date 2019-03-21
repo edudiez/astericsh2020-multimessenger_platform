@@ -39,7 +39,7 @@
           <div class="cols">
               <div class="col">
                   {{ title_prefix }}
-                  <h2>{{ name|field_value }}</h2>
+                    <h2>{{ name|field_value }}</h2>
                   {{ title_suffix }}
                   {{ content.description }}
               </div>
@@ -51,11 +51,12 @@
           <div class="box {{ (content.field_observatory_observacio|render|striptags('<form>')|trim) ? 'hasform' : 'notform' }} ">
               <div class="address">
                   <h3> {{ 'Location & contact'|t }} </h3>
+                  {{ content.field_observatory_fotografia }}
                   {{ content.field_observatory_address }}
                   {{ content.field_observatory_phone }}
                   {{ content.field_observatory_website }}
               </div>
-              {{ content|without('description','field_observatory_rrss','field_observatory_website','field_observatory_address','field_observatory_phone') }}
+              {{ content|without('description','field_observatory_rrss','field_observatory_fotografia','field_observatory_website','field_observatory_address','field_observatory_phone') }}
               {{ attach_library('asterics/flexslider') }}
           </div>
       </div>

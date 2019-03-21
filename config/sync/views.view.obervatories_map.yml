@@ -89,7 +89,7 @@ display:
           marker_clusterer_image_path: ''
           marker_clusterer_styles: ''
           google_map_settings:
-            height: 400px
+            height: 700px
             width: 100%
             type: ROADMAP
             zoom: '10'
@@ -395,8 +395,21 @@ display:
           entity_field: vid
           plugin_id: bundle
       sorts: {  }
-      title: 'Obervatories Map'
-      header: {  }
+      title: ''
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content:
+            value: "<h4>Map title lorem ipsum dolor set</h4>\r\n<h1>All observations over lorem ipsum</h1>\r\n<a href=\"#\">OBSERVATION SEARCH</a>\r\n<a href=\"#\">ASK FOR A COORINATED OBSERVATION</a>"
+            format: full_html
+          plugin_id: text
       footer: {  }
       empty: {  }
       relationships: {  }

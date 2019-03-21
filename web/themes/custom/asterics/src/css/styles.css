@@ -58,7 +58,7 @@ body .paragraph--type--link { margin: 40px 0; }
 body .paragraph--type--link a { display: inline-block; width: auto; padding: 20px 30px; border-radius: 30px; color: #fff; font-weight: 300; font-size: 14px; text-transform: uppercase; background-color: #f2644c; }
 
 /* MAPS */
-.geolocation-common-map:before { background-image: url(../images/assets-03.svg); background-repeat: no-repeat; background-size: 100% 100%; content: ""; display: block; position: absolute; top: 56px; right: 20%; width: 100%; height: 100%; max-height: calc(100vh - 200px); z-index: 0; }
+.geolocation-common-map { /*&:before { @include defaultBackground(); }*/ }
 
 .geolocation-common-map-locations { /*display:block !important;*/ position: fixed; top: 0; left: 0; z-index: 1; background: rgba(0, 0, 0, 0.7); width: 100%; height: 100%; padding: 60px; }
 
@@ -85,7 +85,9 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .taxonomy.observatory.full .cols .col:nth-last-child(1) { padding-left: 20px; -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
 
-.taxonomy.observatory.full .cols .field_observatory_website { font-size: 13px; }
+.taxonomy.observatory.full .cols .field_observatory_website a { font-size: 13px; }
+
+.taxonomy.observatory.full .cols .field_observatory_website a:hover { color: #f2644c; }
 
 .taxonomy.observatory.full .box { width: 100%; display: inline-block; display: -webkit-box; display: -ms-flexbox; display: flex; }
 
@@ -95,13 +97,15 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .taxonomy.observatory.full .address { padding: 20px; -webkit-box-flex: 1; -ms-flex: 1 0 25%; flex: 1 0 25%; margin-top: 80px; color: black; background-color: white; }
 
-.taxonomy.observatory.full .address h3 { font-size: 20px; margin: 5px 0 10px; }
+.taxonomy.observatory.full .address h3 { font-size: 20px; margin: 5px 0 20px; }
 
 .taxonomy.observatory.full .address > p { font-size: 16px; margin: 5px 0; }
 
 .taxonomy.observatory.full .address .field_observatory_phone { font-weight: bold; font-size: 18px; margin: 5px 0; }
 
 .taxonomy.observatory.full .address .field_observatory_website { color: #f2644c; font-size: 18px; margin: 5px 0; }
+
+.taxonomy.observatory.full .address .field_observatory_address { margin: 15px 0; }
 
 .taxonomy.observatory.full .views-element-container { -webkit-box-flex: 1; -ms-flex: 1 0 25%; flex: 1 0 25%; padding: 20px; background-color: #53d6f9; color: white; }
 
@@ -130,6 +134,21 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 .taxonomy.observatory.full .field_observatory_observacio input[type="submit"] { background-color: #f2644c; }
 
 .taxonomy.observatory.full .field_observatory_observacio .js-form-type-datetime, .taxonomy.observatory.full .field_observatory_observacio .form-item-observatory { display: none !important; }
+
+/* VISTAS */
+.view.view_obervatories-map.view_display_map .view-header { text-align: center; margin-bottom: 60px; }
+
+.view.view_obervatories-map.view_display_map .view-header h4 { display: inline-block; width: 100%; font-size: 20px; font-weight: 400; margin: 0 0 20px; }
+
+.view.view_obervatories-map.view_display_map .view-header h1 { font-size: 40px; font-weight: 700; margin: 20px 0 60px; }
+
+.view.view_obervatories-map.view_display_map .view-header a { border-radius: 20px; color: white; padding: 10px 25px 10px 50px; display: inline-block; vertical-align: middle; opacity: 1; }
+
+.view.view_obervatories-map.view_display_map .view-header a:nth-child(3) { margin-right: 40px; background: #f2644c url("../images/antena.svg") no-repeat 5px center; }
+
+.view.view_obervatories-map.view_display_map .view-header a:nth-child(4) { background: #f2644c url("../images/espiral.svg") no-repeat 10px center; padding-left: 55px; }
+
+.view.view_obervatories-map.view_display_map .view-header a:hover { background-color: #53d6f9; }
 
 .node.new.visualizacion-1 { text-align: left; }
 
