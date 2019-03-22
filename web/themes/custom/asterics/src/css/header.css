@@ -92,6 +92,8 @@ header[role="banner"] .right .top .ico-menu.active span:nth-child(3) { -webkit-t
 
 header[role="banner"] #main-menu { display: none; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; padding-bottom: 100px; position: absolute; width: 100%; height: calc(100vh - 100px); top: 100px; /* padding-top: 46px; */ background-color: #071c47; z-index: 9; }
 
+body.toolbar-fixed header[role="banner"] #main-menu { top: 200px; }
+
 header[role="banner"] #main-menu:before { background-image: url(../images/assets-03.svg); background-repeat: no-repeat; background-size: 100% 100%; content: ""; display: block; position: absolute; top: 56px; right: 20%; width: 100%; height: 100%; max-height: calc(100vh - 200px); z-index: 0; }
 
 header[role="banner"] #main-menu > div { position: relative; z-index: 1; }

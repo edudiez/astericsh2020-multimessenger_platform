@@ -148,6 +148,7 @@ header[role="banner"] {
       /* padding-top: 46px; */
       background-color: $blaufons;
       z-index: 9;
+      body.toolbar-fixed & {top: 200px;}
       &:before {@include defaultBackground();}
       > div {position: relative; z-index: 1;}
       #block-mainnavigation .menu {
