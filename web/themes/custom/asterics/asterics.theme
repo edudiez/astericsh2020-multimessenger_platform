@@ -29,17 +29,22 @@ function _asterics_user_login_form_submit($form, FormStateInterface $form_state)
 }
 
 function asterics_preprocess_html(&$variables) {
-    
+
     $current_path = \Drupal::service('path.current')->getPath();
     $path_args = explode('/', $current_path);
     if(count($path_args) == 3 && $path_args[1] == 'user' && $path_args[2] == \Drupal::currentUser()->id()) {
         $variables['attributes']['class'][] = 'user-page';
     }
-    
-    
+
+}
+
+function asterics_preprocess_page(&$variables) {
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $variables['username'] = $user->getDisplayName() != 'Anonymous' ? $user->getDisplayName() : null;
 }
 
 function asterics_preprocess_user(&$variables) {
+
     // USER //
     $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
     $ovid = (isset($user->field_user_observatory->getValue()[0])) ? $user->field_user_observatory->getValue()[0]['target_id'] : null;
@@ -47,7 +52,7 @@ function asterics_preprocess_user(&$variables) {
     $vid = 'observatories';
     $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
     // LISTA OBSERVATORIES //
-    
+
     // >>>>>>> TODO - VARIAR UNA MICA EL LLISTAT //
     $ovlist = array();
     foreach($terms as $term) {
@@ -60,38 +65,38 @@ function asterics_preprocess_user(&$variables) {
     $list = views_embed_view('observatories_list_user_page','default',implode('+',$ovlist));
     $variables['observatories_list'] = $list;
     // >>>>>>> TODO - VARIAR UNA MICA EL LLISTAT //
-    
+
     // MY OBSERVATORI - NEW OBSERVATORI PER A LA PAGINA USUARI PROFESSIONAL //
     if($ovid) {
         $my_observatory = views_embed_view('observatories_list_user_page','default',$ovid);
         $variables['my_observatory'] = $my_observatory;
     }
-    
+
     // OBSERVATIONS - DEMANADES - ASKED FOR PER A LA PAGINA USUARI PROFESSIONAL //
-    $view = Views::getView('observacions_demanades'); 
+    $view = Views::getView('observacions_demanades');
     $view->build('askedto');
     $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
     $count = reset($q);
     $variables['total_observations_askedto'] = $count;
     $ovaskedfor = views_embed_view('observacions_demanades','askedto',$user->id());
     $variables['observations_askedto'] = $ovaskedfor;
-    
+
     // OBSERVATIONS - DEMANADES - ASKED TO PER A LA PAGINA USUARI PROFESSIONAL //
-    $view = Views::getView('observacions_demanades'); 
+    $view = Views::getView('observacions_demanades');
     $view->build('askedfor');
     $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
     $count = reset($q);
     $variables['total_observations_askedfor'] = $count;
     $ovaskedto = views_embed_view('observacions_demanades','askedfor',$user->id());
     $variables['observations_askedfor'] = $ovaskedto;
-    
+
     // FORM PETICIO OBERVACIO PER A LA PAGINA USUARI PROFESSIONAL //
     $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('observacion');
     $webform = $webform->getSubmissionForm();
     $variables['observation_form'] = $webform;
-    
+
     // LISTAT DE NEWS & EVENTS PER A LA PAGINA USUARI PROFESSIONAL //
-    $view = Views::getView('news'); 
+    $view = Views::getView('news');
     $view->build('user_news_events');
     //$view->setArguments(array($user->id()));
     $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
@@ -99,14 +104,12 @@ function asterics_preprocess_user(&$variables) {
     $variables['total_myevents'] = $count;
     $myevents = views_embed_view('news','user_news_events',$user->id());
     $variables['my_events'] = $myevents;
-    
+
     // FROM EVENT PER A LA PAGINA USUARI PROFESSIONAL //
     $node = \Drupal\node\Entity\Node::create(['type' => 'event']);
     $form = \Drupal::service('entity.form_builder')->getForm($node);
     $variables['event_form'] = $form; // {{ event_form }} //
-       
 }
-
 
 /*
  * Implements hook_form_user_pass_reset_alter

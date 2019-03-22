@@ -46,6 +46,61 @@
 <header role="banner">
     <div class="container">
         <div class="right">
+            {% if username %}
+              <div class="user_box">
+                <div class="user_profile">
+                  <a href="/db_member">{{ username }}</a>
+                </div>
+                <div class="user_notify">
+                  <span></span>
+                  <div class="notifications">
+                    <ul>
+                      <li>
+                        <div class="image">
+                          <img src="/themes/custom/asterics/src/images/notify.jpg" alt="notify image">
+                        </div>
+                        <div class="box">
+                          <div class="category">Monte Palomar Observatory</div>
+                          <div class="title">Notification title lorem ipsum</div>
+                          <div class="date">14/03/2019 6:10 pm</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="image">
+                          <img src="/themes/custom/asterics/src/images/notify.jpg" alt="notify image">
+                        </div>
+                        <div class="box">
+                          <div class="category">Monte Palomar Observatory</div>
+                          <div class="title">Notification title lorem ipsum</div>
+                          <div class="date">14/03/2019 6:10 pm</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="image">
+                          <img src="/themes/custom/asterics/src/images/notify.jpg" alt="notify image">
+                        </div>
+                        <div class="box">
+                          <div class="category">Monte Palomar Observatory</div>
+                          <div class="title">Notification title lorem ipsum</div>
+                          <div class="date">14/03/2019 6:10 pm</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="image">
+                          <img src="/themes/custom/asterics/src/images/notify.jpg" alt="notify image">
+                        </div>
+                        <div class="box">
+                          <div class="category">Monte Palomar Observatory</div>
+                          <div class="title">Notification title lorem ipsum</div>
+                          <div class="date">14/03/2019 6:10 pm</div>
+                        </div>
+                      </li>
+                    </ul>
+                    <a href="#" class="button">All Alerts</a>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
             <div class="top">
                 <div class="ico-search"></div>
                 <div class="ico-menu">
@@ -55,7 +110,6 @@
                 </div>
             </div>
         </div>
-        {{ user.name.0.value }}
         {{ page.header|without('sociallinks') }}
     </div>
         <div id="main-menu">

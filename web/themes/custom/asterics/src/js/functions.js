@@ -1,5 +1,8 @@
 ( function ($, Drupal, drupalSettings) {
     $(document).ready(function() {
+
+      userBox();
+
         $('header .right .top .ico-menu').click(function() {
           $(this).toggleClass("active");
           $('body').toggleClass('no_scroll');
@@ -50,6 +53,15 @@
 
 
     });
+
+    function userBox(){
+      if ($('.user_box span').length){
+        $('.user_box span').click(function(e){
+
+          $(this).next().slideToggle();
+        });
+      }
+    }
 
     /** PASWORD RESET BEHAVIOUR **/
     Drupal.behaviors.PasswordReset = {
