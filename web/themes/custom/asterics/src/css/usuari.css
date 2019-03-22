@@ -22,9 +22,9 @@
 
 .profesional #usertabs > ul:nth-child(1) { border: none; background: transparent; max-width: 1200px; margin: 0 auto; }
 
-.profesional #usertabs > ul:nth-child(1) li { background-color: #c93a27; border-color: #c93a27; border: none; margin: 0; outline: none; margin-right: 18px; padding: 18px 28px; }
+.profesional #usertabs > ul:nth-child(1) li { background-color: #c93a27; border-color: #c93a27; border: none; margin: 0; outline: none; margin-right: 18px; margin-bottom: -1px; }
 
-.profesional #usertabs > ul:nth-child(1) li a { font-weight: 600; font-size: 18px; color: #fff; padding: 0; }
+.profesional #usertabs > ul:nth-child(1) li a { font-weight: 600; font-size: 18px; color: #fff; padding: 18px 28px; }
 
 .profesional #usertabs > ul:nth-child(1) li:hover, .profesional #usertabs > ul:nth-child(1) li.ui-tabs-active { background-color: #f2644c; border-color: #f2644c; }
 
@@ -32,15 +32,19 @@
 
 .profesional #usertabs #observatories > ul:nth-child(1), .profesional #usertabs #observations > ul:nth-child(1), .profesional #usertabs #newsevents > ul:nth-child(1) { border: none; background: transparent; max-width: 1200px; margin: 0 auto; }
 
-.profesional #usertabs #observatories > ul:nth-child(1) li, .profesional #usertabs #observations > ul:nth-child(1) li, .profesional #usertabs #newsevents > ul:nth-child(1) li { background-color: #f2644c; border-color: #f2644c; border: none; margin: 0; margin-right: 18px; padding: 18px 28px; text-align: center; }
+.profesional #usertabs #observatories > ul:nth-child(1) li, .profesional #usertabs #observations > ul:nth-child(1) li, .profesional #usertabs #newsevents > ul:nth-child(1) li { background-color: #f2644c; border-color: #f2644c; border: none; margin: 0; margin-right: 18px; padding: 18px 28px; text-align: center; white-space: normal; }
 
-.profesional #usertabs #observatories > ul:nth-child(1) li a, .profesional #usertabs #observations > ul:nth-child(1) li a, .profesional #usertabs #newsevents > ul:nth-child(1) li a { font-weight: 400; font-size: 18px; color: #fff; padding: 0; text-align: center; }
+.profesional #usertabs #observatories > ul:nth-child(1) li a, .profesional #usertabs #observations > ul:nth-child(1) li a, .profesional #usertabs #newsevents > ul:nth-child(1) li a { font-weight: 400; font-size: 18px; color: #fff; padding: 0; text-align: center; position: relative; padding-bottom: 5px; }
+
+.profesional #usertabs #observatories > ul:nth-child(1) li a:after, .profesional #usertabs #observations > ul:nth-child(1) li a:after, .profesional #usertabs #newsevents > ul:nth-child(1) li a:after { content: ''; display: inline-block; width: 0; height: 2px; background-color: white; position: absolute; bottom: 0; left: 0; -webkit-transition: .5s; transition: .5s; }
 
 .profesional #usertabs #observatories > ul:nth-child(1) li:hover, .profesional #usertabs #observatories > ul:nth-child(1) li.ui-tabs-active, .profesional #usertabs #observations > ul:nth-child(1) li:hover, .profesional #usertabs #observations > ul:nth-child(1) li.ui-tabs-active, .profesional #usertabs #newsevents > ul:nth-child(1) li:hover, .profesional #usertabs #newsevents > ul:nth-child(1) li.ui-tabs-active { background-color: #f2644c; border-color: #f2644c; }
 
-.profesional #usertabs #observatories > ul:nth-child(1) li:hover a, .profesional #usertabs #observatories > ul:nth-child(1) li.ui-tabs-active a, .profesional #usertabs #observations > ul:nth-child(1) li:hover a, .profesional #usertabs #observations > ul:nth-child(1) li.ui-tabs-active a, .profesional #usertabs #newsevents > ul:nth-child(1) li:hover a, .profesional #usertabs #newsevents > ul:nth-child(1) li.ui-tabs-active a { font-weight: 600; border: none; }
+.profesional #usertabs #observatories > ul:nth-child(1) li:hover a, .profesional #usertabs #observatories > ul:nth-child(1) li.ui-tabs-active a, .profesional #usertabs #observations > ul:nth-child(1) li:hover a, .profesional #usertabs #observations > ul:nth-child(1) li.ui-tabs-active a, .profesional #usertabs #newsevents > ul:nth-child(1) li:hover a, .profesional #usertabs #newsevents > ul:nth-child(1) li.ui-tabs-active a { border: none; }
 
-.profesional #usertabs #observatories > ul:nth-child(1) li.button, .profesional #usertabs #observations > ul:nth-child(1) li.button, .profesional #usertabs #newsevents > ul:nth-child(1) li.button { float: right; padding: 0; }
+.profesional #usertabs #observatories > ul:nth-child(1) li:hover a:after, .profesional #usertabs #observatories > ul:nth-child(1) li.ui-tabs-active a:after, .profesional #usertabs #observations > ul:nth-child(1) li:hover a:after, .profesional #usertabs #observations > ul:nth-child(1) li.ui-tabs-active a:after, .profesional #usertabs #newsevents > ul:nth-child(1) li:hover a:after, .profesional #usertabs #newsevents > ul:nth-child(1) li.ui-tabs-active a:after { width: 100%; }
+
+.profesional #usertabs #observatories > ul:nth-child(1) li.button, .profesional #usertabs #observations > ul:nth-child(1) li.button, .profesional #usertabs #newsevents > ul:nth-child(1) li.button { float: right; padding: 0; position: relative; }
 
 .profesional #usertabs #observatories > ul:nth-child(1) li.button button, .profesional #usertabs #observatories > ul:nth-child(1) li.button a, .profesional #usertabs #observations > ul:nth-child(1) li.button button, .profesional #usertabs #observations > ul:nth-child(1) li.button a, .profesional #usertabs #newsevents > ul:nth-child(1) li.button button, .profesional #usertabs #newsevents > ul:nth-child(1) li.button a { border: 1px solid #fff; outline: none; padding: 15px 30px; border-radius: 30px; background-color: #f2644c; color: white; text-transform: uppercase; display: inline-block; font-weight: 300; font-size: 14px; margin-top: 4px; cursor: pointer; }
 
@@ -51,9 +55,5 @@
 .profesional #usertabs #observatories > ul:nth-child(1) li.button { float: right; padding: 0; }
 
 .profesional #usertabs #observatories > ul:nth-child(1) li.button button { border: 1px solid #fff; outline: none; padding: 15px 30px; border-radius: 30px; background-color: #f2644c; color: white; text-transform: uppercase; display: inline-block; font-weight: 300; font-size: 14px; margin-top: 4px; cursor: pointer; }
-
-.profesional #usertabs #observatories > ul:nth-child(1) li a { width: 80px; }
-
-.profesional #usertabs #observations > ul:nth-child(1) li a { width: 300px; text-align: left; }
 
 /*# sourceMappingURL=maps/usuari.css.map */

@@ -143,6 +143,34 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .taxonomy.observatory.full .field_observatory_observacio .js-form-type-datetime, .taxonomy.observatory.full .field_observatory_observacio .form-item-observatory { display: none !important; }
 
+.taxonomy.observatory.user_page_view { font-size: 0; }
+
+.taxonomy.observatory.user_page_view p { font-size: 20px; line-height: normal; margin: 5px 0; }
+
+.taxonomy.observatory.user_page_view .imatge { width: 150px; height: 150px; margin: 0 50px; border-radius: 100%; display: inline-block; vertical-align: middle; overflow: hidden; }
+
+.taxonomy.observatory.user_page_view .imatge .background { width: 100%; height: 100%; background: transparent none no-repeat center / cover; }
+
+.taxonomy.observatory.user_page_view .informacion { width: calc(100% - 300px); display: inline-block; vertical-align: middle; font-size: 20px; }
+
+.taxonomy.observatory.user_page_view .title { font-size: 0; margin-bottom: 30px; }
+
+.taxonomy.observatory.user_page_view .title h2 { font-size: 30px; font-weight: 700; color: #071c47; display: inline-block; vertical-align: middle; margin: 0; max-width: 580px; }
+
+.taxonomy.observatory.user_page_view .title span { display: inline-block; vertical-align: middle; font-size: 14px; border: 1px solid #f2644c; color: #f2644c; padding: 7px 20px; border-radius: 20px; text-transform: uppercase; font-family: 'rob_l'; margin-left: 20px; }
+
+.taxonomy.observatory.user_page_view .title span:nth-child(2) { margin-left: 30px; }
+
+.taxonomy.observatory.user_page_view .title span:nth-child(3) { color: #1d1d1b; border-color: #1d1d1b; }
+
+.taxonomy.observatory.user_page_view .description { margin-bottom: 30px; }
+
+.taxonomy.observatory.user_page_view .field_observatory_address, .taxonomy.observatory.user_page_view .field_observatory_phone, .taxonomy.observatory.user_page_view .field_observatory_website { font-size: 16px; font-weight: 400; margin-top: 13px; }
+
+.taxonomy.observatory.user_page_view .field_observatory_address p { font-size: 16px; }
+
+.taxonomy.observatory.user_page_view .field_observatory_website a { color: #f2644c; }
+
 /* VISTAS */
 .view.view_obervatories-map.view_display_map .view-content { width: 1500px; max-width: 100%; margin: 0 auto; }
 
@@ -161,6 +189,28 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 .view.view_obervatories-map.view_display_map .view-header a:hover { background-color: #53d6f9; }
 
 .view.view_obervatories-map.view_display_map .view-footer .image { width: 1500px; max-width: 100%; margin: 0 auto; height: 494px; background: transparent url("../images/timeline.png") no-repeat center; }
+
+.view.view_observatories-list-user-page.view_display_default .view-content { width: 1200px; margin: 0 auto; max-width: 100%; padding: 0 10px; }
+
+.view.view_observatories-list-user-page.view_display_default .views-row { border-bottom: 1px solid #53d6f9; padding: 60px 0; }
+
+.view .pager { padding: 60px 10px; }
+
+.view .pager ul { text-align: center; }
+
+.view .pager li { display: inline-block; vertical-align: middle; margin: 0 7px; }
+
+.view .pager li.pager__item--last, .view .pager li.pager__item--next, .view .pager li.pager__item--first, .view .pager li.pager__item--previous { margin: 0px; }
+
+.view .pager li.pager__item--last a, .view .pager li.pager__item--next a, .view .pager li.pager__item--first a, .view .pager li.pager__item--previous a { border: 1px solid #f2644c; border-radius: 100%; line-height: 5px; display: inline-block; width: 35px; height: 35px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+.view .pager li.pager__item--last span, .view .pager li.pager__item--next span, .view .pager li.pager__item--first span, .view .pager li.pager__item--previous span { color: #f2644c; }
+
+.view .pager li.pager__item--next { margin-left: 10px; }
+
+.view .pager li.pager__item--previous { margin-right: 10px; }
+
+.view .pager a { font-weight: 400; font-size: 18px; }
 
 /* CONTENT */
 .node.new.visualizacion-1 { text-align: left; }
@@ -205,14 +255,14 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 /* USER */
 #forms-wrapper { position: absolute; top: 0; z-index: 99; background: rgba(0, 0, 0, 0.5); width: 100%; height: 100%; display: none; }
 
-#observation-form-wrapper { position: absolute; z-index: 1; display: none; }
+#observation-form-wrapper { position: absolute; z-index: 1; display: none; width: 100%; }
 
 /* FORMS */
 form .form-item { margin: 10px 0; width: 100%; display: inline-block; }
 
 form .form-actions { text-align: center; margin-top: 30px; }
 
-form input, form textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; border: 0px; padding: 7px 10px; width: 100%; font-size: 16px; }
+form input, form textarea { -webkit-appearance: none; -moz-appearance: none; appearance: none; border: 0px; padding: 7px 10px; width: 100%; font-size: 16px; outline: none; }
 
 form input[type="submit"] { width: auto; padding: 10px 25px; border-radius: 20px; background-color: #f2644c; color: white; text-transform: uppercase; font-family: 'rob_l'; cursor: pointer; -webkit-transition: background-color .3s; transition: background-color .3s; }
 
@@ -261,5 +311,15 @@ form#user-login-form > p, form#user-register-form > p, form#user-form > p, form#
 form#user-login-form #edit-reset-password, form#user-register-form #edit-reset-password, form#user-form #edit-reset-password, form#user-pass #edit-reset-password { font-size: 16px; }
 
 form#user-login-form #edit-actions, form#user-register-form #edit-actions, form#user-form #edit-actions, form#user-pass #edit-actions { margin-top: 60px; }
+
+form.webform-submission-add-form { background-color: #6a7791; color: white; padding: 20px; -webkit-box-flex: 1; -ms-flex: 1 0 25%; flex: 1 0 25%; margin-top: 12px; text-align: left; }
+
+form.webform-submission-add-form input, form.webform-submission-add-form textarea { background-color: #c3c9d3; color: white; padding: 5px 10px; font-size: 15px; }
+
+form.webform-submission-add-form input[type="submit"] { background-color: #f2644c; padding: 10px 25px; }
+
+form.webform-submission-add-form label { font-size: 15px; }
+
+form.webform-submission-add-form .js-form-type-datetime, form.webform-submission-add-form .form-item-observatory { display: none !important; }
 
 /*# sourceMappingURL=maps/styles.css.map */

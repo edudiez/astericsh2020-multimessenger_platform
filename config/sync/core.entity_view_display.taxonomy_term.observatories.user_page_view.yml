@@ -11,11 +11,11 @@ dependencies:
     - field.field.taxonomy_term.observatories.field_observatory_phone
     - field.field.taxonomy_term.observatories.field_observatory_rrss
     - field.field.taxonomy_term.observatories.field_observatory_website
-    - image.style.medium
+    - image.style.large
     - taxonomy.vocabulary.observatories
   module:
+    - image
     - link
-    - svg_image
     - text
 id: taxonomy_term.observatories.user_page_view
 targetEntityType: taxonomy_term
@@ -40,14 +40,9 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: medium
-      image_link: ''
-      svg_render_as_image: '1'
-      svg_attributes:
-        width: ''
-        height: ''
+      image_style: large
     third_party_settings: {  }
-    type: image
+    type: image_url
     region: content
   field_observatory_phone:
     weight: 3
@@ -71,9 +66,9 @@ content:
     region: content
   news_entity_view_2:
     weight: 10
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden:
   field_observatory_geolocation: true
   field_observatory_observacio: true

@@ -34,7 +34,7 @@
         }
         if($('#observation-form-wrapper')) {
             $('#askobervation').click(function() {
-                $('#observation-form-wrapper').show();
+                $('#observation-form-wrapper').slideToggle();
             });
         }
         /*
