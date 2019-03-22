@@ -1,5 +1,8 @@
 ( function ($, Drupal, drupalSettings) {
     $(document).ready(function() {
+
+      userBox();
+
         $('header .right .top .ico-menu').click(function() {
           $(this).toggleClass("active");
           $('body').toggleClass('no_scroll');
@@ -22,10 +25,13 @@
             $('#newobservatori').click(function() {
                 $('#forms-wrapper').show();
             });
+            $('#forms-wrapper .close').click(function() {
+                $('#forms-wrapper').hide();
+            });
         }
         if($('#observation-form-wrapper')) {
             $('#askobervation').click(function() {
-                $('#observation-form-wrapper').show();
+                $('#observation-form-wrapper').slideToggle();
             });
         }
         /*
@@ -44,6 +50,15 @@
 
 
     });
+
+    function userBox(){
+      if ($('.user_box span').length){
+        $('.user_box span').click(function(e){
+
+          $(this).next().slideToggle();
+        });
+      }
+    }
 
     /** PASWORD RESET BEHAVIOUR **/
     Drupal.behaviors.PasswordReset = {
