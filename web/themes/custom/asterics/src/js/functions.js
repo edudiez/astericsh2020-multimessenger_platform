@@ -22,6 +22,9 @@
             $('#newobservatori').click(function() {
                 $('#forms-wrapper').show();
             });
+            $('#forms-wrapper .close').click(function() {
+                $('#forms-wrapper').hide();
+            });
         }
         if($('#observation-form-wrapper')) {
             $('#askobervation').click(function() {
