@@ -18,7 +18,7 @@
 #}
 <article{{ attributes.addClass('profesional') }}>
     {% if content %}
-        <div id="forms-wrapper"></div>
+        <div id="forms-wrapper"><div class="close"></div>{{ observatory_form }}</div>
         <div class="user-header">
         <div class="container">
             {{ content.field_user_photo }}
