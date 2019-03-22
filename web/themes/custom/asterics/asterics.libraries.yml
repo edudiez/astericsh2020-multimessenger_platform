@@ -26,6 +26,12 @@ flexslider:
     src/js/libraries/jquery.flexslider.js : {}
   dependencies:
     - core/jquery
+share:
+  js:
+    https://static.addtoany.com/menu/page.js: {}
+  css:
+    theme:
+      src/css/share.css: {}
 aladin:
   css:
     theme:

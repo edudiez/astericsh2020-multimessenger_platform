@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.new.field_new_date_n
     - node.type.new
   module:
-    - datetime
+    - field_formatter
     - text
     - user
 id: node.new.default
@@ -20,31 +20,35 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
   field_event_category_n:
-    weight: 3
-    label: above
+    weight: 0
+    label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_new_date_n:
-    weight: 2
-    label: above
+  field_g_media:
+    type: field_formatter_with_inline_settings
+    weight: 1
+    region: content
+    label: hidden
     settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
-    region: content
-  links:
-    weight: 0
-    region: content
-    settings: {  }
+      field_name: field_media_image
+      label: hidden
+      type: image
+      settings:
+        image_style: cabecera
+        image_link: ''
+        svg_render_as_image: '1'
+        svg_attributes:
+          width: ''
+          height: ''
     third_party_settings: {  }
 hidden:
-  field_g_media: true
+  field_new_date_n: true
+  links: true

@@ -32,7 +32,8 @@ function asterics_preprocess_html(&$variables) {
     
     $current_path = \Drupal::service('path.current')->getPath();
     $path_args = explode('/', $current_path);
-    if(count($path_args) == 3 && $path_args[1] == 'user' && $path_args[2] == \Drupal::currentUser()->id()) {
+    //kint($path_args);
+    if(count($path_args) == 3 && $path_args[1] == 'user' && is_integer($path_args[2])) {
         $variables['attributes']['class'][] = 'user-page';
     }
     
@@ -65,6 +66,10 @@ function asterics_preprocess_user(&$variables) {
     if($ovid) {
         $my_observatory = views_embed_view('observatories_list_user_page','default',$ovid);
         $variables['my_observatory'] = $my_observatory;
+    } else {
+        $ovterm = \Drupal\taxonomy\Entity\Term::create(['vid' => 'example_vocabulary_machine_name']);
+        $form = \Drupal::service('entity.form_builder')->getForm($ovterm);
+        $variables['observatory_form'] = $form; // {{ event_form }} //
     }
     
     // OBSERVATIONS - DEMANADES - ASKED FOR PER A LA PAGINA USUARI PROFESSIONAL //
@@ -73,8 +78,8 @@ function asterics_preprocess_user(&$variables) {
     $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
     $count = reset($q);
     $variables['total_observations_askedto'] = $count;
-    $ovaskedfor = views_embed_view('observacions_demanades','askedto',$user->id());
-    $variables['observations_askedto'] = $ovaskedfor;
+    $ovaskedto = views_embed_view('observacions_demanades','askedto',$user->id());
+    $variables['observations_askedto'] = $ovaskedto;
     
     // OBSERVATIONS - DEMANADES - ASKED TO PER A LA PAGINA USUARI PROFESSIONAL //
     $view = Views::getView('observacions_demanades'); 
@@ -82,8 +87,8 @@ function asterics_preprocess_user(&$variables) {
     $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
     $count = reset($q);
     $variables['total_observations_askedfor'] = $count;
-    $ovaskedto = views_embed_view('observacions_demanades','askedfor',$user->id());
-    $variables['observations_askedfor'] = $ovaskedto;
+    $ovaskedfor = views_embed_view('observacions_demanades','askedfor',$user->id());
+    $variables['observations_askedfor'] = $ovaskedfor;
     
     // FORM PETICIO OBERVACIO PER A LA PAGINA USUARI PROFESSIONAL //
     $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('observacion');
