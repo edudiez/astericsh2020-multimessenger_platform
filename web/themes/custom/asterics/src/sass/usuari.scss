@@ -161,29 +161,21 @@
             }
         }
         #observatories {
-            > ul:nth-child(1) {
-                li {
-                    &.button {
-                        float:right;
-                        padding:0;
-                        button {
-                            border: 1px solid $blanc;
-                            outline: none;
-                            padding: 15px 30px;
-                            border-radius: 30px;
-                            background-color: #f2644c;
-                            color: white;
-                            text-transform: uppercase;
-                            display: inline-block;
-                            font-weight: 300;
-                            font-size:14px;
-                            margin-top: 4px;
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
-
+          > ul:nth-child(1) {
+              li {
+                  &.button {
+                      float:right;
+                      padding:0;
+                      button {
+                          background: url(../images/antena.svg) no-repeat 15px 0 transparent;
+                          padding: 15px 30px 15px 60px;
+                          &:hover {
+                              background-color:$azul_claro;
+                          }
+                      }
+                  }
+              }
+          }
         }
         #observations {
             > ul:nth-child(1) {
@@ -242,7 +234,7 @@
             opacity:0.8;
             transition:0.3s;
             &:hover {
-                opacity:1;    
+                opacity:1;
             }
         }
         .form-item {

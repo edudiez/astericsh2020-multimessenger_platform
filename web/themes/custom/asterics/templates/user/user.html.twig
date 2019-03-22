@@ -18,7 +18,7 @@
 #}
 <article{{ attributes.addClass('profesional') }}>
     {% if content %}
-        <div id="forms-wrapper"></div>
+        <div id="forms-wrapper"><div class="close"></div>{{ observatory_form }}</div>
         <div class="user-header">
         <div class="container">
             {{ content.field_user_photo }}
@@ -33,7 +33,7 @@
             <ul>
                 <li><a href="#observatories">Observatories</a></li>
                 <li><a href="#observations">Observations</a></li>
-                <li><a href="#newsevents">News & Events</a></li>        
+                <li><a href="#newsevents">News & Events</a></li>
             </ul>
             <div id="observatories">
                 <ul class="main-tabs-nav">
@@ -49,14 +49,14 @@
                 <div id="followers">{{ observatories_list }}</div>
                 {% if user.field_user_observatory.value %}
                     <div id="myobservatory">{{ my_observatory }}</div>
-                {% endif %}    
+                {% endif %}
             </div>
             <div id="observations">
                 <ul>
                     <li><a href="#demandades">Observations demanded ({{ total_observations_askedto }})</a></li>
                     <li><a href="#demanades">Observations that have asked for me ({{ total_observations_askedfor }})</a></li>
                     <li class="button">
-                        <button id="askobervation">Ask for a new observation</button>
+                        <button id="askobervation">Ask for a coordinated observation</button>
                         <div id="observation-form-wrapper">{{ observation_form }}</div>
                     </li>
                 </ul>
