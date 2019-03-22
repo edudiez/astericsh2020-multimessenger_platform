@@ -73,8 +73,8 @@ function asterics_preprocess_user(&$variables) {
     $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
     $count = reset($q);
     $variables['total_observations_askedto'] = $count;
-    $ovaskedfor = views_embed_view('observacions_demanades','askedto',$user->id());
-    $variables['observations_askedto'] = $ovaskedfor;
+    $ovaskedto = views_embed_view('observacions_demanades','askedto',$user->id());
+    $variables['observations_askedto'] = $ovaskedto;
     
     // OBSERVATIONS - DEMANADES - ASKED TO PER A LA PAGINA USUARI PROFESSIONAL //
     $view = Views::getView('observacions_demanades'); 
@@ -82,8 +82,8 @@ function asterics_preprocess_user(&$variables) {
     $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
     $count = reset($q);
     $variables['total_observations_askedfor'] = $count;
-    $ovaskedto = views_embed_view('observacions_demanades','askedfor',$user->id());
-    $variables['observations_askedfor'] = $ovaskedto;
+    $ovaskedfor = views_embed_view('observacions_demanades','askedfor',$user->id());
+    $variables['observations_askedfor'] = $ovaskedfor;
     
     // FORM PETICIO OBERVACIO PER A LA PAGINA USUARI PROFESSIONAL //
     $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('observacion');

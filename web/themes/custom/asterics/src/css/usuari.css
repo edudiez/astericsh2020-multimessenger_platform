@@ -50,10 +50,22 @@
 
 .profesional #usertabs #observatories > ul:nth-child(1) li.button { float: right; padding: 0; }
 
-.profesional #usertabs #observatories > ul:nth-child(1) li.button button { border: 1px solid #fff; outline: none; padding: 15px 30px; border-radius: 30px; background-color: #f2644c; color: white; text-transform: uppercase; display: inline-block; font-weight: 300; font-size: 14px; margin-top: 4px; cursor: pointer; }
+.profesional #usertabs #observatories > ul:nth-child(1) li.button button { background: url(../images/antena.svg) no-repeat 15px 0 transparent; padding: 15px 30px 15px 60px; }
+
+.profesional #usertabs #observatories > ul:nth-child(1) li.button button:hover { background-color: #53d6f9; }
 
 .profesional #usertabs #observatories > ul:nth-child(1) li a { width: 80px; }
 
-.profesional #usertabs #observations > ul:nth-child(1) li a { width: 300px; text-align: left; }
+.profesional #usertabs #observations > ul:nth-child(1) li.button { float: right; padding: 0; }
+
+.profesional #usertabs #observations > ul:nth-child(1) li.button button { background: url(../images/espiral.svg) no-repeat 15px 0 transparent; padding: 15px 30px 15px 60px; }
+
+.profesional #usertabs #observations > ul:nth-child(1) li.button button:hover { background-color: #53d6f9; }
+
+.profesional #usertabs #observations > ul:nth-child(1) li.button a { width: 300px; text-align: left; }
+
+.profesional #usertabs #newsevents > ul:nth-child(1) li.button a { background: url(../images/carpeta.svg) no-repeat 20px 5px transparent; padding: 15px 30px 15px 60px; background-size: 27px; }
+
+.profesional #usertabs #newsevents > ul:nth-child(1) li.button a:hover { background-color: #53d6f9; }
 
 /*# sourceMappingURL=maps/usuari.css.map */
