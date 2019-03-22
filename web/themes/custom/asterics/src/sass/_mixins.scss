@@ -123,6 +123,10 @@ $path: '';
     	c-0.57,0-1-1.48-1.65-4.07c-0.67-2.68-0.67-7.5-3.45-6.95C5.4,3.05,1.95,7.17,1.95,7.17z"/>
     </svg>
     ');
+  } @else if $type == 'user_profile' {
+    background-image: url('data:image/svg+xml;utf8,<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.54 38.54"><defs><style>.cls-1,.cls-2{fill:none;stroke:#{$color_parsed};}.cls-1{stroke-miterlimit:10;stroke-width:0.5px;}.cls-2{stroke-linecap:round;stroke-linejoin:round;}</style></defs><title>assets21</title><circle class="cls-1" cx="19.27" cy="19.27" r="17.5"/><path class="cls-2" d="M27.27,28.27v-2a4,4,0,0,0-4-4h-8a4,4,0,0,0-4,4v2"/><circle class="cls-2" cx="19.27" cy="14.27" r="4"/></svg>');
+  } @else if $type == 'user_notify' {
+    background-image: url('data:image/svg+xml;utf8,<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.54 38.54"><defs><style>.cls-1,.cls-2{fill:none;stroke:#{$color_parsed};}.cls-1{stroke-miterlimit:10;stroke-width:0.54px;}.cls-2{stroke-linecap:round;stroke-linejoin:round;stroke-width:0.98px;}</style></defs><title>assets21</title><circle class="cls-1" cx="19.27" cy="19.27" r="19"/><path class="cls-2" d="M29,24.16H9.5a2.93,2.93,0,0,0,2.93-2.93V16.34a6.84,6.84,0,0,1,13.68,0v4.89A2.93,2.93,0,0,0,29,24.16ZM21,28.07a2,2,0,0,1-2.67.71,2,2,0,0,1-.71-.71"/></svg>');
   }
 }
 
