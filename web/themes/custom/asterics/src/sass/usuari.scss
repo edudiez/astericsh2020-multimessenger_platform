@@ -159,11 +159,18 @@
                         float:right;
                         padding:0;
                         button {
-                            background: url(../images/antena.svg) no-repeat 15px 0 transparent;
-                            padding: 15px 30px 15px 60px;
-                            &:hover {
-                                background-color:$azul_claro;
-                            }
+                            border: 1px solid $blanc;
+                            outline: none;
+                            padding: 15px 30px;
+                            border-radius: 30px;
+                            background-color: #f2644c;
+                            color: white;
+                            text-transform: uppercase;
+                            display: inline-block;
+                            font-weight: 300;
+                            font-size:14px;
+                            margin-top: 4px;
+                            cursor: pointer;
                         }
                     }
                     a {
@@ -174,40 +181,7 @@
 
         }
         #observations {
-            > ul:nth-child(1) {
-                li {
-                    &.button {
-                        float:right;
-                        padding:0;
-                        button {
-                            background: url(../images/espiral.svg) no-repeat 15px 0 transparent;
-                            padding: 15px 30px 15px 60px;
-                            &:hover {
-                                background-color:$azul_claro;
-                            }
-                        }
-                    a {
-                        width:300px;text-align:left;
-                    }
-                    }
-                }
-            }
-        }
-        #newsevents {
-            > ul:nth-child(1) {
-                li {
-                    &.button {
-                        a {
-                            background: url(../images/carpeta.svg) no-repeat 20px 5px transparent;
-                            padding: 15px 30px 15px 60px;
-                            background-size: 27px;
-                            &:hover {
-                                background-color:$azul_claro;
-                            }
-                        }
-                    }
-                }
-            }
+            > ul:nth-child(1) {li {a {width:300px;text-align:left;}}}
         }
 
     }
