@@ -22,6 +22,8 @@
 }
 
 .profesional {
+    position: relative;
+    /* HEADER */
     .user-header {
         .container {
             display:flex;
@@ -59,6 +61,7 @@
             }
         }
     }
+    /* TABS */
     #usertabs {
         border:none;
         background:transparent;
@@ -181,6 +184,156 @@
                 }
             }
 
+        }
+        #observations {
+            > ul:nth-child(1) {
+                li {
+                    &.button {
+                        float:right;
+                        padding:0;
+                        button {
+                            background: url(../images/espiral.svg) no-repeat 15px 0 transparent;
+                            padding: 15px 30px 15px 60px;
+                            &:hover {
+                                background-color:$azul_claro;
+                            }
+                        }
+                        a {
+                            width:300px;text-align:left;
+                        }
+                    }
+                }
+            }
+        }
+        #newsevents {
+            > ul:nth-child(1) {
+                li {
+                    &.button {
+                        a {
+                            background: url(../images/carpeta.svg) no-repeat 20px 5px transparent;
+                            padding: 15px 30px 15px 60px;
+                            background-size: 27px;
+                            &:hover {
+                                background-color:$azul_claro;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* FORMS */
+    #forms-wrapper {
+        position: absolute;
+        top: -120px;
+        z-index: 99;
+        background: rgba(0,0,0,0.7);
+        width: 100%;
+        height: auto;
+        display:none;
+        padding:270px;
+        .close {
+            background: url(../images/tancar-blanc.svg) no-repeat 0 0 transparent;
+            width: 30px;
+            height: 30px;
+            float: right;
+            background-size: 30px;
+            cursor:pointer;
+            opacity:0.8;
+            transition:0.3s;
+            &:hover {
+                opacity:1;    
+            }
+        }
+        .form-item {
+            label {
+                font-size:20px;
+                color:$azul_claro;
+                padding-bottom:12px;
+                margin-bottom:12px;
+                border-bottom:1px solid $azul_claro;
+                display:block;
+            }
+        }
+        .field--name-field-observatory-fotografia {
+            margin-top:40px;
+            .js-form-type-managed-file {
+                .description {
+                    position:relative;
+                    bottom:100px;
+                    left:300px;
+                }
+                border-bottom:1px solid $azul_claro;
+                height: 284px;
+            }
+            .image-widget {
+                display:flex;
+                position:relative;
+                overflow:hidden;
+                input.form-file, input.button {
+                    margin-left:20px;
+                    display:block;
+                    width:auto;
+                    height:47px;
+                    padding: 10px 25px;
+                    border-radius: 20px;
+                    background-color: #f2644c;
+                    color: white;
+                    text-transform: uppercase;
+                    font-family: 'rob_l';
+                    cursor: pointer;
+                    left: 20px;
+                    position: relative;
+                }
+            }
+        }
+        .text-full, input[type="url"] {
+            border:1px solid $blanc;
+            background:transparent;
+            outline:none;
+            color:$blanc;
+            padding:30px;
+            font-size:24px;
+        }
+        .canvas-field-observatory-geolocation {
+            border:none;
+            padding: 6px 0 20px 0;
+            border-bottom:1px solid $azul_claro;
+            legend {
+                width:100%;
+                font-size:20px;
+                color:$azul_claro;
+                padding-bottom:12px;
+                margin-bottom:12px;
+                border-bottom:1px solid $azul_claro;
+                display:block;
+            }
+        }
+        .location {
+            color:#000;
+        }
+        .filter-wrapper {
+            display:none;
+        }
+        .tabledrag-toggle-weight-wrapper {
+            display:none;
+        }
+        table.field-multiple-table {
+            width:100%;
+            h4 {
+                font-size:20px;
+                color:$azul_claro;
+                padding-bottom:12px;
+                margin-bottom:12px;
+                border-bottom:1px solid $azul_claro;
+                display:block;
+                text-align: left;
+            }
+            select {
+                padding: 10px 30px;
+                background-color: $buttonlink;
+                color:$blanc;
+            }
         }
     }
 }
