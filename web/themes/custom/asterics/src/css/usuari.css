@@ -82,9 +82,7 @@
 
 .profesional #forms-wrapper .field--name-field-observatory-fotografia { margin-top: 40px; }
 
-.profesional #forms-wrapper .field--name-field-observatory-fotografia .js-form-type-managed-file { border-bottom: 1px solid #53d6f9; height: 284px; }
-
-.profesional #forms-wrapper .field--name-field-observatory-fotografia .js-form-type-managed-file .description { position: relative; bottom: 100px; left: 300px; }
+.profesional #forms-wrapper .field--name-field-observatory-fotografia .js-form-type-managed-file { border-bottom: 1px solid #53d6f9; height: 375px; }
 
 .profesional #forms-wrapper .field--name-field-observatory-fotografia .image-widget { display: -webkit-box; display: -ms-flexbox; display: flex; position: relative; overflow: hidden; }
 
@@ -107,5 +105,21 @@
 .profesional #forms-wrapper table.field-multiple-table h4 { font-size: 20px; color: #53d6f9; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid #53d6f9; display: block; text-align: left; }
 
 .profesional #forms-wrapper table.field-multiple-table select { padding: 10px 30px; background-color: #f2644c; color: #fff; }
+
+.profesional #newevent .text-full, .profesional #newevent input[type="url"], .profesional #newevent .form-date, .profesional #newevent .form-time { border: 1px solid #000; background: transparent; outline: none; color: #000; padding: 30px; font-size: 24px; }
+
+.profesional #newevent .filter-wrapper, .profesional #newevent .tabledrag-toggle-weight-wrapper { display: none; }
+
+.profesional #newevent table.field-multiple-table { width: 100%; }
+
+.profesional #newevent table.field-multiple-table thead { display: none; }
+
+.profesional #newevent table.field-multiple-table .field-multiple-drag { display: none; }
+
+.profesional #newevent table.field-multiple-table h4 { display: none; font-size: 20px; color: #53d6f9; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid #53d6f9; display: block; text-align: left; }
+
+.profesional #newevent table.field-multiple-table select { padding: 10px 30px; background-color: #f2644c; color: #fff; }
+
+.profesional #newevent .description { display: none; }
 
 /*# sourceMappingURL=maps/usuari.css.map */

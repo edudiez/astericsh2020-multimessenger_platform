@@ -250,13 +250,8 @@
         .field--name-field-observatory-fotografia {
             margin-top:40px;
             .js-form-type-managed-file {
-                .description {
-                    position:relative;
-                    bottom:100px;
-                    left:300px;
-                }
                 border-bottom:1px solid $azul_claro;
-                height: 284px;
+                height: 375px;
             }
             .image-widget {
                 display:flex;
@@ -327,5 +322,47 @@
                 color:$blanc;
             }
         }
+    }
+    #newevent {
+         .text-full, input[type="url"],.form-date,.form-time {
+            border:1px solid $negre;
+            background:transparent;
+            outline:none;
+            color:$negre;
+            padding:30px;
+            font-size:24px;
+        }
+        .filter-wrapper, .tabledrag-toggle-weight-wrapper {
+            display:none;
+        }
+        table.field-multiple-table {
+            width:100%;
+            thead {
+                display:none;
+            }
+            .field-multiple-drag {
+                display:none;
+            }
+            h4 {
+                display:none;
+                font-size:20px;
+                color:$azul_claro;
+                padding-bottom:12px;
+                margin-bottom:12px;
+                border-bottom:1px solid $azul_claro;
+                display:block;
+                text-align: left;
+            }
+            select {
+                padding: 10px 30px;
+                background-color: $buttonlink;
+                color:$blanc;
+            }
+
+        }
+        
+                    .description {
+                display:none;
+            }
     }
 }

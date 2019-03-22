@@ -86,18 +86,14 @@ function demoasterics_form_taxonomy_term_submit_handler(array $form, FormStateIn
 function demoasterics_form_node_event_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $current_user = \Drupal::currentUser();
     $roles = $current_user->getRoles(TRUE);
-   
     if(in_array('profesional',$roles)) {
-       
             $form['field_event_category_n']['#access'] = FALSE;
             $form['field_event_place_n']['#access'] = FALSE;
-
             foreach (array_keys($form['actions']) as $action) {
                 if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
                     $form['actions'][$action]['#submit'][] = 'demoasterics_form_node_event_submit_handler';
                 }
             }
-        
     }
 }
 
