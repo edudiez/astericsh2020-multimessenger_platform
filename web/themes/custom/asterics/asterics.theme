@@ -32,7 +32,6 @@ function asterics_preprocess_html(&$variables) {
     
     $current_path = \Drupal::service('path.current')->getPath();
     $path_args = explode('/', $current_path);
-    //kint($path_args);
     if(count($path_args) == 3 && $path_args[1] == 'user' && is_integer($path_args[2])) {
         $variables['attributes']['class'][] = 'user-page';
     }
@@ -67,9 +66,15 @@ function asterics_preprocess_user(&$variables) {
         $my_observatory = views_embed_view('observatories_list_user_page','default',$ovid);
         $variables['my_observatory'] = $my_observatory;
     } else {
-        $ovterm = \Drupal\taxonomy\Entity\Term::create(['vid' => 'example_vocabulary_machine_name']);
+        $ovterm = \Drupal\taxonomy\Entity\Term::create(array('vid' => 'observatories'));
         $form = \Drupal::service('entity.form_builder')->getForm($ovterm);
-        $variables['observatory_form'] = $form; // {{ event_form }} //
+        $form['title'] = array (
+          '#type' => 'item',
+          '#markup' =>'<div class="extrabold-40">New Observatory</div>',
+          '#weight' => -99
+        );
+        //dump($form);
+        $variables['observatory_form'] = $form; // {{ observatory_form }} //
     }
     
     // OBSERVATIONS - DEMANADES - ASKED FOR PER A LA PAGINA USUARI PROFESSIONAL //
