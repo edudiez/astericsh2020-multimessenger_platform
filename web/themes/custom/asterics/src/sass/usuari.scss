@@ -249,13 +249,8 @@
         .field--name-field-observatory-fotografia {
             margin-top:40px;
             .js-form-type-managed-file {
-                .description {
-                    position:relative;
-                    bottom:100px;
-                    left:300px;
-                }
                 border-bottom:1px solid $azul_claro;
-                height: 284px;
+                height: 375px;
             }
             .image-widget {
                 display:flex;
@@ -325,6 +320,16 @@
                 background-color: $buttonlink;
                 color:$blanc;
             }
+        }
+    }
+    #newevent {
+         .text-full, input[type="url"] {
+            border:1px solid $negre;
+            background:transparent;
+            outline:none;
+            color:$negre;
+            padding:30px;
+            font-size:24px;
         }
     }
 }

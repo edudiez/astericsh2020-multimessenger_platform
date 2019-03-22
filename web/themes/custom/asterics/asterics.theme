@@ -116,6 +116,14 @@ function asterics_preprocess_user(&$variables) {
     // FROM EVENT PER A LA PAGINA USUARI PROFESSIONAL //
     $node = \Drupal\node\Entity\Node::create(['type' => 'event']);
     $form = \Drupal::service('entity.form_builder')->getForm($node);
+    $form['#attributes']['class'][] = 'container';
+    $form['header'] = array (
+          '#type' => 'item',
+          '#markup' =>'<div class="extrabold-40">New Event</div>',
+          '#weight' => -99
+        );
+    $form['title']['widget']['#attributes']['placeholder'] = 'Title';
+    $form['title']['widget']['#title_display'] = 'invisible';
     $variables['event_form'] = $form; // {{ event_form }} //
        
 }
