@@ -198,6 +198,51 @@ body {
 		.view-content {width: 1200px; margin: 0 auto; max-width: 100%; padding: 0 10px;}
 		.views-row {border-bottom: 1px solid $azul_claro; padding: 60px 0;}
 	}
+	&.view_observacions-demanades {
+		.views-row {border-bottom: 1px solid $azul_claro; padding: 30px 0; display: flex;}
+		.views-label {color: $buttonlink; font-size: 16px; margin-bottom: 10px;}
+		.content, .label {display: inline-block; vertical-align: middle;}
+		.col {flex: 1 0 33%;}
+		.item {
+			width: 100%; display: inline-block; font-size: 20px; font-weight: 400;
+			&.inline {
+				width: auto; vertical-align: middle; margin-bottom: 5px;
+				& + .inline {padding-left: 15px;}
+			}
+		}
+		.title {font-size: 30px; font-weight: 700; color: $blaufons; margin-bottom: 8px;}
+		.data {font-size: 16px;}
+		.image {overflow: hidden; width: 30px; height: 30px; border-radius: 100%;}
+		.tax {
+			font-size: 16px; display: flex; align-items: flex-start; flex-direction: column;
+			.field-content {display: flex; align-items: center; flex: 1 0 80%;}
+		}
+		.views-field-nothing-1 {
+			display: flex; align-items: center;
+			.alerts {
+				display: inline-block; vertical-align: middle; font-size: 16px;
+				&:before {content: ''; display: inline-block; width: 33px; height: 33px; vertical-align: middle; @include getSocialIcon('user_notify', 'black'); margin-right: 15px;}
+			}
+			a {width: auto; padding: 5px 15px; border-radius: 20px; border: 1px solid $buttonlink; color: $buttonlink; font-family: 'rob_l'; display: inline-block; vertical-align: middle; font-size: 14px; margin-left: 30px;}
+		}
+	}
+	&.view_news.view_display_user_news_events {
+		.view-content {display: block; margin-top: 0;}
+		.views-row {border-bottom: 1px solid $azul_claro; padding: 30px 0; display: flex; width: 100%;}
+		.views-label {color: $buttonlink; font-size: 16px; margin-bottom: 20px;}
+		.col {flex: 1; padding: 10px;}
+		.title {
+			flex: 1.5;
+			.field-content {font-size: 30px; color: $blaufons; font-weight: 700;}
+		}
+		.last-edit, .created {font-size: 16px;}
+		.buttons {
+			padding-top: 40px;
+			a {width: auto; padding: 5px 15px; border-radius: 20px; border: 1px solid $buttonlink; color: $buttonlink; font-family: 'rob_l'; display: inline-block; vertical-align: middle; font-size: 14px;}
+			a:nth-child(1) {color: #333; border-color: #333;}
+			a:nth-child(2) {margin-left: 10px;}
+		}
+	}
 	.pager {
 		padding: 60px 10px;
 		ul {text-align: center;}
@@ -304,6 +349,10 @@ form {
 		> p {font-size: 14px; margin-bottom: 0; margin-top: -14px}
 		#edit-reset-password {font-size: 16px;}
 		#edit-actions {margin-top: 60px;}
+	}
+	&#user-register-form, &#user-form {
+		.js-form-type-managed-file,
+		.form-item-field-user-description-0-value {display: none}
 	}
 	&.webform-submission-add-form {
 		background-color: $gris_claro; color: white; padding: 20px; flex:1 0 25%; margin-top: 12px;text-align: left;

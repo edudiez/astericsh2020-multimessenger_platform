@@ -11,10 +11,12 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access devel information'
   - 'access kint'
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'create terms in media_tags'
+  - 'delete own webform submission'
   - 'delete terms in media_tags'
   - 'edit terms in media_tags'
   - 'post comments'
