@@ -157,7 +157,7 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .taxonomy.observatory.user_page_view .title h2 { font-size: 30px; font-weight: 700; color: #071c47; display: inline-block; vertical-align: middle; margin: 0; max-width: 580px; }
 
-.taxonomy.observatory.user_page_view .title span { display: inline-block; vertical-align: middle; font-size: 14px; border: 1px solid #f2644c; color: #f2644c; padding: 7px 20px; border-radius: 20px; text-transform: uppercase; font-family: 'rob_l'; margin-left: 20px; }
+.taxonomy.observatory.user_page_view .title span { display: inline-block; vertical-align: middle; font-size: 14px; border: 1px solid #f2644c; color: #f2644c; padding: 7px 20px; border-radius: 20px; text-transform: uppercase; font-family: 'rob_l'; margin-left: 20px; cursor: pointer; }
 
 .taxonomy.observatory.user_page_view .title span:nth-child(2) { margin-left: 30px; }
 

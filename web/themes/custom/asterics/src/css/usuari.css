@@ -4,7 +4,7 @@
 
 .user-page main { background-color: transparent; }
 
-.profesional { position: relative; /* HEADER */ /* TABS */ /* FORMS */ }
+.profesional { /* HEADER */ /* TABS */ /* FORMS */ }
 
 .profesional .user-header .container { display: -webkit-box; display: -ms-flexbox; display: flex; padding: 85px; }
 
@@ -72,27 +72,35 @@
 
 .profesional #usertabs #newsevents > ul:nth-child(1) li.button a:hover { background-color: #53d6f9; }
 
-.profesional #forms-wrapper { position: absolute; top: -120px; z-index: 99; background: rgba(0, 0, 0, 0.7); width: 100%; height: auto; display: none; padding: 270px; }
+.profesional #forms-wrapper { position: absolute; top: 0px; z-index: 99; background: rgba(0, 0, 0, 0.85); width: 100%; height: auto; display: none; }
 
-.profesional #forms-wrapper .close { background: url(../images/tancar-blanc.svg) no-repeat 0 0 transparent; width: 30px; height: 30px; float: right; background-size: 30px; cursor: pointer; opacity: 0.8; -webkit-transition: 0.3s; transition: 0.3s; }
+.profesional #forms-wrapper form { width: 800px; margin: 200px auto 0; }
+
+.profesional #forms-wrapper .field-multiple-drag { display: none !important; }
+
+.profesional #forms-wrapper .paragraph-type-title { display: none; }
+
+.profesional #forms-wrapper .description { font-size: 14px; }
+
+.profesional #forms-wrapper .close { background: url(../images/tancar-blanc.svg) no-repeat 0 0 transparent; width: 30px; height: 30px; position: absolute; top: 80px; right: 80px; background-size: 30px; cursor: pointer; opacity: 0.8; -webkit-transition: 0.3s; transition: 0.3s; }
 
 .profesional #forms-wrapper .close:hover { opacity: 1; }
 
 .profesional #forms-wrapper .form-item label { font-size: 20px; color: #53d6f9; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid #53d6f9; display: block; }
 
-.profesional #forms-wrapper .field--name-field-observatory-fotografia { margin-top: 40px; }
+.profesional #forms-wrapper .group-box { margin-top: 40px; }
 
-.profesional #forms-wrapper .field--name-field-observatory-fotografia .js-form-type-managed-file { border-bottom: 1px solid #53d6f9; height: 375px; }
+.profesional #forms-wrapper .group-box .js-form-type-managed-file .description { margin-top: 10px; display: inline-block; border: 1px solid white; padding: 10px; }
 
-.profesional #forms-wrapper .field--name-field-observatory-fotografia .image-widget { display: -webkit-box; display: -ms-flexbox; display: flex; position: relative; overflow: hidden; }
-
-.profesional #forms-wrapper .field--name-field-observatory-fotografia .image-widget input.form-file, .profesional #forms-wrapper .field--name-field-observatory-fotografia .image-widget input.button { margin-left: 20px; display: block; width: auto; height: 47px; padding: 10px 25px; border-radius: 20px; background-color: #f2644c; color: white; text-transform: uppercase; font-family: 'rob_l'; cursor: pointer; left: 20px; position: relative; }
+.profesional #forms-wrapper .group-box .image-widget input.form-file, .profesional #forms-wrapper .group-box .image-widget input.button { display: inline-block; vertical-align: middle; width: auto; padding: 10px 25px; border-radius: 20px; background-color: #f2644c; color: white; text-transform: uppercase; font-family: 'rob_l'; cursor: pointer; left: 20px; position: relative; }
 
 .profesional #forms-wrapper .text-full, .profesional #forms-wrapper input[type="url"] { border: 1px solid #fff; background: transparent; outline: none; color: #fff; padding: 30px; font-size: 24px; }
 
-.profesional #forms-wrapper .canvas-field-observatory-geolocation { border: none; padding: 6px 0 20px 0; border-bottom: 1px solid #53d6f9; }
+.profesional #forms-wrapper .text-full { padding: 12px 15px; font-size: 20px; }
 
-.profesional #forms-wrapper .canvas-field-observatory-geolocation legend { width: 100%; font-size: 20px; color: #53d6f9; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid #53d6f9; display: block; }
+.profesional #forms-wrapper .canvas-field-observatory-geolocation { border: none; padding: 6px 0 20px 0; }
+
+.profesional #forms-wrapper .canvas-field-observatory-geolocation legend { width: 100%; font-size: 20px; color: #53d6f9; padding-bottom: 12px; margin-bottom: 12px; display: block; border-bottom: 1px solid #53d6f9; }
 
 .profesional #forms-wrapper .location { color: #000; }
 
@@ -102,7 +110,7 @@
 
 .profesional #forms-wrapper table.field-multiple-table { width: 100%; }
 
-.profesional #forms-wrapper table.field-multiple-table h4 { font-size: 20px; color: #53d6f9; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid #53d6f9; display: block; text-align: left; }
+.profesional #forms-wrapper table.field-multiple-table h4 { font-size: 20px; color: #53d6f9; padding-bottom: 12px; margin-bottom: 12px; display: block; text-align: left; border-bottom: 1px solid #53d6f9; }
 
 .profesional #forms-wrapper table.field-multiple-table select { padding: 10px 30px; background-color: #f2644c; color: #fff; }
 
