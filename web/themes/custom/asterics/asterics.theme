@@ -4,6 +4,14 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\Role;
 use Drupal\views\Views;
 
+
+function asterics_user_login($account) {
+  // We want to redirect user on login.
+  $response = new RedirectResponse("db_member");
+  $response->send();
+  return;
+}
+
 /**
  * Implements hook_form_user_login_form_alter().
  */
@@ -180,7 +188,11 @@ function asterics_form_user_register_form_alter(&$form, FormStateInterface $form
       '#disabled' => TRUE,
     );
     $form['field_user_description']['#access'] = FALSE;
-    $form['field_user_photo']['#access'] = FALSE;
+
+    /*------------------------------------*
+      Se comenta por que al crear un usuario salta un error. Se oculta por css
+    ------------------------------------*/
+    // $form['field_user_photo']['#access'] = FALSE;
     /* FORM CLEAN */
     _asterics_user_form($form);
 

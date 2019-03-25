@@ -9,5 +9,8 @@ is_admin: null
 permissions:
   - 'create event content'
   - 'create terms in observatories'
+  - 'delete own event content'
+  - 'delete own new content'
   - 'edit own event content'
+  - 'edit own new content'
   - 'edit terms in observatories'
