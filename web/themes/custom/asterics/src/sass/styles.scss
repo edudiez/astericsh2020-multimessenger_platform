@@ -354,6 +354,12 @@ form {
 		.js-form-type-managed-file,
 		.form-item-field-user-description-0-value {display: none}
 	}
+	&#node-event-form {
+		width: 700px; max-width: 100%; margin: 0 auto; padding-top: 100px;
+		.js-form-item {
+			&:nth-child(1) {margin-bottom: 40px;}
+		}
+	}
 	&.webform-submission-add-form {
 		background-color: $gris_claro; color: white; padding: 20px; flex:1 0 25%; margin-top: 12px;text-align: left;
 		input,textarea {background-color: $gris_claro2; color: white; padding: 5px 10px; font-size: 15px;}

@@ -205,6 +205,7 @@
                             background: url(../images/carpeta.svg) no-repeat 20px 5px transparent;
                             padding: 15px 30px 15px 60px;
                             background-size: 27px;
+                            &:after {content: none !important;}
                             &:hover {
                                 background-color:$azul_claro;
                             }
@@ -329,9 +330,12 @@
             background:transparent;
             outline:none;
             color:$negre;
-            padding:30px;
-            font-size:24px;
+            padding:10px 15px;
+            font-size:20px;
         }
+        .field-edit-link {display: none;}
+        fieldset {border: 0; padding: 0;}
+        legend {display: none;}
         .filter-wrapper, .tabledrag-toggle-weight-wrapper {
             display:none;
         }
