@@ -148,6 +148,30 @@ body {
 				.js-form-type-datetime, .form-item-observatory {display: none !important;}
 			}
 		}
+		&.user_page_view {
+			font-size: 0;
+			p {font-size: 20px; line-height: normal; margin: 5px 0;}
+			.imatge {
+				width: 150px; height: 150px; margin: 0 50px; border-radius: 100%; display: inline-block; vertical-align: middle; overflow: hidden;
+				.background {width: 100%; height: 100%; background: transparent none no-repeat center / cover;}
+			}
+			.informacion {width: calc(100% - 300px); display: inline-block; vertical-align: middle; font-size: 20px;}
+			.title {
+				font-size: 0; margin-bottom: 30px;
+				h2 {font-size: 30px; font-weight: 700; color: $blaufons; display: inline-block; vertical-align: middle; margin: 0; max-width: 580px;}
+				span {
+					display: inline-block; vertical-align: middle; font-size: 14px; border: 1px solid $buttonlink; color: $buttonlink; padding: 7px 20px; border-radius: 20px; text-transform: uppercase; font-family: 'rob_l'; margin-left: 20px; cursor: pointer;
+					&:nth-child(2) {margin-left: 30px;}
+					&:nth-child(3) {color: #1d1d1b; border-color: #1d1d1b;}
+				}
+			}
+			.description {margin-bottom: 30px;}
+			.field_observatory_address,
+			.field_observatory_phone,
+			.field_observatory_website {font-size: 16px; font-weight: 400; margin-top: 13px}
+			.field_observatory_address p {font-size: 16px;}
+			.field_observatory_website a {color: $buttonlink;}
+		}
 	}
 }
 
@@ -169,6 +193,28 @@ body {
 		.view-footer {
 			.image {width: 1500px; max-width: 100%; margin: 0 auto;height: 494px; background: transparent url('../images/timeline.png') no-repeat center;}
 		}
+	}
+	&.view_observatories-list-user-page.view_display_default{
+		.view-content {width: 1200px; margin: 0 auto; max-width: 100%; padding: 0 10px;}
+		.views-row {border-bottom: 1px solid $azul_claro; padding: 60px 0;}
+	}
+	.pager {
+		padding: 60px 10px;
+		ul {text-align: center;}
+		li {
+			display: inline-block;vertical-align: middle; margin: 0 7px;
+			&.pager__item--last,
+			&.pager__item--next,
+			&.pager__item--first,
+			&.pager__item--previous {
+				margin: 0px;
+				a {border: 1px solid $buttonlink; border-radius: 100%; line-height: 5px; display: inline-block; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;}
+				span {color: $buttonlink;}
+			}
+			&.pager__item--next {margin-left: 10px;}
+			&.pager__item--previous {margin-right: 10px;}
+		}
+		a {font-weight: 400; font-size: 18px;}
 	}
 }
 
@@ -213,6 +259,7 @@ body {
     position:absolute;
     z-index:1;
     display:none;
+		width: 100%;
 }
 
 /* FORMS */
@@ -257,5 +304,12 @@ form {
 		> p {font-size: 14px; margin-bottom: 0; margin-top: -14px}
 		#edit-reset-password {font-size: 16px;}
 		#edit-actions {margin-top: 60px;}
+	}
+	&.webform-submission-add-form {
+		background-color: $gris_claro; color: white; padding: 20px; flex:1 0 25%; margin-top: 12px;text-align: left;
+		input,textarea {background-color: $gris_claro2; color: white; padding: 5px 10px; font-size: 15px;}
+		input[type="submit"] {background-color: $buttonlink; padding: 10px 25px;}
+		label {font-size: 15px;}
+		.js-form-type-datetime, .form-item-observatory {display: none !important;}
 	}
 }

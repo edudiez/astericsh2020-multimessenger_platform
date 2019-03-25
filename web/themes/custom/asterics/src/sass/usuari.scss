@@ -22,7 +22,7 @@
 }
 
 .profesional {
-    position: relative;
+    // position: relative;
     /* HEADER */
     .user-header {
         .container {
@@ -81,12 +81,12 @@
                 margin:0;
                 outline:none;
                 margin-right:18px;
-                padding:18px 28px;
+                margin-bottom: -1px;
                 a {
                     font-weight:600;
                     font-size:18px;
                     color:$blanc;
-                    padding:0;
+                    padding:18px 28px;
                 }
                 &:hover, &.ui-tabs-active {
                     background-color:$hovacttabs;
@@ -113,17 +113,21 @@
                     margin-right:18px;
                     padding:18px 28px;
                     text-align:center;
+                    white-space: normal;
                     a {
-                        font-weight:400;
-                        font-size:18px;
-                        color:$blanc;
-                        padding:0;
-                        text-align: center;
+                      font-weight:400;
+                      font-size:18px;
+                      color:$blanc;
+                      padding:0;
+                      text-align: center;
+                      position: relative;
+                      padding-bottom: 5px;
+                      &:after {content: ''; display: inline-block; width: 0; height: 2px; background-color: white; position: absolute; bottom: 0; left: 0; transition: .5s;}
                     }
                     &:hover, &.ui-tabs-active {
                         a {
-                            font-weight:600;
-                            border:none;
+                          border:none;
+                          &:after {width: 100%;}
                         }
                         background-color:$hovacttabs;
                         border-color:$hovacttabs;
@@ -131,6 +135,7 @@
                     &.button {
                         float:right;
                         padding:0;
+                        position: relative;
                         button, a {
                             border: 1px solid $blanc;
                             outline: none;
@@ -156,25 +161,21 @@
             }
         }
         #observatories {
-            > ul:nth-child(1) {
-                li {
-                    &.button {
-                        float:right;
-                        padding:0;
-                        button {
-                            background: url(../images/antena.svg) no-repeat 15px 0 transparent;
-                            padding: 15px 30px 15px 60px;
-                            &:hover {
-                                background-color:$azul_claro;
-                            }
-                        }
-                    }
-                    a {
-                        width:80px;
-                    }
-                }
-            }
-
+          > ul:nth-child(1) {
+              li {
+                  &.button {
+                      float:right;
+                      padding:0;
+                      button {
+                          background: url(../images/antena.svg) no-repeat 15px 0 transparent;
+                          padding: 15px 30px 15px 60px;
+                          &:hover {
+                              background-color:$azul_claro;
+                          }
+                      }
+                  }
+              }
+          }
         }
         #observations {
             > ul:nth-child(1) {
@@ -216,25 +217,30 @@
     /* FORMS */
     #forms-wrapper {
         position: absolute;
-        top: -120px;
+        top: 0px;
         z-index: 99;
-        background: rgba(0,0,0,0.7);
+        background: rgba(0,0,0,0.85);
         width: 100%;
         height: auto;
         display:none;
-        padding:270px;
+        form {width: 800px; margin: 200px auto 0;}
+        .field-multiple-drag {display: none !important;}
+        .paragraph-type-title {display: none;}
+        .description {font-size: 14px;}
         .close {
-            background: url(../images/tancar-blanc.svg) no-repeat 0 0 transparent;
-            width: 30px;
-            height: 30px;
-            float: right;
-            background-size: 30px;
-            cursor:pointer;
-            opacity:0.8;
-            transition:0.3s;
-            &:hover {
-                opacity:1;    
-            }
+          background: url(../images/tancar-blanc.svg) no-repeat 0 0 transparent;
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          top: 80px;
+          right: 80px;
+          background-size: 30px;
+          cursor:pointer;
+          opacity:0.8;
+          transition:0.3s;
+          &:hover {
+            opacity:1;
+          }
         }
         .form-item {
             label {
@@ -246,32 +252,27 @@
                 display:block;
             }
         }
-        .field--name-field-observatory-fotografia {
-            margin-top:40px;
-            .js-form-type-managed-file {
-                border-bottom:1px solid $azul_claro;
-                height: 375px;
+        .group-box {
+          margin-top:40px;
+          .js-form-type-managed-file {
+            .description {margin-top: 10px; display: inline-block; border: 1px solid white; padding: 10px;}
+          }
+          .image-widget {
+            input.form-file, input.button {
+              display:inline-block;
+              vertical-align: middle;
+              width:auto;
+              padding: 10px 25px;
+              border-radius: 20px;
+              background-color: #f2644c;
+              color: white;
+              text-transform: uppercase;
+              font-family: 'rob_l';
+              cursor: pointer;
+              left: 20px;
+              position: relative;
             }
-            .image-widget {
-                display:flex;
-                position:relative;
-                overflow:hidden;
-                input.form-file, input.button {
-                    margin-left:20px;
-                    display:block;
-                    width:auto;
-                    height:47px;
-                    padding: 10px 25px;
-                    border-radius: 20px;
-                    background-color: #f2644c;
-                    color: white;
-                    text-transform: uppercase;
-                    font-family: 'rob_l';
-                    cursor: pointer;
-                    left: 20px;
-                    position: relative;
-                }
-            }
+          }
         }
         .text-full, input[type="url"] {
             border:1px solid $blanc;
@@ -281,18 +282,18 @@
             padding:30px;
             font-size:24px;
         }
+        .text-full {padding: 12px 15px; font-size: 20px;}
         .canvas-field-observatory-geolocation {
             border:none;
             padding: 6px 0 20px 0;
-            border-bottom:1px solid $azul_claro;
             legend {
                 width:100%;
                 font-size:20px;
                 color:$azul_claro;
                 padding-bottom:12px;
                 margin-bottom:12px;
-                border-bottom:1px solid $azul_claro;
                 display:block;
+                border-bottom: 1px solid $azul_claro;
             }
         }
         .location {
@@ -311,9 +312,9 @@
                 color:$azul_claro;
                 padding-bottom:12px;
                 margin-bottom:12px;
-                border-bottom:1px solid $azul_claro;
                 display:block;
                 text-align: left;
+                border-bottom:1px solid $azul_claro;
             }
             select {
                 padding: 10px 30px;
@@ -365,4 +366,3 @@
         }
     }
 }
-

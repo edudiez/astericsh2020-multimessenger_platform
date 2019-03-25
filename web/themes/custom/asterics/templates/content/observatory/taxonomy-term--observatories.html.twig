@@ -26,7 +26,9 @@
 
 <div{{ attributes.addClass('taxonomy','observatory',view_mode) }}>
     {% if view_mode == 'user_page_view' %}
-        <div class="imatge">{{ content.field_observatory_fotografia }}</div>
+        <div class="imatge">
+          <div class="background" style="background-image: url({{ content.field_observatory_fotografia|field_value }})"></div>
+        </div>
         <div class="informacion">
             <div class="title"><h2>{{ name|field_value }}</h2><span class="unfollow">Unfollow</span><span class="followsyou">It follows you</span></div>
             {{ content.description }}
