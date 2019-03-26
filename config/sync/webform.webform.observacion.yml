@@ -122,8 +122,8 @@ settings:
 access:
   create:
     roles:
-      - administrator
-      - profesional
+      - anonymous
+      - authenticated
     users: {  }
     permissions: {  }
   view_any:
@@ -146,7 +146,8 @@ access:
     permissions: {  }
   view_own:
     roles:
-      - profesional
+      - anonymous
+      - authenticated
     users: {  }
     permissions: {  }
   update_own:
