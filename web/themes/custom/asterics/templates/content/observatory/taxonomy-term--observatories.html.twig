@@ -30,7 +30,14 @@
           <div class="background" style="background-image: url({{ content.field_observatory_fotografia|field_value }})"></div>
         </div>
         <div class="informacion">
-            <div class="title"><h2>{{ name|field_value }}</h2><span class="unfollow">Unfollow</span><span class="followsyou">It follows you</span></div>
+            <div class="title"><h2>{{ name|field_value }}</h2>
+              <div class="unfollow">
+                <span class="unfollow reverse" data-reverse="Follow">Unfollow</span>
+              </div>
+              <div>
+                <span class="followsyou" >It follows you</span>
+              </div>
+            </div>
             {{ content.description }}
             {{ content.field_observatory_address }}
             {{ content.field_observatory_phone }}
@@ -45,7 +52,7 @@
                   {{ title_suffix }}
                   {{ content.description }}
                   <div class="follow">
-                    <a href="#">Follow</a>
+                    <a href="#" class="reverse" data-reverse="Unfollow">Follow</a>
                   </div>
               </div>
               <div class="col">

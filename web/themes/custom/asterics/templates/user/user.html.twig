@@ -16,7 +16,7 @@
  * @see template_preprocess_user()
  */
 #}
-<article{{ attributes.addClass('profesional') }}>
+<article{{ attributes.addClass('profesional', view_mode) }}>
     {% if content %}
         <div id="forms-wrapper"><div class="close"></div>{{ observatory_form }}</div>
         <div class="user-header">
@@ -54,7 +54,7 @@
             <div id="observations">
                 <ul>
                     <li><a href="#demandades">Observations demanded ({{ total_observations_askedto }})</a></li>
-                    <li><a href="#demanades">Observations that have asked for me ({{ total_observations_askedfor }})</a></li>
+                    <li><a href="#demanades">Observations asked to me ({{ total_observations_askedfor }})</a></li>
                     <li class="button">
                         <button id="askobervation">Ask for a coordinated observation</button>
                         <div id="observation-form-wrapper">{{ observation_form }}</div>

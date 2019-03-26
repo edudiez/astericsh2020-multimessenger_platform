@@ -4,6 +4,14 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\Role;
 use Drupal\views\Views;
 
+
+function asterics_user_login($account) {
+  // We want to redirect user on login.
+  $response = new RedirectResponse("db_member");
+  $response->send();
+  return;
+}
+
 /**
  * Implements hook_form_user_login_form_alter().
  */
@@ -39,8 +47,23 @@ function asterics_preprocess_html(&$variables) {
 }
 
 function asterics_preprocess_page(&$variables) {
+  
   $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
   $variables['username'] = $user->getDisplayName() != 'Anonymous' ? $user->getDisplayName() : null;
+  
+  $current_user = \Drupal::currentUser();
+  $roles = $current_user->getRoles(TRUE);
+  //if(in_array('profesional',$roles)) {
+    $current_path = \Drupal::service('path.current')->getPath();
+    $path_args = explode('/', $current_path);
+    if(count($path_args) == 2 && $path_args[1] == 'obervatories-map') {
+          // FORM PETICIO OBERVACIO PER A LA PAGINA USUARI PROFESSIONAL //
+          $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('observacion');
+          $webform = $webform->getSubmissionForm();
+          $variables['observation_form'] = $webform;     
+    }
+  //}
+  
 }
 
 function asterics_preprocess_user(&$variables) {
@@ -91,8 +114,8 @@ function asterics_preprocess_user(&$variables) {
     $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
     $count = reset($q);
     $variables['total_observations_askedto'] = $count;
-    $ovaskedfor = views_embed_view('observacions_demanades','askedto',$user->id());
-    $variables['observations_askedto'] = $ovaskedfor;
+    $ovaskedto = views_embed_view('observacions_demanades','askedto',$user->id());
+    $variables['observations_askedto'] = $ovaskedto;
 
     // OBSERVATIONS - DEMANADES - ASKED TO PER A LA PAGINA USUARI PROFESSIONAL //
     $view = Views::getView('observacions_demanades');
@@ -100,8 +123,8 @@ function asterics_preprocess_user(&$variables) {
     $q = $view->query->query()->countQuery()->execute()->fetchAssoc();
     $count = reset($q);
     $variables['total_observations_askedfor'] = $count;
-    $ovaskedto = views_embed_view('observacions_demanades','askedfor',$user->id());
-    $variables['observations_askedfor'] = $ovaskedto;
+    $ovaskedfor = views_embed_view('observacions_demanades','askedfor',$user->id());
+    $variables['observations_askedfor'] = $ovaskedfor;
 
     // FORM PETICIO OBERVACIO PER A LA PAGINA USUARI PROFESSIONAL //
     $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('observacion');
@@ -118,7 +141,7 @@ function asterics_preprocess_user(&$variables) {
     $myevents = views_embed_view('news','user_news_events',$user->id());
     $variables['my_events'] = $myevents;
 
-    // FROM EVENT PER A LA PAGINA USUARI PROFESSIONAL //
+    // FORM EVENT PER A LA PAGINA USUARI PROFESSIONAL //
     $node = \Drupal\node\Entity\Node::create(['type' => 'event']);
     $form = \Drupal::service('entity.form_builder')->getForm($node);
     $form['#attributes']['class'][] = 'container';
@@ -127,8 +150,8 @@ function asterics_preprocess_user(&$variables) {
           '#markup' =>'<div class="extrabold-40">New Event</div>',
           '#weight' => -99
         );
-    $form['title']['widget']['#attributes']['placeholder'] = 'Title';
-    $form['title']['widget']['#title_display'] = 'invisible';
+    $form['title']['widget'][0]['value']['#attributes']['placeholder'] = 'Title';
+    $form['title']['widget'][0]['value']['#title_display'] = 'invisible';
     $variables['event_form'] = $form; // {{ event_form }} //
 }
 
@@ -180,7 +203,11 @@ function asterics_form_user_register_form_alter(&$form, FormStateInterface $form
       '#disabled' => TRUE,
     );
     $form['field_user_description']['#access'] = FALSE;
-    $form['field_user_photo']['#access'] = FALSE;
+
+    /*------------------------------------*
+      Se comenta por que al crear un usuario salta un error. Se oculta por css
+    ------------------------------------*/
+    // $form['field_user_photo']['#access'] = FALSE;
     /* FORM CLEAN */
     _asterics_user_form($form);
 
