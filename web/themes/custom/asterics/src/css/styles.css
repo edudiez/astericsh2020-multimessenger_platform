@@ -321,7 +321,15 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 .follow_message span { display: inline-block; background: transparent url("../images/tancar-blanc.svg") no-repeat center; position: absolute; top: 0; right: 0; width: 30px; height: 30px; cursor: pointer; }
 
 /* USER */
-#observation-form-wrapper { position: absolute; z-index: 1; display: none; width: 100%; }
+#observation-form-wrapper { position: absolute; z-index: 1; display: none; width: 100%; height: 100%; }
+
+#observation-form-wrapper.observation-map { /*position:static;*/ position: fixed; /*display:flex;*/ -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: rgba(0, 0, 0, 0.6); }
+
+#observation-form-wrapper .close { background: url(../images/tancar-blanc.svg) no-repeat 0 0 transparent; width: 30px; height: 30px; position: absolute; top: 80px; right: 80px; background-size: 30px; cursor: pointer; opacity: 0.8; -webkit-transition: 0.3s; transition: 0.3s; }
+
+#observation-form-wrapper .close:hover { opacity: 1; }
+
+#observation-form-wrapper form.webform-submission-add-form { margin: 0 auto; height: 350px; width: 350px; -webkit-box-flex: 25%; -ms-flex: 25% 0; flex: 25% 0; }
 
 /* FORMS */
 form .form-item { margin: 10px 0; width: 100%; display: inline-block; }
