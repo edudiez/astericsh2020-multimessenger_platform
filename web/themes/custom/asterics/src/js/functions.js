@@ -33,21 +33,15 @@
             $('#askobervation').click(function() {
                 $('#observation-form-wrapper').slideToggle();
             });
-        }
-        /*
-        if($('#myevents')) {
-            $('#newevent').click(function() {
-                $('#myevents').empty();
-                $('#myevents').append('<iframe></iframe>');
-                var frame = $($('#myevents').children('iframe'));
-                frame.attr('width','100%');
-                frame.attr('height','100%');
-                frame.attr('src','/node/add/event');
-                $('#myevents').show();
+            $('.observation-map .close').click(function () {
+                $('#observation-form-wrapper.observation-map').hide();
             });
         }
-        */
-
+        if($('.view_obervatories-map')) {
+            $('.askfor').click(function () {
+                $('#observation-form-wrapper.observation-map').css('display','flex');
+            });
+        }
 
     });
 

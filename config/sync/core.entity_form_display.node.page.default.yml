@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_home_paragraphs
     - node.type.page
   module:
+    - paragraphs
     - path
     - text
 _core:
@@ -30,6 +32,18 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_home_paragraphs:
+    weight: 121
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: aladin
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
   path:
     type: path
     weight: 30
@@ -76,7 +90,7 @@ content:
     third_party_settings: {  }
   url_redirects:
     weight: 50
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
 hidden: {  }
