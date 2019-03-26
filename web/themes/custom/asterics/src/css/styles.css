@@ -172,7 +172,7 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 .taxonomy.observatory.user_page_view .field_observatory_website a { color: #f2644c; }
 
 /* VISTAS */
-.view.view_obervatories-map.view_display_map .view-content { width: 1500px; max-width: 100%; margin: 0 auto; }
+.view.view_obervatories-map.view_display_map .view-content { width: 1200px; max-width: 100%; margin: 0 auto; }
 
 .view.view_obervatories-map.view_display_map .view-header { text-align: center; margin-bottom: 60px; }
 
@@ -188,7 +188,13 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .view.view_obervatories-map.view_display_map .view-header a:hover { background-color: #53d6f9; }
 
-.view.view_obervatories-map.view_display_map .view-footer .image { width: 1500px; max-width: 100%; margin: 0 auto; height: 494px; background: transparent url("../images/timeline.png") no-repeat center; }
+.view.view_obervatories-map.view_display_map .view-footer { width: 1200px; height: 395px; margin: 0 auto; max-width: 100%; }
+
+.view.view_obervatories-map.view_display_map .view-footer .image-before { float: left; width: 520px; max-width: 100%; height: 305px; background: transparent url("../images/timeline-before.jpg") no-repeat center; cursor: pointer; }
+
+.view.view_obervatories-map.view_display_map .view-footer .image-after { float: right; width: 680px; max-width: 100%; height: 305px; background: transparent url("../images/timeline-after.jpg") no-repeat center; cursor: pointer; }
+
+.view.view_obervatories-map.view_display_map .view-footer .image-footer { clear: both; width: 1200px; max-width: 100%; height: 90px; background: transparent url("../images/timeline-footer.jpg") no-repeat center; }
 
 .view.view_observatories-list-user-page.view_display_default .view-content { width: 1200px; margin: 0 auto; max-width: 100%; padding: 0 10px; }
 
@@ -329,7 +335,7 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 #observation-form-wrapper .close:hover { opacity: 1; }
 
-#observation-form-wrapper form.webform-submission-add-form { margin: 0 auto; height: 350px; width: 350px; -webkit-box-flex: 25%; -ms-flex: 25% 0; flex: 25% 0; }
+#observation-form-wrapper form.webform-submission-add-form { margin: 0 auto; height: 500px; width: 350px; -webkit-box-flex: 25%; -ms-flex: 25% 0; flex: 25% 0; }
 
 /* FORMS */
 form .form-item { margin: 10px 0; width: 100%; display: inline-block; }

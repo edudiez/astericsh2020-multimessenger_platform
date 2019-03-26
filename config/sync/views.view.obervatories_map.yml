@@ -421,7 +421,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: '<div class="image"></div>'
+            value: '<div class="image-before"></div><div class="image-after"></div><div class="image-footer"></div>'
             format: full_html
           plugin_id: text
       empty: {  }
