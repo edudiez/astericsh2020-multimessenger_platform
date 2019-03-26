@@ -218,7 +218,13 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .view.view_observacions-demanades .tax .field-content { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-flex: 1; -ms-flex: 1 0 80%; flex: 1 0 80%; }
 
-.view.view_observacions-demanades .views-field-nothing-1 { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+.view.view_observacions-demanades .views-field-nothing-1 .flexbox { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100%; }
+
+.view.view_observacions-demanades .views-field-nothing-1 .state { font-size: 16px; }
+
+.view.view_observacions-demanades .views-field-nothing-1 .state div { display: inline; }
+
+.view.view_observacions-demanades .views-field-nothing-1 .state + .flexbox { height: calc(100% - 30px); }
 
 .view.view_observacions-demanades .views-field-nothing-1 .alerts { display: inline-block; vertical-align: middle; font-size: 16px; }
 

@@ -218,7 +218,12 @@ body {
 			.field-content {display: flex; align-items: center; flex: 1 0 80%;}
 		}
 		.views-field-nothing-1 {
-			display: flex; align-items: center;
+			.flexbox {display: flex; align-items: center; height: 100%;}
+			.state {
+				font-size: 16px;
+				div {display: inline}
+				& + .flexbox {height: calc(100% - 30px);}
+			}
 			.alerts {
 				display: inline-block; vertical-align: middle; font-size: 16px;
 				&:before {content: ''; display: inline-block; width: 33px; height: 33px; vertical-align: middle; @include getSocialIcon('user_notify', 'black'); margin-right: 15px;}
