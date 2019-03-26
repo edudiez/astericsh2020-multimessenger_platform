@@ -8,6 +8,8 @@ main .paragraph--view-mode--home-superior .paragraph--type--text { text-align: l
 
 main .paragraph--view-mode--home-superior .paragraph--view-mode--news { clear: both; text-align: left; padding: 120px 0 45px 0; position: relative; }
 
+main .paragraph--view-mode--home-superior .paragraph--type--link { text-align: center; }
+
 main .paragraph--view-mode--home-inferior:before { background-image: url(../images/assets-02.svg); background-repeat: no-repeat; background-size: cover; background-position-x: right; content: ""; display: block; position: absolute; bottom: 130px; width: 50%; height: 100%; z-index: 1; }
 
 main .paragraph--view-mode--home-inferior { position: relative; background: #fff; color: #071c47; text-align: center; padding: 50px 0 10px 0; }

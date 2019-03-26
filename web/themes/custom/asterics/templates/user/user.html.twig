@@ -16,7 +16,7 @@
  * @see template_preprocess_user()
  */
 #}
-<article{{ attributes.addClass('profesional') }}>
+<article{{ attributes.addClass('profesional', view_mode) }}>
     {% if content %}
         <div id="forms-wrapper"><div class="close"></div>{{ observatory_form }}</div>
         <div class="user-header">

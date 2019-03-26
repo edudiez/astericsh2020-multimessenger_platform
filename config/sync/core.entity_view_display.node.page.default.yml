@@ -6,8 +6,28 @@ dependencies:
     - field.field.node.page.body
     - node.type.page
   module:
+    - field_group
     - text
     - user
+third_party_settings:
+  field_group:
+    group_container:
+      children:
+        - links
+        - body
+      parent_name: ''
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: container
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Container
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
 id: node.page.default
@@ -18,11 +38,13 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 100
+    weight: 102
     region: content
     settings: {  }
     third_party_settings: {  }
   links:
     weight: 101
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }
