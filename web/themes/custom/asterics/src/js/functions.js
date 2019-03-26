@@ -40,6 +40,7 @@
             });
         }
         if($('.view_obervatories-map')) {
+            console.log('la view');
             $('.askfor').click(function () {
                 $('#observation-form-wrapper.observation-map').css('display','flex');
             });
