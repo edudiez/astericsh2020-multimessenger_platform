@@ -43,6 +43,9 @@
  * @see html.html.twig
  */
 #}
+{% if observation_form %}
+<div id="observation-form-wrapper" class="observation-map"><div class="close"></div>{{ observation_form }}</div>
+{% endif %}
 <header role="banner">
     <div class="container">
         <div class="right">
