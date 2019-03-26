@@ -71,6 +71,21 @@ body {
     /*&:before {
         @include defaultBackground();
     }*/
+    .close {
+          background: url(../images/tancar-blanc.svg) no-repeat 0 0 transparent;
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          top: 80px;
+          right: 80px;
+          background-size: 30px;
+          cursor:pointer;
+          opacity:0.8;
+          transition:0.3s;
+          &:hover {
+            opacity:1;
+          }
+        }
 }
 .geolocation-common-map-locations {
   /*display:block !important;*/
