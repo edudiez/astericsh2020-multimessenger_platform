@@ -78,4 +78,22 @@ main article.teaser .teaser-wrapper .info .wrapper .date-item:last-child:after {
 
 .user-pass-reset input { display: none; }
 
+.view_news .views-exposed-form { display: -webkit-box; display: -ms-flexbox; display: flex; width: 1200px; margin: 0 auto; }
+
+.view_news .views-exposed-form .view-filters { padding-top: 60px; }
+
+.view_news .views-exposed-form .form-item label { display: none; }
+
+.view_news .views-exposed-form .form-item input, .view_news .views-exposed-form .form-item select { width: 90%; border-bottom: 1px solid #fff; color: #fff; background-color: #071c47; }
+
+.view_news .views-exposed-form .form-item input::-webkit-input-placeholder, .view_news .views-exposed-form .form-item select::-webkit-input-placeholder { color: #fff; opacity: 0.8; }
+
+.view_news .views-exposed-form .form-item input:-ms-input-placeholder, .view_news .views-exposed-form .form-item select:-ms-input-placeholder { color: #fff; opacity: 0.8; }
+
+.view_news .views-exposed-form .form-item input::-ms-input-placeholder, .view_news .views-exposed-form .form-item select::-ms-input-placeholder { color: #fff; opacity: 0.8; }
+
+.view_news .views-exposed-form .form-item input::placeholder, .view_news .views-exposed-form .form-item select::placeholder { color: #fff; opacity: 0.8; }
+
+.view_news .views-exposed-form input[type="submit"] { position: relative; bottom: 10px; }
+
 /*# sourceMappingURL=maps/main.css.map */
