@@ -47,10 +47,10 @@ function asterics_preprocess_html(&$variables) {
 }
 
 function asterics_preprocess_page(&$variables) {
-  
+
   $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
   $variables['username'] = $user->getDisplayName() != 'Anonymous' ? $user->getDisplayName() : null;
-  
+
   $current_user = \Drupal::currentUser();
   $roles = $current_user->getRoles(TRUE);
   //if(in_array('profesional',$roles)) {
@@ -60,10 +60,10 @@ function asterics_preprocess_page(&$variables) {
           // FORM PETICIO OBERVACIO PER A LA PAGINA USUARI PROFESSIONAL //
           $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('observacion');
           $webform = $webform->getSubmissionForm();
-          $variables['observation_form'] = $webform;     
+          $variables['observation_form'] = $webform;
     }
   //}
-  
+
 }
 
 function asterics_preprocess_user(&$variables) {

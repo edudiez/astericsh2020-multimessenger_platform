@@ -165,7 +165,6 @@ body {
 				background-color: $gris_claro; color: white; padding: 20px; flex:1 0 25%; margin-top: 80px;
 				input,textarea {background-color: $gris_claro2; color: white;}
 				input[type="submit"] {background-color: $buttonlink;}
-				.js-form-type-datetime, .form-item-observatory {display: none !important;}
 			}
 		}
 		&.user_page_view {
@@ -300,8 +299,8 @@ body {
 }
 
 /* CONTENT */
-.node{
-	&.new {
+.node {
+	&.new, &.event {
 		&.visualizacion-1 {
 			text-align: left;
 			.field_media_image {text-align: center;}
@@ -321,6 +320,11 @@ body {
 			.creation_date {font-size: 18px; font-weight: 300; margin-bottom: 40px;}
 			.share {margin-bottom: 60px;}
 			.body {display: inline-block; width: 100%; margin-top: 80px; color: black;}
+		}
+	}
+	&.event {
+		&.full {
+			.white_box:before {top: 0; height: 100%;}
 		}
 	}
 	&.page {

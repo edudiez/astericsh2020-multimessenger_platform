@@ -34,7 +34,7 @@ main article.teaser .teaser-wrapper .category { font-size: 16px; color: #f2644c;
 
 main article.teaser .teaser-wrapper .title { padding: 36px 0; font-weight: 900; font-size: 30px; }
 
-main article.teaser .teaser-wrapper .info { font-weight: 300; font-size: 18px; display: inline-block; }
+main article.teaser .teaser-wrapper .info { font-weight: 300; font-size: 18px; display: inline-block; width: 100%; }
 
 main article.teaser .teaser-wrapper .info .wrapper { display: inline; display: inline-block; }
 
