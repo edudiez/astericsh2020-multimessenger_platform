@@ -89,7 +89,7 @@ display:
           marker_clusterer_image_path: ''
           marker_clusterer_styles: ''
           google_map_settings:
-            height: 700px
+            height: 550px
             width: 100%
             type: ROADMAP
             zoom: '10'

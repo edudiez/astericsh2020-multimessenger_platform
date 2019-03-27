@@ -33,6 +33,8 @@ body .field-item { line-height: 2em; }
 
 body h1 { margin: 0; padding: 0 10px; }
 
+body #block-asterics-page-title h1 { display: inline-block; }
+
 body h2 { font-size: 1.8em; }
 
 body .contextual-region { position: relative; }
@@ -114,6 +116,8 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 .taxonomy.observatory.full .address .field_observatory_address { margin: 15px 0; }
 
 .taxonomy.observatory.full .views-element-container { -webkit-box-flex: 1; -ms-flex: 1 0 25%; flex: 1 0 25%; padding: 20px; background-color: #53d6f9; color: white; }
+
+.taxonomy.observatory.full .views-element-container:empty { display: none; }
 
 .taxonomy.observatory.full .views-element-container:nth-last-child(1) { background-color: #f2644c; margin-top: 60px; }
 
@@ -200,17 +204,19 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .view.view_observatories-list-user-page.view_display_default .views-row { border-bottom: 1px solid #53d6f9; padding: 60px 0; }
 
+.view.view_observacions-demanades { width: 1200px; max-width: 100%; margin: 0 auto; }
+
 .view.view_observacions-demanades .views-row { border-bottom: 1px solid #53d6f9; padding: 30px 0; display: -webkit-box; display: -ms-flexbox; display: flex; }
 
 .view.view_observacions-demanades .views-label { color: #f2644c; font-size: 16px; margin-bottom: 10px; }
 
 .view.view_observacions-demanades .content, .view.view_observacions-demanades .label { display: inline-block; vertical-align: middle; }
 
-.view.view_observacions-demanades .col { -webkit-box-flex: 1; -ms-flex: 1 0 33%; flex: 1 0 33%; }
+.view.view_observacions-demanades .col { -webkit-box-flex: 1; -ms-flex: 1 0 33%; flex: 1 0 33%; padding: 10px; }
 
 .view.view_observacions-demanades .item { width: 100%; display: inline-block; font-size: 20px; font-weight: 400; }
 
-.view.view_observacions-demanades .item.inline { width: auto; vertical-align: middle; margin-bottom: 5px; }
+.view.view_observacions-demanades .item.inline { width: auto; max-width: 46%; vertical-align: middle; margin-bottom: 5px; }
 
 .view.view_observacions-demanades .item.inline + .inline { padding-left: 15px; }
 
@@ -220,9 +226,11 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .view.view_observacions-demanades .image { overflow: hidden; width: 30px; height: 30px; border-radius: 100%; }
 
-.view.view_observacions-demanades .tax { font-size: 16px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+.view.view_observacions-demanades .tax, .view.view_observacions-demanades .state { font-size: 16px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; position: relative; -webkit-box-flex: 1; -ms-flex: 1 0 16.5%; flex: 1 0 16.5%; }
 
-.view.view_observacions-demanades .tax .field-content { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-flex: 1; -ms-flex: 1 0 80%; flex: 1 0 80%; }
+.view.view_observacions-demanades .tax .views-label, .view.view_observacions-demanades .state .views-label { position: absolute; top: 10px; left: 10px; }
+
+.view.view_observacions-demanades .tax .field-content, .view.view_observacions-demanades .state .field-content { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-flex: 1; -ms-flex: 1 0 auto; flex: 1 0 auto; }
 
 .view.view_observacions-demanades .views-field-nothing-1 .flexbox { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100%; }
 
@@ -237,6 +245,8 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 .view.view_observacions-demanades .views-field-nothing-1 .alerts:before { content: ''; display: inline-block; width: 33px; height: 33px; vertical-align: middle; background-image: url('data:image/svg+xml;utf8,<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.54 38.54"><defs><style>.cls-1,.cls-2{fill:none;stroke:black;}.cls-1{stroke-miterlimit:10;stroke-width:0.54px;}.cls-2{stroke-linecap:round;stroke-linejoin:round;stroke-width:0.98px;}</style></defs><title>assets21</title><circle class="cls-1" cx="19.27" cy="19.27" r="19"/><path class="cls-2" d="M29,24.16H9.5a2.93,2.93,0,0,0,2.93-2.93V16.34a6.84,6.84,0,0,1,13.68,0v4.89A2.93,2.93,0,0,0,29,24.16ZM21,28.07a2,2,0,0,1-2.67.71,2,2,0,0,1-.71-.71"/></svg>'); margin-right: 15px; }
 
 .view.view_observacions-demanades .views-field-nothing-1 a { width: auto; padding: 5px 15px; border-radius: 20px; border: 1px solid #f2644c; color: #f2644c; font-family: 'rob_l'; display: inline-block; vertical-align: middle; font-size: 14px; margin-left: 30px; }
+
+.view.view_observacions-demanades .views-field-nothing-1 a.schedule { border-color: #333; color: #333; margin-left: 10px; }
 
 .view.view_news.view_display_user_news_events .view-content { display: block; margin-top: 0; }
 

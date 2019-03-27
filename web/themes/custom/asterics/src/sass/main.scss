@@ -180,31 +180,18 @@ main {
     input {display:none;}
 }
 .view_news {
-    .views-exposed-form {
-        display: flex;
-        width: 1200px;
-        margin: 0 auto;
-        .view-filters {
-            padding-top:60px;
-        }
-        .form-item {
-            label {
-                display:none;
-            }
-            input, select {
-                width:90%;
-                border-bottom:1px solid $blanc;
-                color:$blanc;
-                background-color:$blaufons;
-                &::placeholder {
-                    color:$blanc;
-                    opacity:0.8;
-                }
-            }
-        }
-         input[type="submit"] {
-                position:relative;
-                bottom:10px;
-            }
+  .view-filters {padding-top:60px;}
+  .views-exposed-form {
+    display: flex; width: 1000px; margin: 0 auto;
+    .form-item {
+      label {display:none;}
+      input, select {
+        width:90%; border: 0; border-radius: 0;border-bottom:1px solid $blanc; color:$blanc; background-color:$blaufons; padding: 10px; font-size: 20px; line-height: normal; outline: none;
+        &::placeholder {color:$blanc; opacity:0.8; font-size: 20px; line-height: normal;}
+      }
+      select {appearance: none; font-size: 20px; line-height: normal;}
     }
+    input[type="submit"] {display: none;}
+    #edit-title {background: transparent url('../images/lupa-01.svg') no-repeat right center / 20px;}
+  }
 }

@@ -1069,6 +1069,55 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: term_name
+        nothing_2:
+          id: nothing_2
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: State
+          exclude: false
+          alter:
+            alter_text: true
+            text: Approved
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: ''
+          element_label_type: div
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: div
+          element_wrapper_class: 'col state'
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
         nothing_1:
           id: nothing_1
           table: views
@@ -1080,7 +1129,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"state\">\r\n<div class=\"label\">State: </div>\r\n<div class=\"ok\">Approved</div>\r\n</div>\r\n<div class=\"flexbox\">\r\n<div class=\"alerts\">Alerts(2)</div>\r\n<a class=\"delete\" href=\"/db_backend/structure/webform/manage/observacion/submission/{{ sid }}/delete?destination=/db_member/{{ uid }}\">Delete</a>\r\n</div>"
+            text: "<div class=\"flexbox\">\r\n<div class=\"alerts\">Alerts(2)</div>\r\n<a class=\"delete\" href=\"/db_backend/structure/webform/manage/observacion/submission/{{ sid }}/delete?destination=/db_member/{{ uid }}\">Delete</a>\r\n<a class=\"schedule\" href=\"#\">Schedule</a>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1615,6 +1664,55 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: term_name
+        nothing_2:
+          id: nothing_2
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: State
+          exclude: false
+          alter:
+            alter_text: true
+            text: Pending
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: ''
+          element_label_type: div
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: div
+          element_wrapper_class: 'col state'
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
         nothing_1:
           id: nothing_1
           table: views
