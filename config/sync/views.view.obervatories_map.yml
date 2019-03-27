@@ -89,7 +89,7 @@ display:
           marker_clusterer_image_path: ''
           marker_clusterer_styles: ''
           google_map_settings:
-            height: 700px
+            height: 550px
             width: 100%
             type: ROADMAP
             zoom: '10'
@@ -421,7 +421,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: '<div class="image"></div>'
+            value: '<div class="image-before"></div><div class="image-after"></div><div class="image-footer"></div>'
             format: full_html
           plugin_id: text
       empty: {  }

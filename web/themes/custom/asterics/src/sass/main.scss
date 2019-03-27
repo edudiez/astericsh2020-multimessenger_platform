@@ -67,9 +67,9 @@ main {
     }
     .paragraph--type--aladin {
         padding:50px 0;
-            #aladin-lite-div {
-                margin:0 auto;
-            }
+        #aladin-lite-div {
+            margin:0 auto;
+        }
     }
     // VISTA NEWS & EVENTS //
     .views-element-container {
@@ -108,7 +108,7 @@ main {
             .info {
                 font-weight:300;
                 font-size:18px;
-                display:inline-block;
+                display:inline-block; width: 100%;
                 .wrapper {
                     display:inline;
                     display:inline-block;
@@ -134,29 +134,29 @@ main {
 
 /* RRSS LINKS */
 .paragraph--type--rrss-link-item {
-  display: inline-block; margin: 0 0 0 10px;
-  .link {
-    display: inline-block;
-    a {display: inline-block; width: 30px; height: 30px; overflow: hidden; text-indent: -999px; background: transparent none no-repeat center / cover; transition: none;}
-    &.facebook a {
-      width: 15px;
-      @include getSocialIcon('facebook', 'white');
-      &:hover {@include getSocialIcon('facebook', $buttonlink);}
+    display: inline-block; margin: 0 0 0 10px;
+    .link {
+        display: inline-block;
+        a {display: inline-block; width: 30px; height: 30px; overflow: hidden; text-indent: -999px; background: transparent none no-repeat center / cover; transition: none;}
+        &.facebook a {
+            width: 15px;
+            @include getSocialIcon('facebook', 'white');
+            &:hover {@include getSocialIcon('facebook', $buttonlink);}
+        }
+        &.youtube a {
+            width: 32px;
+            @include getSocialIcon('youtube', 'white');
+            &:hover {@include getSocialIcon('youtube', $buttonlink);}
+        }
+        &.instagram a {
+            @include getSocialIcon('instagram', 'white');
+            &:hover {@include getSocialIcon('instagram', $buttonlink);}
+        }
+        &.twitter a {
+            @include getSocialIcon('twitter', 'white');
+            &:hover {@include getSocialIcon('twitter', $buttonlink);}
+        }
     }
-    &.youtube a {
-      width: 32px;
-      @include getSocialIcon('youtube', 'white');
-      &:hover {@include getSocialIcon('youtube', $buttonlink);}
-    }
-    &.instagram a {
-      @include getSocialIcon('instagram', 'white');
-      &:hover {@include getSocialIcon('instagram', $buttonlink);}
-    }
-    &.twitter a {
-      @include getSocialIcon('twitter', 'white');
-      &:hover {@include getSocialIcon('twitter', $buttonlink);}
-    }
-  }
 }
 
 /** FORMS **/
@@ -178,4 +178,20 @@ main {
         margin:0 auto;
     }
     input {display:none;}
+}
+.view_news {
+  .view-filters {padding-top:60px;}
+  .views-exposed-form {
+    display: flex; width: 1000px; margin: 0 auto;
+    .form-item {
+      label {display:none;}
+      input, select {
+        width:90%; border: 0; border-radius: 0;border-bottom:1px solid $blanc; color:$blanc; background-color:$blaufons; padding: 10px; font-size: 20px; line-height: normal; outline: none;
+        &::placeholder {color:$blanc; opacity:0.8; font-size: 20px; line-height: normal;}
+      }
+      select {appearance: none; font-size: 20px; line-height: normal;}
+    }
+    input[type="submit"] {display: none;}
+    #edit-title {background: transparent url('../images/lupa-01.svg') no-repeat right center / 20px;}
+  }
 }

@@ -70,20 +70,37 @@
  *   in different view modes.
  */
 #}
-<article{{ attributes.addClass('teaser') }}>
-  <div{{ content_attributes.addClass('teaser-wrapper') }}>
-      <div class="category">{{ content.field_event_category_n }}</div>
-      <a href="{{url}}">
-        <div class="title">{{ label }}</div>
-        {% if content.field_event_date_n|field_value %}
-          <div class="info"><label>Date</label>&nbsp;(<div class="wrapper">{{ content.field_event_date_n }}</div>)</div>
-        {% endif %}
-        {% if content.field_event_schedule_n|field_value %}
-          <div class="info"><label>Hours</label>&nbsp;(<div class="wrapper">{{ content.field_event_schedule_n }}</div>)</div>
-        {% endif %}
-        {% if content.field_event_place_n|field_value %}
-          <div class="info"><label>Place</label>&nbsp;(<div class="wrapper">{{ content.field_event_place_n }}</div>)</div>
-        {% endif %}
-      </a>
+<article{{ attributes.addClass('node',node.bundle|clean_class,view_mode|clean_class) }}>
+
+  <div{{ content_attributes }}>
+
+    <div class="container">
+      {{ content.field_event_category_n }}
+
+      {{ title_prefix }}
+        <h1>{{ label }}</h1>
+      {{ title_suffix }}
+
+      <div class="creation_date">{{ node.created.value|date('F d, Y') }}</div>
+
+      <div class="share">
+        <p> Share </p>
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+          <a class="a2a_button_whatsapp"></a>
+          <a class="a2a_button_facebook"></a>
+          <a class="a2a_button_twitter"></a>
+          <a class="a2a_button_linkedin"></a>
+        </div>
+        {{ attach_library('asterics/share') }}
+      </div>
+    </div>
+
+    <div class="white_box">
+      <div class="container">
+        {{ content.field_g_media }}
+        {{ content|without('field_event_category_n','field_g_media') }}
+      </div>
+    </div>
   </div>
+
 </article>

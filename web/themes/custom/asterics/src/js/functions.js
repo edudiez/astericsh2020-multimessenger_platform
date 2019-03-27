@@ -40,7 +40,12 @@
             });
         }
         if($('.view_obervatories-map')) {
-            console.log('la view');
+            $('.image-before').click(function() {
+                window.location.href ='/celestial-map';
+            });
+            $('.image-after').click(function () {
+                $('#observation-form-wrapper.observation-map').css('display','flex');
+            });
             $('.askfor').click(function () {
                 $('#observation-form-wrapper.observation-map').css('display','flex');
             });

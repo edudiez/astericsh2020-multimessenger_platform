@@ -28,6 +28,14 @@ header[role="banner"] .user_box .user_notify ul { width: 100%; }
 
 header[role="banner"] .user_box .user_notify li { padding: 20px 10px 20px 0; margin-bottom: 0px; border-bottom: 1px solid white; font-size: 0; }
 
+header[role="banner"] .user_box .user_notify li.observatory { background-color: #f2644c; }
+
+header[role="banner"] .user_box .user_notify li.new { background-color: #53d6f9; }
+
+header[role="banner"] .user_box .user_notify li:nth-child(1) { border-radius: 13px 13px 0 0; }
+
+header[role="banner"] .user_box .user_notify li:nth-last-child(1) { /*border-radius: 0 0 13px 13px;*/ border-bottom: 0; }
+
 header[role="banner"] .user_box .user_notify .box { display: inline-block; vertical-align: middle; width: calc(100% - 90px); text-align: left; }
 
 header[role="banner"] .user_box .user_notify .image { width: 90px; text-align: left; padding: 0 0 0 10px; display: inline-block; vertical-align: middle; }
