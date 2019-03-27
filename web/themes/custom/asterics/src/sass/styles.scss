@@ -325,6 +325,7 @@ body {
 	&.event {
 		&.full {
 			.white_box:before {top: 0; height: 100%;}
+			.date-item {color: black;}
 		}
 	}
 	&.page {

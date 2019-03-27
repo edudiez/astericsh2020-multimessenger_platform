@@ -321,6 +321,8 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .node.event.full .white_box:before { top: 0; height: 100%; }
 
+.node.event.full .date-item { color: black; }
+
 .node.page.full .container { padding: 0 10px; }
 
 .node.page.full .body { display: inline-block; width: 100%; margin-top: 60px; }

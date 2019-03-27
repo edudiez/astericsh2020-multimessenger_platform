@@ -46,7 +46,7 @@ content:
     third_party_settings: {  }
   field_home_paragraphs:
     weight: 102
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''

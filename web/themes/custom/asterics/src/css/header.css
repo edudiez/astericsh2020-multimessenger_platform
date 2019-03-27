@@ -98,7 +98,7 @@ header[role="banner"] .right .top .ico-menu.active span:nth-child(1), header[rol
 
 header[role="banner"] .right .top .ico-menu.active span:nth-child(3) { -webkit-transform: translateY(9px) rotate(-45deg); transform: translateY(9px) rotate(-45deg); }
 
-header[role="banner"] #main-menu { display: none; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; padding-bottom: 100px; position: absolute; width: 100%; height: calc(100vh - 100px); top: 100px; /* padding-top: 46px; */ background-color: #071c47; z-index: 9; }
+header[role="banner"] #main-menu { display: none; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; padding-bottom: 100px; position: absolute; width: 100%; height: calc(100vh - 100px); top: 100px; /* padding-top: 46px; */ background-color: #071c47; z-index: 99; }
 
 body.toolbar-fixed header[role="banner"] #main-menu { top: 200px; }
 
