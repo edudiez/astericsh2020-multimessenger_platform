@@ -394,6 +394,53 @@ display:
           entity_type: taxonomy_term
           entity_field: vid
           plugin_id: bundle
+        tid_raw:
+          id: tid_raw
+          table: taxonomy_term_field_data
+          field: tid_raw
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: tid_raw_op
+            label: 'Term ID'
+            description: ''
+            use_operator: false
+            operator: tid_raw_op
+            identifier: observatory
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              profesional: '0'
+              amateur: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: taxonomy_term
+          plugin_id: numeric
       sorts: {  }
       title: ''
       header:
@@ -407,7 +454,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<h4>Map title lorem ipsum dolor set</h4>\r\n<h1>All observations over lorem ipsum</h1>\r\n<a href=\"#\">OBSERVATION SEARCH</a>\r\n<a href=\"#\" class=\"askfor\">ASK FOR A COORINATED OBSERVATION</a>"
+            value: "<h4>Map title lorem ipsum dolor set</h4>\r\n<h1>All observations over lorem ipsum</h1>\r\n<a href=\"#\" class=\"searchfor\">OBSERVATION SEARCH</a>\r\n<a href=\"#\" class=\"askfor\">ASK FOR A COORINATED OBSERVATION</a>"
             format: full_html
           plugin_id: text
       footer:
@@ -433,6 +480,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_observatory_address'
@@ -450,6 +498,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - user.permissions
       tags:
         - 'config:field.storage.taxonomy_term.field_observatory_address'

@@ -2,7 +2,7 @@ google_map_api_key: AIzaSyC4PrJR06jvQo5NZkUnSl2_PfJFdXnBdGk
 google_map_custom_url_parameters:
   libraries: {  }
   region: ''
-  language: ''
+  language: en
   v: ''
   client: ''
   channel: ''
