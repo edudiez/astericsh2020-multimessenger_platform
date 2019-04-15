@@ -2,59 +2,62 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 //* ASIGNACIO DIRECTA DE ROLE PROFESIONAL *//
 function demoasterics_user_presave(EntityInterface $entity) {
-    if($entity->isNew()) {
-      $entity->addRole('profesional');
+    if ($entity->isNew()) {
+        $entity->addRole('profesional');
     }
 }
 
 function demoasterics_link_alter(&$item) {
     /**
-   * The URL of the link.
-   *
-   * @var Url
-   */
-  $url = $item['url'];
+     * The URL of the link.
+     *
+     * @var Url
+     */
+    $url = $item['url'];
 
-  // Return early where possible.
-  if ($url->isExternal()) {
-    return;
-  } else {
-    $current_user = \Drupal::currentUser();
-    $roles = $current_user->getRoles(TRUE);
-    if(in_array('profesional',$roles)) {
-        switch($item['text']) {
-            case 'Create Observatory': // AIXO ES MOLT CHUNGU HA DIT EL JOSE
-                $user = user_load($current_user->id());
-                if($user->get('field_user_observatory')->get(0)) {
-                  $item['options']['attributes']['class'][] = 'disabled';
-                } else {
-                    $item['options']['attributes']['class'][] = 'highlighted';
-                }
-                break;
-            case 'Events': // AIXO ES MOLT CHUNGU HA DIT EL JOSE
-                $user = user_load($current_user->id());
-                if(!$user->get('field_user_observatory')->get(0)) {
-                  $item['options']['attributes']['class'][] = 'disabled';
-                }
-                break;
-        }
-    } else {
+    // Return early where possible.
+    if ($url->isExternal()) {
         return;
     }
-  }
-    
+    else {
+        $current_user = \Drupal::currentUser();
+        $roles = $current_user->getRoles(TRUE);
+        if (in_array('profesional', $roles)) {
+            switch ($item['text']) {
+                case 'Create Observatory': // AIXO ES MOLT CHUNGU HA DIT EL JOSE
+                    $user = user_load($current_user->id());
+                    if ($user->get('field_user_observatory')->get(0)) {
+                        $item['options']['attributes']['class'][] = 'disabled';
+                    }
+                    else {
+                        $item['options']['attributes']['class'][] = 'highlighted';
+                    }
+                    break;
+                case 'Events': // AIXO ES MOLT CHUNGU HA DIT EL JOSE
+                    $user = user_load($current_user->id());
+                    if (!$user->get('field_user_observatory')->get(0)) {
+                        $item['options']['attributes']['class'][] = 'disabled';
+                    }
+                    break;
+            }
+        }
+        else {
+            return;
+        }
+    }
 }
 
 //************************* CREACIO DE OBSERVATORI PER USUARI PROFESSIONAL ********************************************//
 function demoasterics_form_taxonomy_term_observatories_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $current_user = \Drupal::currentUser();
-    $roles = $current_user->getRoles(TRUE); 
-        
-    if(in_array('profesional',$roles)) {
-        
+    $roles = $current_user->getRoles(TRUE);
+
+    if (in_array('profesional', $roles)) {
+
         $form['relations']['#access'] = FALSE;
         $form['field_observatory_observacio']['#access'] = FALSE;
 
@@ -63,42 +66,41 @@ function demoasterics_form_taxonomy_term_observatories_form_alter(&$form, FormSt
                 $form['actions'][$action]['#submit'][] = 'demoasterics_form_taxonomy_term_submit_handler';
             }
         }
-  
     }
 }
 
 function demoasterics_form_taxonomy_term_submit_handler(array $form, FormStateInterface $form_state) {
-    
+
     // Create a new user
     $values = $form_state->getValues();
 
     // Load the current user.
     $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-    $user->set('field_user_observatory',$values['tid']);
+    $user->set('field_user_observatory', $values['tid']);
     $user->save();
-    
+
     $url = \Drupal\Core\Url::fromRoute('entity.user.canonical', ['user' => $user->id()]);
     return $form_state->setRedirectUrl($url);
 }
-//************************* CREACIO DE OBSERVATORI PER USUARI PROFESSIONAL ********************************************//
 
+//************************* CREACIO DE OBSERVATORI PER USUARI PROFESSIONAL ********************************************//
 //************************* CREACIO DE EVENT PER USUARI PROFESSIONAL ********************************************//
 function demoasterics_form_node_event_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $current_user = \Drupal::currentUser();
     $roles = $current_user->getRoles(TRUE);
-    if(in_array('profesional',$roles)) {
-            $form['field_event_category_n']['#access'] = FALSE;
-            $form['field_event_place_n']['#access'] = FALSE;
-            foreach (array_keys($form['actions']) as $action) {
-                if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
-                    $form['actions'][$action]['#submit'][] = 'demoasterics_form_node_event_submit_handler';
-                }
+    if (in_array('profesional', $roles)) {
+        $form['field_event_category_n']['#access'] = FALSE;
+        $form['field_event_place_n']['#access'] = FALSE;
+        foreach (array_keys($form['actions']) as $action) {
+            if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+                $form['actions'][$action]['#submit'][] = 'demoasterics_form_node_event_submit_handler';
             }
+        }
     }
 }
 
 function demoasterics_form_node_event_submit_handler(array $form, FormStateInterface $form_state) {
-    
+
     // Create a new user
     $values = $form_state->getValues();
 
@@ -107,10 +109,34 @@ function demoasterics_form_node_event_submit_handler(array $form, FormStateInter
     $observatory = $user->get('field_user_observatory');
     $observatory = $observatory->referencedEntities();
     $event = node_load($values['nid']);
-    $event->set('field_event_category_n',$observatory);
-    $event->set('field_event_place_n',$observatory);
+    $event->set('field_event_category_n', $observatory);
+    $event->set('field_event_place_n', $observatory);
     $event->save();
-    
+
     $url = \Drupal\Core\Url::fromRoute('entity.user.canonical', ['user' => $user->id()]);
     return $form_state->setRedirectUrl($url);
+}
+
+//********************************** FORMULARI DE CERCA DEL MAPA OBSERVATORIS************************************//
+function demoasterics_form_webform_submission_search_for_observation_add_form_alter(array &$form, FormStateInterface $form_state) {
+
+    unset($form['actions']['submit']['#validate']);
+    unset($form['#validate']);
+    unset($form['#submit']);
+    $form['actions']['submit']['#submit'] = array('demoasterics_form_search_observation_submit');
+}
+
+function demoasterics_form_search_observation_submit(array $form, FormStateInterface $form_state) {
+    $values = $form_state->getValues();
+    $response = new RedirectResponse('/obervatories-map?observatory');
+    if ($values['observatory'] != '') {
+        $response = new RedirectResponse('/obervatories-map?observatory=' . $values['observatory']);
+    }
+    $request = \Drupal::request();
+    // Save the session so things like messages get saved.
+    $request->getSession()->save();
+    $response->prepare($request);
+    // Make sure to trigger kernel events.
+    \Drupal::service('kernel')->terminate($request, $response);
+    $response->send();
 }

@@ -197,6 +197,7 @@ body {
 /* VISTAS */
 .view {
 	&.view_obervatories-map.view_display_map {
+                .view-filters {display:none;}
 		.view-content {width: 1200px; max-width: 100%; margin: 0 auto;}
 		.view-header {
 			text-align: center; margin-bottom: 60px;
