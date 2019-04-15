@@ -9,6 +9,7 @@ dependencies:
     - field.field.taxonomy_term.observatories.field_observatory_observacio
     - field.field.taxonomy_term.observatories.field_observatory_phone
     - field.field.taxonomy_term.observatories.field_observatory_rrss
+    - field.field.taxonomy_term.observatories.field_observatory_suscribers
     - field.field.taxonomy_term.observatories.field_observatory_website
     - image.style.medium
     - taxonomy.vocabulary.observatories
@@ -120,4 +121,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_observatory_observacio: true
+  field_observatory_suscribers: true
   path: true
