@@ -140,3 +140,24 @@ function demoasterics_form_search_observation_submit(array $form, FormStateInter
     \Drupal::service('kernel')->terminate($request, $response);
     $response->send();
 }
+
+//******************************* SUSCRIPCIO / DESUSCRIPCIO OBSERVATORY ************************************//
+function demoasterics_preprocess_taxonomy_term(&$variables) {
+
+    $suscribe = '<div class="suscribe">If you suscribe to this observatroy you will recieve alerts from it <a href="#">Suscribe</a></div>';
+    $unsuscribe = '<div class="unsuscribe">You are suscribed to the events and alerts of this observatory <a href="#">Unsuscribe</a></div>';
+    switch ($variables['view_mode']) {
+        case 'user_page_view':
+            $suscribe = '<div class="suscribe"><a href="#">Suscribe</a></div>';
+            $unsuscribe = '<div class="unsuscribe"><a href="#">Unsuscribe</a></div>';
+            break;
+    }
+
+    $variables['suscription']['#markup'] = $suscribe;
+    foreach ($variables['term']->get('field_observatory_suscribers')->getValue() as $uid) {
+        if ($uid['target_id'] == \Drupal::currentUser()->id()) {
+            $variables['suscription']['#markup'] = $unsuscribe;
+        }
+        break;
+    }
+}
