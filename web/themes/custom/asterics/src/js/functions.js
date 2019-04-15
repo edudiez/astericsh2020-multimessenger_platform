@@ -31,6 +31,7 @@
                 $('#forms-wrapper').hide();
             });
         }
+
         if($('#observation-form-wrapper')) {
             $('#askobervation').click(function() {
                 $('#observation-form-wrapper').slideToggle();
@@ -39,6 +40,12 @@
                 $('#observation-form-wrapper.observation-map').hide();
             });
         }
+        if($('#search-observation-form-wrapper')) {
+            $('.observation-map .close').click(function () {
+                $('#search-observation-form-wrapper.observation-map').hide();
+            });
+        }
+
         if($('.view_obervatories-map')) {
             $('.image-before').click(function() {
                 window.location.href ='/celestial-map';
@@ -48,6 +55,9 @@
             });
             $('.askfor').click(function () {
                 $('#observation-form-wrapper.observation-map').css('display','flex');
+            });
+            $('.searchfor').click(function () {
+                $('#search-observation-form-wrapper.observation-map').css('display','flex');
             });
         }
 

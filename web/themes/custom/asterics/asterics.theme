@@ -57,10 +57,14 @@ function asterics_preprocess_page(&$variables) {
     $current_path = \Drupal::service('path.current')->getPath();
     $path_args = explode('/', $current_path);
     if(count($path_args) == 2 && $path_args[1] == 'obervatories-map') {
-          // FORM PETICIO OBERVACIO PER A LA PAGINA USUARI PROFESSIONAL //
+          // FORM PETICIO OBERVACIO //
           $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('observacion');
           $webform = $webform->getSubmissionForm();
           $variables['observation_form'] = $webform;
+          // FORM CERCA DE OBSERVACIO //
+          $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('search_for_observation');
+          $webform = $webform->getSubmissionForm();
+          $variables['search_for_observation_form'] = $webform;
     }
   //}
 

@@ -407,7 +407,7 @@ display:
           empty: true
           tokenize: false
           content:
-            value: "<h4>Map title lorem ipsum dolor set</h4>\r\n<h1>All observations over lorem ipsum</h1>\r\n<a href=\"#\">OBSERVATION SEARCH</a>\r\n<a href=\"#\" class=\"askfor\">ASK FOR A COORINATED OBSERVATION</a>"
+            value: "<h4>Map title lorem ipsum dolor set</h4>\r\n<h1>All observations over lorem ipsum</h1>\r\n<a href=\"#\" class=\"searchfor\">OBSERVATION SEARCH</a>\r\n<a href=\"#\" class=\"askfor\">ASK FOR A COORINATED OBSERVATION</a>"
             format: full_html
           plugin_id: text
       footer:
