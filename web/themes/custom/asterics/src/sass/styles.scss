@@ -124,7 +124,9 @@ body {
                                         margin-top: 40px;
                                         display:inline-flex;
                                         width:420px;
-					a {width: auto; padding: 10px 25px; border-radius: 20px; background-color: $buttonlink; color: white; text-transform: uppercase;  display: inline-block; }
+					a {width: auto; padding: 10px 25px; border-radius: 20px; background-color: $buttonlink; color: white; text-transform: uppercase;  display: inline-block; 
+                                           &:hover {background-color: $azul_claro;}
+                                        }
 				}
 				.field_observatory_website a {
 					font-size: 13px;
