@@ -2,6 +2,10 @@
 
 namespace Drupal\demoasterics\Alerts;
 
+use Drupal\webform\Entity\WebformSubmission;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\user\Entity\User;
+
 class AlertManager {
     
     private $user;
@@ -62,6 +66,47 @@ class AlertManager {
     
     public function notifications() {
         
+        $markup = '<div class="notifications"><ul>';
+        foreach($this->alerts as $alert) {
+            switch ($alert['type']) {
+                case 'petition':
+                    $webform_submission = WebformSubmission::load($alert['sid']);
+                    //kint($webform_submission);
+                    $observatory =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($webform_submission->getElementData('observatory'));
+                    $image = file_url_transform_relative(ImageStyle::load('notify')->buildUrl($observatory->field_observatory_fotografia->entity->getFileUri()));
+                    $category = $observatory->getName();
+                    $account = User::load($webform_submission->get('uid')->getValue()[0]['target_id']);
+                    $name = $account->getUsername();
+                    //kint($name);
+                    $markup.='<li class="observatory"><div class="image"><img src="'.$image.'" alt="notify image"></div>';
+                    $markup.='<div class="box">';
+                    $markup.='<div class="category">'.$category.'</div>';
+                    $markup.='<div class="title">'.$name.' sent a request for a coordinated observation</div>';
+                    $markup.='<div class="date">RA:'.$webform_submission->getElementData('ra').' DEC:'.$webform_submission->getElementData('dec').' FROM:'.$webform_submission->getElementData('from').' TO:'.$webform_submission->getElementData('to').'</div>';
+                    $markup.='</div></li>';
+
+                    break;
+                case 'event':
+                    $event = \Drupal::entityTypeManager()->getStorage('node')->load($alert['nid']);
+                    $observatory =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($event->get('field_event_category_n')->first()->getValue()['target_id']);
+                    $image = file_url_transform_relative(ImageStyle::load('notify')->buildUrl($observatory->field_observatory_fotografia->entity->getFileUri()));
+                    $category = $observatory->getName();
+                    $title = $event->title->value;
+                    $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/'.$alert['nid']);
+                    $date = new \DateTime($event->field_event_date_n->value);
+                    $date = \Drupal::service('date.formatter')->format($date->getTimestamp(), 'teaser_news');
+                     $markup.='<li class="new"><a href="'.$alias.'"><div class="image"><img src="'.$image.'" alt="notify image"></div>';
+                    $markup.='<div class="box">';
+                    $markup.='<div class="category">'.$category.'</div>';
+                    $markup.='<div class="title">'.$title.'</div>';
+                    $markup.='<div class="date">'.$date.'</div>';
+                    $markup.='</div></a></li>';
+                    break;
+            }
+        }
+        $markup.='<ul></div>';
+        return $markup;
+        /*
         return '<div class="notifications">
                     <ul>
                       <li class="observatory">
@@ -87,6 +132,8 @@ class AlertManager {
                     </ul>
                     <a href="#" class="button">All Alerts</a>
                   </div>';
+         * 
+         */
     }
     
 }
