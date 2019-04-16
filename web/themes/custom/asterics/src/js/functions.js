@@ -3,7 +3,7 @@
     $(document).ready(function() {
 
       userBox();
-      followControl();
+      //followControl();
 
         $('header .right .top .ico-menu').click(function() {
           $(this).toggleClass("active");
@@ -62,8 +62,8 @@
         }
 
     });
-/* PASSEM DEL FOLLOW / UNFOLLOW A SUSCRIBE / UNSUSCRIBE */
 /*
+/* PASSEM DEL FOLLOW / UNFOLLOW A SUSCRIBE / UNSUSCRIBE */
     function followControl() {
 
       const followMessage = $('<div class="follow_message"><div class="box"><span class="close"></span>Now you follow this observatory</div></div>').hide();
@@ -115,7 +115,7 @@
         return false;
       }
     }
-
+*/
     function userBox(){
       if ($('.user_box span').length){
         $('.user_box span').click(function(e){
