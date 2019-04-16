@@ -9,14 +9,23 @@ class AlertManager {
     
     public function __construct() {
         $this->user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+        $connection = \Drupal::database();
+        $query = $connection->select('taxonomy_term_data', 't');
+        $query->join('taxonomy_term__field_observatory_suscribers', 'subscr', 'subscr.entity_id = t.tid');
+        $this->suscribed = $query->condition('t.vid','observatories')
+                        ->condition('subscr.field_observatory_suscribers_target_id',$this->user->id())
+                        ->fields('t', ['tid'])
+                        ->execute()
+                        ->fetchObject();
+        kint(empty($this->suscribed));
     }
     
     public function isSuscribed() {
-        if(empty($suscribed)) {return false;}
-        return true;
+        return !empty($this->suscribed);
     }
     
     public function getCountAlerts() {
+        
         return '0';
     }
     

@@ -67,7 +67,7 @@ function asterics_preprocess_page(&$variables) {
           $variables['search_for_observation_form'] = $webform;
     }
   //}
-    // ALERTES //
+    //****************** ALERTES ********************//
     $alerts = \Drupal::service('demoasterics.alerts');
     if($alerts->isSuscribed()) {
         $variables['count_alerts']['#markup'] = '<span data-content="'.$alerts->getCountAlerts().'"></span>';
