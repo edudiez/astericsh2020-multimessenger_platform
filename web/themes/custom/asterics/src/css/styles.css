@@ -93,9 +93,9 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .taxonomy.observatory.full .cols .col:nth-last-child(1) { padding-left: 20px; -webkit-box-align: end; -ms-flex-align: end; align-items: flex-end; }
 
-.taxonomy.observatory.full .cols .follow { -webkit-box-flex: 0; -ms-flex: none; flex: none; }
+.taxonomy.observatory.full .cols .follow, .taxonomy.observatory.full .cols .suscribe, .taxonomy.observatory.full .cols .unsuscribe { -webkit-box-flex: 0; -ms-flex: none; flex: none; font-family: 'rob_l'; margin-top: 40px; display: -webkit-inline-box; display: -ms-inline-flexbox; display: inline-flex; width: 420px; }
 
-.taxonomy.observatory.full .cols .follow a { width: auto; padding: 10px 25px; border-radius: 20px; background-color: #f2644c; color: white; text-transform: uppercase; font-family: 'rob_l'; display: inline-block; margin-top: 40px; }
+.taxonomy.observatory.full .cols .follow a, .taxonomy.observatory.full .cols .suscribe a, .taxonomy.observatory.full .cols .unsuscribe a { width: auto; padding: 10px 25px; border-radius: 20px; background-color: #f2644c; color: white; text-transform: uppercase; display: inline-block; }
 
 .taxonomy.observatory.full .cols .field_observatory_website a { font-size: 13px; }
 

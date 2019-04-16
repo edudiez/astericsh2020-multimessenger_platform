@@ -31,12 +31,7 @@
         </div>
         <div class="informacion">
             <div class="title"><h2>{{ name|field_value }}</h2>
-              <div class="unfollow">
-                <span class="unfollow reverse" data-reverse="Follow">Unfollow</span>
-              </div>
-              <div>
-                <span class="followsyou" >It follows you</span>
-              </div>
+                {{ suscription }}
             </div>
             {{ content.description }}
             {{ content.field_observatory_address }}
@@ -51,9 +46,7 @@
                     <h2>{{ name|field_value }}</h2>
                   {{ title_suffix }}
                   {{ content.description }}
-                  <div class="follow">
-                    <a href="#" class="reverse" data-reverse="Unfollow">Follow</a>
-                  </div>
+                  {{ suscription }}
               </div>
               <div class="col">
                   {{ content.field_observatory_rrss }}

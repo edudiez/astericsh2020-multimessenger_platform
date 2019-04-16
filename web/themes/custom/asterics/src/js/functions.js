@@ -62,7 +62,8 @@
         }
 
     });
-
+/* PASSEM DEL FOLLOW / UNFOLLOW A SUSCRIBE / UNSUSCRIBE */
+/*
     function followControl() {
 
       const followMessage = $('<div class="follow_message"><div class="box"><span class="close"></span>Now you follow this observatory</div></div>').hide();
@@ -123,6 +124,7 @@
         });
       }
     }
+    */
 
     /** PASWORD RESET BEHAVIOUR **/
     Drupal.behaviors.PasswordReset = {

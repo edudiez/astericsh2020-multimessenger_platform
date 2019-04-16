@@ -118,9 +118,13 @@ body {
 					&:nth-child(1) {padding-right: 20px;}
 					&:nth-last-child(1) {padding-left: 20px; align-items: flex-end;}
 				}
-				.follow {
+				.follow,.suscribe,.unsuscribe {
 					flex: none;
-					a {width: auto; padding: 10px 25px; border-radius: 20px; background-color: $buttonlink; color: white; text-transform: uppercase; font-family: 'rob_l'; display: inline-block; margin-top: 40px;}
+                                        font-family: 'rob_l';
+                                        margin-top: 40px;
+                                        display:inline-flex;
+                                        width:420px;
+					a {width: auto; padding: 10px 25px; border-radius: 20px; background-color: $buttonlink; color: white; text-transform: uppercase;  display: inline-block; }
 				}
 				.field_observatory_website a {
 					font-size: 13px;
