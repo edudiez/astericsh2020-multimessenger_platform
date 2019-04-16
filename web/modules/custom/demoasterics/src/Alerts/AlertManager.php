@@ -6,6 +6,7 @@ class AlertManager {
     
     private $user;
     private $suscribed = array();
+    private $alerts = array();
     
     public function __construct() {
         $this->user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
@@ -16,8 +17,39 @@ class AlertManager {
                         ->condition('subscr.field_observatory_suscribers_target_id',$this->user->id())
                         ->fields('t', ['tid'])
                         ->execute()
-                        ->fetchObject();
-        kint(empty($this->suscribed));
+                        ->fetchAll();
+        if(!empty($this->suscribed)) {
+            $alerts = array();
+            foreach($this->suscribed as $observatory ) {
+                //*** OBSERVACIONS DEMANDADES ***//
+                $query = $connection->select('webform_submission_data', 'o');
+                $query->join('webform_submission','s','s.sid=o.sid');
+                $result = $query->condition('o.webform_id','observacion')
+                                ->condition('o.name','observatory')
+                                ->condition('o.value',$observatory->tid)
+                                ->fields('o',['sid'])
+                                ->fields('s',['created'])
+                                ->execute()
+                                ->fetchAll();
+                foreach($result as $petition) {
+                    $alerts[$petition->created] = array('type' => 'petition', 'sid' => $petition->sid);
+                }
+                //*** EVENTS CREATS ***//
+                $query = $connection->select('node_field_data','n');
+                $query->join('node__field_event_category_n','obs','obs.entity_id=n.nid');
+                $result = $query->condition('n.type','event')
+                                ->condition('obs.field_event_category_n_target_id',$observatory->tid)
+                                ->fields('n',['nid','created'])
+                                ->execute()
+                                ->fetchAll();
+                 foreach($result as $event) {
+                    $alerts[$event->created] = array('type' => 'event', 'nid' => $event->nid);
+                }
+            }
+            // LES ULTIMES 12 NOTIFICACIONS //
+            krsort($alerts);
+            $this->alerts = array_slice($alerts,0,12);
+        }
     }
     
     public function isSuscribed() {
@@ -25,11 +57,11 @@ class AlertManager {
     }
     
     public function getCountAlerts() {
-        
-        return '0';
+        return count($this->alerts);
     }
     
     public function notifications() {
+        
         return '<div class="notifications">
                     <ul>
                       <li class="observatory">

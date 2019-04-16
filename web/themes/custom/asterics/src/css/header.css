@@ -86,7 +86,7 @@ header[role="banner"] #block-profesionalmenu li .disabled { display: none; }
 
 header[role="banner"] #block-profesionalmenu li .highlighted { font-weight: 700; }
 
-header[role="banner"] .right { clear: right; float: right; padding-top: 12px; }
+header[role="banner"] .right { clear: right; float: right; padding-top: 12px; position: relative; z-index: 99; }
 
 header[role="banner"] .right > .box { position: relative; }
 

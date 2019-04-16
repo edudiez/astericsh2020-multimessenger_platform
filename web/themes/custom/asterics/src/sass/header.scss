@@ -104,6 +104,8 @@ header[role="banner"] {
         clear:right;
         float: right;
         padding-top: 12px;
+        position: relative;
+        z-index: 99;
         > .box {position: relative;}
         .top {
             display: inline-block; vertical-align: middle;
