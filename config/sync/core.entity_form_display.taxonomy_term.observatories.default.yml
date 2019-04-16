@@ -103,6 +103,12 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
+  field_observatory_suscribers:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_observatory_website:
     weight: 6
     settings:
@@ -121,5 +127,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_observatory_observacio: true
-  field_observatory_suscribers: true
   path: true
