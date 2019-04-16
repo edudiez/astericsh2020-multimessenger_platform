@@ -1,0 +1,3 @@
+services:
+  demoasterics.alerts:
+    class: Drupal\demoasterics\Alerts\AlertManager

@@ -3,7 +3,7 @@
     $(document).ready(function() {
 
       userBox();
-      followControl();
+      //followControl();
 
         $('header .right .top .ico-menu').click(function() {
           $(this).toggleClass("active");
@@ -114,7 +114,7 @@
         return false;
       }
     }
-
+*/
     function userBox(){
       if ($('.user_box span').length){
         $('.user_box span').click(function(e){
