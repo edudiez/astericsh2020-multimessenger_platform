@@ -9,6 +9,7 @@ dependencies:
     - field.field.taxonomy_term.observatories.field_observatory_observacio
     - field.field.taxonomy_term.observatories.field_observatory_phone
     - field.field.taxonomy_term.observatories.field_observatory_rrss
+    - field.field.taxonomy_term.observatories.field_observatory_suscribers
     - field.field.taxonomy_term.observatories.field_observatory_website
     - image.style.medium
     - taxonomy.vocabulary.observatories
@@ -102,6 +103,12 @@ content:
       default_paragraph_type: ''
     third_party_settings: {  }
     region: content
+  field_observatory_suscribers:
+    type: options_select
+    weight: 8
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   field_observatory_website:
     weight: 6
     settings:
