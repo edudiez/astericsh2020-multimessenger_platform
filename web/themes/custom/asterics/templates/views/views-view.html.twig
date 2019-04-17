@@ -85,6 +85,11 @@
       {{ footer }}
     </div>
   {% endif %}
+  {% if timeline %}
+      <div class="view-timeline container">
+          {{ timeline }}
+      </div>
+  {% endif %}
   {% if feed_icons %}
     <div class="feed-icons">
       {{ feed_icons }}
