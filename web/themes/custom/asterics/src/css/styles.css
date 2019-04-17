@@ -97,6 +97,8 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 .taxonomy.observatory.full .cols .follow a, .taxonomy.observatory.full .cols .suscribe a, .taxonomy.observatory.full .cols .unsuscribe a { width: auto; padding: 10px 25px; border-radius: 20px; background-color: #f2644c; color: white; text-transform: uppercase; display: inline-block; }
 
+.taxonomy.observatory.full .cols .follow a:hover, .taxonomy.observatory.full .cols .suscribe a:hover, .taxonomy.observatory.full .cols .unsuscribe a:hover { background-color: #53d6f9; }
+
 .taxonomy.observatory.full .cols .field_observatory_website a { font-size: 13px; }
 
 .taxonomy.observatory.full .cols .field_observatory_website a:hover { color: #f2644c; }

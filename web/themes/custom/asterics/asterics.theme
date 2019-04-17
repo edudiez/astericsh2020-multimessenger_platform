@@ -83,7 +83,7 @@ function asterics_preprocess_views_view(&$variables) {
     if(count($query) == 2) {
         $query = explode('=',$query[1]);
         if(in_array('observatory',$query)) {
-            $variables['timeline'] = \Drupal::service('demoasterics.timeline')->getTimeline();
+            $variables['timeline'] = \Drupal::service('demoasterics.timeline')->getTimeline((count($query) == 2) ? $query[1] : NULL);
         }
     }
 }
