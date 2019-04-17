@@ -57,14 +57,15 @@ function asterics_preprocess_page(&$variables) {
     $current_path = \Drupal::service('path.current')->getPath();
     $path_args = explode('/', $current_path);
     if(count($path_args) == 2 && $path_args[1] == 'obervatories-map') {
-          // FORM PETICIO OBERVACIO //
-          $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('observacion');
-          $webform = $webform->getSubmissionForm();
-          $variables['observation_form'] = $webform;
-          // FORM CERCA DE OBSERVACIO //
-          $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('search_for_observation');
-          $webform = $webform->getSubmissionForm();
-          $variables['search_for_observation_form'] = $webform;
+        // FORM PETICIO OBERVACIO //
+        $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('observacion');
+        $webform = $webform->getSubmissionForm();
+        $variables['observation_form'] = $webform;
+        // FORM CERCA DE OBSERVACIO //
+        $webform = \Drupal::entityTypeManager()->getStorage('webform')->load('search_for_observation');
+        $webform = $webform->getSubmissionForm();
+        $variables['search_for_observation_form'] = $webform;
+       
     }
   //}
     //****************** ALERTES ********************//
@@ -72,6 +73,18 @@ function asterics_preprocess_page(&$variables) {
     if($alerts->isSuscribed()) {
         $variables['count_alerts']['#markup'] = '<span data-content="'.$alerts->getCountAlerts().'"></span>';
         $variables['notifications']['#markup'] = $alerts->notifications();
+    }
+}
+
+function asterics_preprocess_views_view(&$variables) {
+     // TIMELINE //
+    $current_uri = \Drupal::request()->getRequestUri();
+    $query = explode('?',$current_uri);
+    if(count($query) == 2) {
+        $query = explode('=',$query[1]);
+        if(in_array('observatory',$query)) {
+            $variables['timeline'] = \Drupal::service('demoasterics.timeline')->getTimeline((count($query) == 2) ? $query[1] : NULL);
+        }
     }
 }
 
