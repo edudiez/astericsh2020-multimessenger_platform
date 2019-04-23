@@ -10,6 +10,7 @@ class SuscribeController extends ControllerBase {
     
     public function suscribe(TermInterface $taxonomy_term) {
         
+        //* POTSER CONTROLAR AQUI QUE NO ESTIGUI JA SUSCRIT PER SI DE CAS *//
         $taxonomy_term->field_observatory_suscribers[] = \Drupal::currentUser()->id();
         $taxonomy_term->save();
         return new JsonResponse(array('message'=>"You have been suscribed to ".$taxonomy_term->name->value));

@@ -48,14 +48,28 @@
         }
 
         if($('.view_obervatories-map')) {
-            $('.image-before').click(function() {
+            $('.past .made').click(function() {
                 window.location.href ='/celestial-map';
             });
-            $('.image-after').click(function () {
+            $('.future .made').click(function () {
                 $('#observation-form-wrapper.observation-map').css('display','flex');
+                $('#edit-ra').val('3h 5m 38s');
+                $('#edit-dec').val('48 50 2"');
+                $('#edit-from-date').val('2019-10-01');
+                $('#edit-to-date').val('2019-12-21');
+                var observatory=$(this).closest('.timeline-row').attr('attr-observatory');
+                $('#edit-observatory').val(observatory);
+                if($('#edit-actions #edit-actions-schedule')) {$('#edit-actions #edit-actions-schedule').remove();}
+                var export_to_schedule = '<input class="webform-button--submit button button--primary js-form-submit form-submit" data-drupal-selector="edit-actions-submit" type="button" disabled="disabled" id="edit-actions-schedule" name="op" value="Export to Schedule">'; 
+                $('#edit-actions').append(export_to_schedule);
             });
             $('.askfor').click(function () {
                 $('#observation-form-wrapper.observation-map').css('display','flex');
+                $('#edit-ra').val('');
+                $('#edit-dec').val('');
+                $('#edit-from-date').val('');
+                $('#edit-to-date').val('');
+                $('#edit-observatory').val('');
             });
             $('.searchfor').click(function () {
                 $('#search-observation-form-wrapper.observation-map').css('display','flex');

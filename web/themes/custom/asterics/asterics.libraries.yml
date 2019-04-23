@@ -44,3 +44,8 @@ aladin:
     - core/drupal
     - core/drupalSettings
     - core/jquery.once
+timeline:
+  css:
+    theme:
+      src/css/timeline.css: {}
+            
