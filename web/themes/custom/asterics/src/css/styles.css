@@ -361,7 +361,7 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 
 #observation-form-wrapper .close:hover, #search-observation-form-wrapper .close:hover { opacity: 1; }
 
-#observation-form-wrapper form.webform-submission-add-form, #search-observation-form-wrapper form.webform-submission-add-form { margin: 0 auto; height: 500px; width: 350px; -webkit-box-flex: 25%; -ms-flex: 25% 0; flex: 25% 0; }
+#observation-form-wrapper form.webform-submission-add-form, #search-observation-form-wrapper form.webform-submission-add-form { margin: 0 auto; height: 520px; width: 350px; -webkit-box-flex: 25%; -ms-flex: 25% 0; flex: 25% 0; }
 
 /* FORMS */
 form .form-item { margin: 10px 0; width: 100%; display: inline-block; }
@@ -372,9 +372,9 @@ form .form-actions { text-align: center; margin-top: 30px; }
 
 form input, form textarea { color: #000; -webkit-appearance: none; -moz-appearance: none; appearance: none; border: 0px; padding: 7px 10px; width: 100%; font-size: 16px; }
 
-form input[type="submit"] { width: auto; padding: 10px 25px; border-radius: 20px; background-color: #f2644c; color: white; text-transform: uppercase; font-family: 'rob_l'; cursor: pointer; -webkit-transition: background-color .3s; transition: background-color .3s; }
+form input[type="submit"], form input[type="button"] { width: auto; padding: 10px 25px; border-radius: 20px; background-color: #f2644c; color: white; text-transform: uppercase; font-family: 'rob_l'; cursor: pointer; -webkit-transition: background-color .3s; transition: background-color .3s; }
 
-form input[type="submit"]:hover { background-color: #53d6f9; }
+form input[type="submit"]:hover, form input[type="button"]:hover { background-color: #53d6f9; }
 
 form input[type="checkbox"], form input[type="radio"] { width: 20px; height: 20px; background: white; cursor: pointer; padding: 0px; vertical-align: middle; outline: none; }
 
@@ -441,5 +441,7 @@ form.webform-submission-add-form label { font-size: 15px; }
 form.webform-submission-add-form .form-item-observatory label { margin-bottom: 0px; display: inline-block; }
 
 form.webform-submission-add-form .form-item-observatory select { padding: 5px; -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 100%; font-size: 15px; }
+
+form.webform-submission-observacion-form input[type="button"] { margin-left: 16px; }
 
 /*# sourceMappingURL=maps/styles.css.map */

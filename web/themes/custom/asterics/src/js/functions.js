@@ -59,6 +59,9 @@
                 $('#edit-to-date').val('2019-12-21');
                 var observatory=$(this).closest('.timeline-row').attr('attr-observatory');
                 $('#edit-observatory').val(observatory);
+                if($('#edit-actions #edit-actions-schedule')) {$('#edit-actions #edit-actions-schedule').remove();}
+                var export_to_schedule = '<input class="webform-button--submit button button--primary js-form-submit form-submit" data-drupal-selector="edit-actions-submit" type="button" disabled="disabled" id="edit-actions-schedule" name="op" value="Export to Schedule">'; 
+                $('#edit-actions').append(export_to_schedule);
             });
             $('.askfor').click(function () {
                 $('#observation-form-wrapper.observation-map').css('display','flex');

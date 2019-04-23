@@ -391,7 +391,7 @@ body {
         }
     form.webform-submission-add-form {
             margin:0 auto;
-            height: 500px;
+            height: 520px;
             width: 350px;
             flex: 25% 0;
         }
@@ -405,7 +405,7 @@ form {
 	}
 	.form-actions {text-align: center; margin-top: 30px;}
 	input,textarea {color:$negre;appearance: none; border: 0px; padding: 7px 10px; width: 100%; font-size: 16px;}
-	input[type="submit"] {
+	input[type="submit"],input[type="button"] {
 		width: auto; padding: 10px 25px; border-radius: 20px; background-color: $buttonlink; color: white; text-transform: uppercase; font-family: 'rob_l'; cursor: pointer; transition: background-color .3s;
 		&:hover {background-color: $azul_claro;}
 	}
@@ -466,4 +466,9 @@ form {
 			select {padding: 5px; appearance: none; width: 100%; font-size: 15px}
 		}
 	}
+        &.webform-submission-observacion-form {
+            input[type="button"] {
+                margin-left:16px;
+            }
+        }
 }
