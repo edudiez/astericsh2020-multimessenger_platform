@@ -3,7 +3,8 @@
     $(document).ready(function() {
 
       userBox();
-      followControl();
+      //followControl();
+      suscribeControl();
 
         $('header .right .top .ico-menu').click(function() {
           $(this).toggleClass("active");
@@ -62,8 +63,63 @@
         }
 
     });
-/* PASSEM DEL FOLLOW / UNFOLLOW A SUSCRIBE / UNSUSCRIBE */
 /*
+/* PASSEM DEL FOLLOW / UNFOLLOW A SUSCRIBE / UNSUSCRIBE */
+    
+    function suscribeControl() {
+        const suscribeMarkup = $('<div class="suscribe">If you suscribe to this observatroy you will recieve alerts from it <a href="#">Suscribe</a></div>')
+        const unSuscribeMarkup = $('<div class="unsuscribe">You are suscribed to the events and alerts of this observatory <a href="#">Unsuscribe</a></div>');
+        const message = $('<div class="follow_message"><div class="box"><span class="close"></span><div id="message"></div></div></div>').hide();
+        message.find('.close').click(function(){
+            $(this).closest('.follow_message').fadeOut().remove();
+            $('body').removeClass('no_scroll');
+        })
+        suscribeButtonControl($('.suscribe a'));
+        unSuscribeButtonControl($('.unsuscribe a'));
+        
+        function suscribeButtonControl(elem) {
+            elem.click(function(e) {
+               e.preventDefault();
+               console.log('calling');
+               $.ajax ({
+                   url: "/demoasterics/suscribe/"+elem.closest("#suscription-wrapper").attr('data-tid'),
+                   dataType: "json",
+                   success: function(result) {
+                       console.log(result);
+                       $('body').append(message.clone(true));
+                       $('.follow_message').find('#message').append(result.message);
+                       $('.follow_message').fadeIn();
+                       $('body').addClass('no_scroll');
+                       $('#suscription-wrapper').empty();
+                       $('#suscription-wrapper').append(unSuscribeMarkup);
+                       unSuscribeButtonControl($('.unsuscribe a'));
+                   }
+               });
+               
+            });
+        }
+        
+        function unSuscribeButtonControl(elem) {
+            elem.click(function(e) {
+               e.preventDefault();
+              $.ajax ({
+                   url: "/demoasterics/unsuscribe/"+elem.closest("#suscription-wrapper").attr('data-tid'),
+                   dataType: "json",
+                   success: function(result) {
+                       $('body').append(message.clone(true));
+                       $('.follow_message').find('#message').append(result.message);
+                       $('.follow_message').fadeIn();
+                       $('body').addClass('no_scroll');
+                       $('#suscription-wrapper').empty();
+                       $('#suscription-wrapper').append(suscribeMarkup);
+                       suscribeButtonControl($('.suscribe a'));
+                   }
+               });
+            });
+        }
+    }
+    
+    /*
     function followControl() {
 
       const followMessage = $('<div class="follow_message"><div class="box"><span class="close"></span>Now you follow this observatory</div></div>').hide();
@@ -115,7 +171,7 @@
         return false;
       }
     }
-
+*/
     function userBox(){
       if ($('.user_box span').length){
         $('.user_box span').click(function(e){
@@ -124,7 +180,7 @@
         });
       }
     }
-    */
+    
 
     /** PASWORD RESET BEHAVIOUR **/
     Drupal.behaviors.PasswordReset = {

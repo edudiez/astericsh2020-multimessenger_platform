@@ -14,13 +14,23 @@ header[role="banner"] .user_box .user_profile a:hover { color: #f2644c; }
 
 header[role="banner"] .user_box .user_profile a:hover:before { background-image: url('data:image/svg+xml;utf8,<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.54 38.54"><defs><style>.cls-1,.cls-2{fill:none;stroke:%23f2644c;}.cls-1{stroke-miterlimit:10;stroke-width:0.5px;}.cls-2{stroke-linecap:round;stroke-linejoin:round;}</style></defs><title>assets21</title><circle class="cls-1" cx="19.27" cy="19.27" r="17.5"/><path class="cls-2" d="M27.27,28.27v-2a4,4,0,0,0-4-4h-8a4,4,0,0,0-4,4v2"/><circle class="cls-2" cx="19.27" cy="14.27" r="4"/></svg>'); }
 
+header[role="banner"] .user_box .user_logout { display: inline-block; vertical-align: middle; margin-right: 35px; position: relative; font-size: 14px; }
+
+header[role="banner"] .user_box .user_logout a { -webkit-transition: none; transition: none; }
+
+header[role="banner"] .user_box .user_logout a:before { content: ''; background: transparent none no-repeat center; background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\a 	 viewBox="0 0 39.5 37.5" style="enable-background:new 0 0 39.5 37.5;" xml:space="preserve">\a<style type="text/css">\a 	.st0{fill:none;stroke:white;stroke-width:0.5;stroke-miterlimit:10;}\a 	.st1{fill:none;stroke:white;stroke-width:0.8889;stroke-linecap:round;stroke-linejoin:round;}\a</style>\a<circle class="st0" cx="19.8" cy="18.8" r="17.5"/>\a<g>\a 	<path class="st1" d="M17.1,26.8h-3.6c-1,0-1.8-0.8-1.8-1.8V12.5c0-1,0.8-1.8,1.8-1.8h3.6"/>\a 	<polyline class="st1" points="23.3,23.2 27.8,18.8 23.3,14.3 	"/>\a 	<line class="st1" x1="27.8" y1="18.8" x2="17.1" y2="18.8"/>\a</g>\a</svg>'); display: inline-block; vertical-align: middle; width: 35px; height: 35px; margin-right: 10px; }
+
+header[role="banner"] .user_box .user_logout a:hover { color: #f2644c; }
+
+header[role="banner"] .user_box .user_logout a:hover:before { background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\a 	 viewBox="0 0 39.5 37.5" style="enable-background:new 0 0 39.5 37.5;" xml:space="preserve">\a<style type="text/css">\a 	.st0{fill:none;stroke:%23f2644c;stroke-width:0.5;stroke-miterlimit:10;}\a 	.st1{fill:none;stroke:%23f2644c;stroke-width:0.8889;stroke-linecap:round;stroke-linejoin:round;}\a</style>\a<circle class="st0" cx="19.8" cy="18.8" r="17.5"/>\a<g>\a 	<path class="st1" d="M17.1,26.8h-3.6c-1,0-1.8-0.8-1.8-1.8V12.5c0-1,0.8-1.8,1.8-1.8h3.6"/>\a 	<polyline class="st1" points="23.3,23.2 27.8,18.8 23.3,14.3 	"/>\a 	<line class="st1" x1="27.8" y1="18.8" x2="17.1" y2="18.8"/>\a</g>\a</svg>'); }
+
 header[role="banner"] .user_box .user_notify { display: inline-block; vertical-align: middle; }
 
 header[role="banner"] .user_box .user_notify span { display: inline-block; width: 33px; height: 33px; background-image: url('data:image/svg+xml;utf8,<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.54 38.54"><defs><style>.cls-1,.cls-2{fill:none;stroke:white;}.cls-1{stroke-miterlimit:10;stroke-width:0.54px;}.cls-2{stroke-linecap:round;stroke-linejoin:round;stroke-width:0.98px;}</style></defs><title>assets21</title><circle class="cls-1" cx="19.27" cy="19.27" r="19"/><path class="cls-2" d="M29,24.16H9.5a2.93,2.93,0,0,0,2.93-2.93V16.34a6.84,6.84,0,0,1,13.68,0v4.89A2.93,2.93,0,0,0,29,24.16ZM21,28.07a2,2,0,0,1-2.67.71,2,2,0,0,1-.71-.71"/></svg>'); cursor: pointer; margin-right: 35px; position: relative; }
 
 header[role="banner"] .user_box .user_notify span:hover { background-image: url('data:image/svg+xml;utf8,<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.54 38.54"><defs><style>.cls-1,.cls-2{fill:none;stroke:%23f2644c;}.cls-1{stroke-miterlimit:10;stroke-width:0.54px;}.cls-2{stroke-linecap:round;stroke-linejoin:round;stroke-width:0.98px;}</style></defs><title>assets21</title><circle class="cls-1" cx="19.27" cy="19.27" r="19"/><path class="cls-2" d="M29,24.16H9.5a2.93,2.93,0,0,0,2.93-2.93V16.34a6.84,6.84,0,0,1,13.68,0v4.89A2.93,2.93,0,0,0,29,24.16ZM21,28.07a2,2,0,0,1-2.67.71,2,2,0,0,1-.71-.71"/></svg>'); }
 
-header[role="banner"] .user_box .user_notify span:before { content: '1'; position: absolute; right: 0; top: -10px; background: #f2644c; color: white; font-size: 9px; font-weight: 400; border-radius: 100%; padding: 5px; line-height: 6px; }
+header[role="banner"] .user_box .user_notify span:before { content: attr(data-content); position: absolute; right: 0; top: -10px; background: #f2644c; color: white; font-size: 9px; font-weight: 400; border-radius: 100%; padding: 5px; line-height: 6px; }
 
 header[role="banner"] .user_box .user_notify .notifications { display: none; position: absolute; left: -65%; top: 45px; width: 220%; background-color: #6a7791; color: white; padding: 15px; border-radius: 13px 13px 0 0; text-align: center; z-index: 9; }
 
@@ -76,7 +86,7 @@ header[role="banner"] #block-profesionalmenu li .disabled { display: none; }
 
 header[role="banner"] #block-profesionalmenu li .highlighted { font-weight: 700; }
 
-header[role="banner"] .right { clear: right; float: right; padding-top: 12px; }
+header[role="banner"] .right { clear: right; float: right; padding-top: 12px; position: relative; z-index: 99; }
 
 header[role="banner"] .right > .box { position: relative; }
 
