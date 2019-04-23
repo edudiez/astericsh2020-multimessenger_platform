@@ -97,19 +97,21 @@ function asterics_preprocess_user(&$variables) {
     $vid = 'observatories';
     $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
     // LISTA OBSERVATORIES //
-
-    // >>>>>>> TODO - VARIAR UNA MICA EL LLISTAT //
     $ovlist = array();
     foreach($terms as $term) {
-        if($term->tid!=$ovid) {
-            $ovlist[] = $term->tid;
+        $observatory =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term->tid);
+        foreach ($observatory->get('field_observatory_suscribers')->getValue() as $uid) {
+            if ($uid['target_id'] == \Drupal::currentUser()->id()) {
+                if($ovid != $term->tid) {
+                    $ovlist[] = $term->tid;
+                }
+            }
         }
     }
     $variables['following'] = count($ovlist);
     $variables['followers'] = count($ovlist);
     $list = views_embed_view('observatories_list_user_page','default',implode('+',$ovlist));
     $variables['observatories_list'] = $list;
-    // >>>>>>> TODO - VARIAR UNA MICA EL LLISTAT //
 
     // MY OBSERVATORI - NEW OBSERVATORI PER A LA PAGINA USUARI PROFESSIONAL //
     if($ovid) {
