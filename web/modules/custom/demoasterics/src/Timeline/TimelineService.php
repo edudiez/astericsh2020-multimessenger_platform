@@ -8,9 +8,9 @@ class TimelineService {
     public function getTimeline($tid = NULL) {
         $timeline = array();
         if($tid) {
-            $timeline['#markup'] = '<div id="timeline">'. $this->getObservatoryTimeline($tid).'</div>';
+            $timeline['#markup'] = '<div id="timeline">'. $this->getObservatoryTimeline($tid).$this->getLegend().'</div>';
         } else {
-           $timeline['#markup'] = '<div id="timeline">'. $this->randomObservatoriesTimeline().'</div>';
+           $timeline['#markup'] = '<div id="timeline">'. $this->randomObservatoriesTimeline().$this->getLegend().'</div>';
         }
         return $timeline;
     }
@@ -76,6 +76,21 @@ class TimelineService {
         $observation .= '<td width="'.intval($width[2]/3).'%"></td></tr></table>';
         $observation .= '</div>';
         return $observation;
+    }
+    
+    private function getLegend() {
+        $legend = '<div class="legend">';
+        $legend .= '<div class="made">';
+        $legend .= '<table class="made-wrapper"><tr>';
+        $legend .= '<td class="made-item"><div class="made-left"></div>';
+        $legend .= '<table width="100%" class="made-center"><tr><td></td></tr></table>';
+        $legend .= '<div class="made-right"></div></td>';
+        $legend .= '</tr></table>';
+        $legend .= '<label>Scheduled Observation</label>';
+        $legend .= '</div>';
+        $legend .= '<div class="made"><table class="made-wrapper"><tr><td><div class="elipse"></div></td></tr></table><div class="visibility">Visibility</div></div></div>';
+        $legend.= '</div>';
+        return $legend;
     }
     
     private function getWidthArray($num = 1) {
