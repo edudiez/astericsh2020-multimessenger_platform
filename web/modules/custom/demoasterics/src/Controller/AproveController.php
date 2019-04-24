@@ -9,7 +9,6 @@ class AproveController extends ControllerBase {
      public function aprove($sid) {
         $submission = \Drupal\webform\Entity\WebformSubmission::load($sid);
         $data = $submission->getData();
-        kint($data);
         $data['scheduled'] = TRUE;
         $submission->setData($data);
         $submission->save();
@@ -58,6 +57,6 @@ class AproveController extends ControllerBase {
             }
         }
         
-        return new JsonResponse(array('message'=>"The Observation has been aproved"));
+        return new JsonResponse(array('message'=>"The Observation has been scheduled"));
      }
 }

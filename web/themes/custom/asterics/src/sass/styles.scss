@@ -170,7 +170,12 @@ body {
 			.field_observatory_observacio {
 				background-color: $gris_claro; color: white; padding: 20px; flex:1 0 25%; margin-top: 80px;
 				input,textarea {background-color: $gris_claro2; color: white;}
-				input[type="submit"] {background-color: $buttonlink;}
+				input[type="submit"] {
+                                    background-color: $buttonlink;
+                                    &:hover {
+                                        background-color: $azul_claro;
+                                    }
+                                }
 			}
 		}
 		&.user_page_view {
@@ -458,17 +463,77 @@ form {
 	&.webform-submission-add-form {
 		background-color: $gris_claro; color: white; padding: 20px; flex:1 0 25%; margin-top: 12px;text-align: left;
 		input,textarea {background-color: $gris_claro2; color: white; padding: 5px 10px; font-size: 15px;}
-		input[type="submit"] {background-color: $buttonlink; padding: 10px 25px;}
+		input[type="submit"] {
+                    background-color: $buttonlink; padding: 10px 25px;
+                    &:hover {background-color: $azul_claro;}
+                }
 		label {font-size: 15px;}
 		/*.js-form-type-datetime, .form-item-observatory {display: none !important;}*/
 		.form-item-observatory {
 			label {margin-bottom: 0px; display: inline-block;}
 			select {padding: 5px; appearance: none; width: 100%; font-size: 15px}
 		}
+                .form-item-scheduled {
+                    display:none;
+                }
 	}
         &.webform-submission-observacion-form {
             input[type="button"] {
                 margin-left:16px;
             }
         }
+}
+
+// THROBBER //
+.ajax-progress,
+.ajax-progress-throbber,
+.ajax-progress-fullscreen {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  overflow: hidden;
+  text-indent: -99999em;
+}
+ 
+.ajax-progress-throbber:before,
+.ajax-progress-fullscreen:before {
+  content: " ";
+  display: block;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 0.8s infinite linear;
+  animation: spin 0.8s infinite linear;
+  border-radius: 120px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #D6232F transparent #D6232F transparent;
+  overflow: hidden;
+  text-indent: -99999em;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+ 
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(360deg); 
+  }
+}
+ 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

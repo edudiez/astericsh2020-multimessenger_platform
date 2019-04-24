@@ -72,7 +72,7 @@ class AlertManager {
             
         }
         krsort($alerts);
-        $this->alerts = array_slice($alerts,0,12);
+        $this->alerts = array_slice($alerts,0,6);
     }
     
     public function isSuscribed() {
@@ -90,17 +90,24 @@ class AlertManager {
             switch ($alert['type']) {
                 case 'petition':
                     $webform_submission = WebformSubmission::load($alert['sid']);
-                    //kint($webform_submission);
                     $observatory =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($webform_submission->getElementData('observatory'));
                     $image = file_url_transform_relative(ImageStyle::load('notify')->buildUrl($observatory->field_observatory_fotografia->entity->getFileUri()));
                     $category = $observatory->getName();
                     $account = User::load($webform_submission->get('uid')->getValue()[0]['target_id']);
                     $name = $account->getUsername();
-                    //kint($name);
-                    $markup.='<li class="observatory"><div class="image"><img src="'.$image.'" alt="notify image"></div>';
+                    $data = $webform_submission->getData();
+                    if(isset($data['scheduled']) && $data['scheduled']) {
+                        $markup.='<li class="aproved"><div class="image"><img src="'.$image.'" alt="notify image"></div>';
+                    } else {
+                        $markup.='<li class="observatory"><div class="image"><img src="'.$image.'" alt="notify image"></div>';
+                    }
                     $markup.='<div class="box">';
                     $markup.='<div class="category">'.$category.'</div>';
-                    $markup.='<div class="title">'.$name.' sent a request for a coordinated observation</div>';
+                    if(isset($data['scheduled']) && $data['scheduled']) {
+                        $markup.='<div class="title">'.$category.' aproved a coordinated observation</div>';
+                    } else {
+                        $markup.='<div class="title">'.$name.' sent a request for a coordinated observation</div>';
+                    }
                     $markup.='<div class="date">RA:'.$webform_submission->getElementData('ra').' DEC:'.$webform_submission->getElementData('dec').' FROM:'.$webform_submission->getElementData('from').' TO:'.$webform_submission->getElementData('to').'</div>';
                     $markup.='</div></li>';
 

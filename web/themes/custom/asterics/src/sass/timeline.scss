@@ -139,12 +139,19 @@
         height: 120px;
         justify-content:space-evenly;
         padding:30px 0;
-         .made-wrapper {
-                width:100%;
+        .made-wrapper {
+            width:100%;
+            .elipse {
+                border:1px solid #e63924;
+                border-radius:30px;
+                height:40px;
+
             }
+            
+        }
         .made {
             height: 35px;
-           
+
             .made-item {
                 display:flex;
                 .made-left {
@@ -160,6 +167,7 @@
                 }
                 .made-center {
                     padding-top:10px;
+                    max-width:95%;
                     td {
                         height: 25px;
                         background: rgba(242,100,76,1);
@@ -183,16 +191,12 @@
                     top: 2px;
                 }
             }
-
-        }
-        .elipse {
-            border:1px solid #e63924;
-            border-radius:30px;
-            height:40px;
             .visibility {
                 padding: 0 60px;
             }
+
         }
+
 
     }
 }

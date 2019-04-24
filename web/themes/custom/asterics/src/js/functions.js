@@ -101,6 +101,7 @@
         function suscribeButtonControl(elem) {
             elem.click(function(e) {
                e.preventDefault();
+               elem.parent().append('<div class="ajax-progress"><div class="ajax-progress-throbber">&nbsp;</div></div>');
                $.ajax ({
                    url: "/demoasterics/suscribe/"+elem.closest("#suscription-wrapper").attr('data-tid'),
                    dataType: "json",
@@ -122,6 +123,7 @@
         function unSuscribeButtonControl(elem) {
             elem.click(function(e) {
                e.preventDefault();
+               elem.parent().append('<div class="ajax-progress"><div class="ajax-progress-throbber">&nbsp;</div></div>');
               $.ajax ({
                    url: "/demoasterics/unsuscribe/"+elem.closest("#suscription-wrapper").attr('data-tid'),
                    dataType: "json",
@@ -152,6 +154,7 @@
         function aproveButtonControl(elem) {
             elem.click(function (e) {
                 e.preventDefault();
+                $(this).parent().append('<div class="ajax-progress"><div class="ajax-progress-throbber">&nbsp;</div></div>');
                 var sid = $(this).attr('attr-sid');
                 $.ajax ({
                    url: "/demoasterics/aprove/"+sid,
@@ -162,7 +165,8 @@
                        $('.follow_message').fadeIn();
                        $('body').addClass('no_scroll');
                        $('.sid-'+sid).find('.state').find('.field-content').text('Scheduled');
-                       elem.remove();
+                       $('.ajax-progress').remove();
+                       $('.sid-'+sid).find('.schedule').remove();
                    }
                 });
             });
