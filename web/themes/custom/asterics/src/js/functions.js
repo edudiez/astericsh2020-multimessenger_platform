@@ -75,6 +75,13 @@
                 $('#search-observation-form-wrapper.observation-map').css('display','flex');
             });
         }
+        
+        if($('.view_display_askedfor')) {
+            
+            aproveControl();
+            
+        }
+        
 
     });
 /*
@@ -94,12 +101,11 @@
         function suscribeButtonControl(elem) {
             elem.click(function(e) {
                e.preventDefault();
-               console.log('calling');
                $.ajax ({
                    url: "/demoasterics/suscribe/"+elem.closest("#suscription-wrapper").attr('data-tid'),
                    dataType: "json",
                    success: function(result) {
-                       console.log(result);
+                       
                        $('body').append(message.clone(true));
                        $('.follow_message').find('#message').append(result.message);
                        $('.follow_message').fadeIn();
@@ -129,6 +135,36 @@
                        suscribeButtonControl($('.suscribe a'));
                    }
                });
+            });
+        }
+    }
+    
+    function aproveControl() {
+        const aproveMessage = $('<div class="follow_message"><div class="box"><span class="close"></span>The observation has been scheduled</div></div>').hide();
+        const message = $('<div class="follow_message"><div class="box"><span class="close"></span><div id="message"></div></div></div>').hide();
+        message.find('.close').click(function(){
+            $(this).closest('.follow_message').fadeOut().remove();
+            $('body').removeClass('no_scroll');
+        })
+        
+        aproveButtonControl($('.schedule'));
+        
+        function aproveButtonControl(elem) {
+            elem.click(function (e) {
+                e.preventDefault();
+                var sid = $(this).attr('attr-sid');
+                $.ajax ({
+                   url: "/demoasterics/aprove/"+sid,
+                   dataType: "json",
+                   success: function(result) {
+                       $('body').append(message.clone(true));
+                       $('.follow_message').find('#message').append(result.message);
+                       $('.follow_message').fadeIn();
+                       $('body').addClass('no_scroll');
+                       $('.sid-'+sid).find('.state').find('.field-content').text('Scheduled');
+                       elem.remove();
+                   }
+                });
             });
         }
     }
