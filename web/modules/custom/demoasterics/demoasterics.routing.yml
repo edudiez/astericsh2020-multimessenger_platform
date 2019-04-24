@@ -12,4 +12,10 @@ demoasterics.unsuscribe:
     requirements:
         _entity_access: 'taxonomy_term.view'
         taxonomy_term: \d+
+demoasterics.aprove:
+    path: '/demoasterics/aprove/{sid}'
+    defaults:
+        _controller: '\Drupal\demoasterics\Controller\AproveController::aprove'
+    requirements:
+        _permission: 'access content'
     

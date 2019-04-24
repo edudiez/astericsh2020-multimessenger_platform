@@ -15,6 +15,25 @@ class AlertManager {
     public function __construct() {
         $this->user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
         $connection = \Drupal::database();
+        $alerts = array();
+        // OBSERVATORI PROPI
+        $ovid = (isset($this->user->field_user_observatory->getValue()[0])) ? $this->user->field_user_observatory->getValue()[0]['target_id'] : null;
+        if($ovid) {
+                //*** OBSERVACIONS DEMANDADES ***//
+                $query = $connection->select('webform_submission_data', 'o');
+                $query->join('webform_submission','s','s.sid=o.sid');
+                $result = $query->condition('o.webform_id','observacion')
+                                ->condition('o.name','observatory')
+                                ->condition('o.value',$ovid)
+                                ->fields('o',['sid'])
+                                ->fields('s',['created'])
+                                ->execute()
+                                ->fetchAll();
+                foreach($result as $petition) {
+                    $alerts[$petition->created] = array('type' => 'petition', 'sid' => $petition->sid);
+                }
+            }
+        // OBSERVATORIS SUSCRITS
         $query = $connection->select('taxonomy_term_data', 't');
         $query->join('taxonomy_term__field_observatory_suscribers', 'subscr', 'subscr.entity_id = t.tid');
         $this->suscribed = $query->condition('t.vid','observatories')
@@ -23,8 +42,7 @@ class AlertManager {
                         ->execute()
                         ->fetchAll();
         if(!empty($this->suscribed)) {
-            $alerts = array();
-            foreach($this->suscribed as $observatory ) {
+            foreach($this->suscribed as $observatory) {
                 //*** OBSERVACIONS DEMANDADES ***//
                 $query = $connection->select('webform_submission_data', 'o');
                 $query->join('webform_submission','s','s.sid=o.sid');
@@ -51,13 +69,14 @@ class AlertManager {
                 }
             }
             // LES ULTIMES 12 NOTIFICACIONS //
-            krsort($alerts);
-            $this->alerts = array_slice($alerts,0,12);
+            
         }
+        krsort($alerts);
+        $this->alerts = array_slice($alerts,0,12);
     }
     
     public function isSuscribed() {
-        return !empty($this->suscribed);
+        return count($this->alerts);
     }
     
     public function getCountAlerts() {
