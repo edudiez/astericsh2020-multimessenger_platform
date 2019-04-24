@@ -573,6 +573,7 @@ display:
           plugin_id: standard
       arguments: {  }
       display_extenders: {  }
+      use_ajax: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -1816,7 +1817,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"alerts\">Alerts(2)</div>\r\n<a class=\"delete\" href=\"/db_backend/structure/webform/manage/observacion/submission/{{ sid }}/delete?destination=/db_member/{{ uid }}\">Delete</a>"
+            text: '<a class="delete" href="/db_backend/structure/webform/manage/observacion/submission/{{ sid }}/delete?destination=/db_member/{{ uid }}">Delete</a>'
             make_link: false
             path: ''
             absolute: false

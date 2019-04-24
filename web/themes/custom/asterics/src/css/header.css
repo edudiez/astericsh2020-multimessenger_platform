@@ -40,6 +40,8 @@ header[role="banner"] .user_box .user_notify li { padding: 20px 10px 20px 0; mar
 
 header[role="banner"] .user_box .user_notify li.observatory { background-color: #f2644c; }
 
+header[role="banner"] .user_box .user_notify li.aproved { background-color: #319258; }
+
 header[role="banner"] .user_box .user_notify li.new { background-color: #53d6f9; }
 
 header[role="banner"] .user_box .user_notify li:nth-child(1) { border-radius: 13px 13px 0 0; }

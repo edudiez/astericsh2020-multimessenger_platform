@@ -41,6 +41,7 @@ header[role="banner"] {
             li {
                 padding: 20px 10px 20px 0; margin-bottom: 0px; border-bottom: 1px solid white; font-size: 0;
                 &.observatory {background-color: $buttonlink;}
+                &.aproved{background-color: $aproved;}
                 &.new {background-color: $azul_claro;}
                 &:nth-child(1) {border-radius: 13px 13px 0 0;}
                 &:nth-last-child(1) {/*border-radius: 0 0 13px 13px;*/ border-bottom: 0;}
