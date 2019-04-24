@@ -77,9 +77,7 @@
         }
         
         if($('.view_display_askedfor')) {
-            
             aproveControl();
-            
         }
         
 
@@ -149,7 +147,7 @@
             $('body').removeClass('no_scroll');
         })
         
-        aproveButtonControl($('.schedule'));
+        aproveButtonControl($('.view_display_askedfor .schedule'));
         
         function aproveButtonControl(elem) {
             elem.click(function (e) {
