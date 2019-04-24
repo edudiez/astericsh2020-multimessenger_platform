@@ -94,7 +94,7 @@ class AlertManager {
                     $image = file_url_transform_relative(ImageStyle::load('notify')->buildUrl($observatory->field_observatory_fotografia->entity->getFileUri()));
                     $category = $observatory->getName();
                     $account = User::load($webform_submission->get('uid')->getValue()[0]['target_id']);
-                    $name = 'Anonimous';
+                    $name = 'Anonymous';
                     if($account) {
                         $name = $account->getUsername();
                     }
