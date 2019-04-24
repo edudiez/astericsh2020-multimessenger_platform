@@ -76,9 +76,8 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: 'sid-{{ sid }}'
           default_row_class: true
-          uses_fields: false
       row:
         type: fields
         options:
@@ -766,10 +765,8 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: false
+          type: number_unformatted
+          settings: {  }
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1069,10 +1066,10 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: term_name
-        nothing_2:
-          id: nothing_2
-          table: views
-          field: nothing
+        webform_submission_value_1:
+          id: webform_submission_value_1
+          table: webform_submission_field_observacion_scheduled
+          field: webform_submission_value
           relationship: none
           group_type: group
           admin_label: ''
@@ -1080,7 +1077,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: Approved
+            text: Scheduled
             make_link: false
             path: ''
             absolute: false
@@ -1113,11 +1110,66 @@ display:
           element_wrapper_type: div
           element_wrapper_class: 'col state'
           element_default_classes: true
-          empty: ''
+          empty: Pending
           hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
+          empty_zero: true
+          hide_alter_empty: true
+          webform_element_format: value
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
+        webform_submission_value_3:
+          id: webform_submission_value_3
+          table: webform_submission_field_observacion_scheduled
+          field: webform_submission_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: true
+            text: '<span></span>'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: '<a class="schedule" attr-sid="{{ sid }}" href="#">Schedule</a>'
+          hide_empty: false
+          empty_zero: true
+          hide_alter_empty: true
+          webform_element_format: value
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
         nothing_1:
           id: nothing_1
           table: views
@@ -1129,7 +1181,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "<div class=\"flexbox\">\r\n<div class=\"alerts\">Alerts(2)</div>\r\n<a class=\"delete\" href=\"/db_backend/structure/webform/manage/observacion/submission/{{ sid }}/delete?destination=/db_member/{{ uid }}\">Delete</a>\r\n<a class=\"schedule\" href=\"#\">Schedule</a>\r\n</div>"
+            text: "<div class=\"flexbox\">\r\n<a class=\"delete\" href=\"/db_backend/structure/webform/manage/observacion/submission/{{ sid }}/delete?destination=/db_member/{{ uid }}\">Delete</a>\r\n{{ webform_submission_value_3 }}\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -1701,10 +1753,10 @@ display:
           entity_type: taxonomy_term
           entity_field: name
           plugin_id: term_name
-        nothing_2:
-          id: nothing_2
-          table: views
-          field: nothing
+        webform_submission_value_1:
+          id: webform_submission_value_1
+          table: webform_submission_field_observacion_scheduled
+          field: webform_submission_value
           relationship: none
           group_type: group
           admin_label: ''
@@ -1712,7 +1764,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: Pending
+            text: Scheduled
             make_link: false
             path: ''
             absolute: false
@@ -1745,11 +1797,14 @@ display:
           element_wrapper_type: div
           element_wrapper_class: 'col state'
           element_default_classes: true
-          empty: ''
+          empty: Pending
           hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
+          empty_zero: true
+          hide_alter_empty: true
+          webform_element_format: raw
+          webform_multiple_value: true
+          webform_multiple_delta: 0
+          plugin_id: webform_submission_field
         nothing_1:
           id: nothing_1
           table: views
