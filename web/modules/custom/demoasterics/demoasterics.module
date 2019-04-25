@@ -144,8 +144,8 @@ function demoasterics_form_search_observation_submit(array $form, FormStateInter
 //******************************* SUSCRIPCIO / DESUSCRIPCIO OBSERVATORY ************************************//
 function demoasterics_preprocess_taxonomy_term(&$variables) {
 
-    $suscribe = '<div class="suscribe">If you suscribe to this observatroy you will recieve alerts from it <a href="#">Suscribe</a></div>';
-    $unsuscribe = '<div class="unsuscribe">You are suscribed to the events and alerts of this observatory <a href="#">Unsuscribe</a></div>';
+    $suscribe = '<div class="suscribe">If you subscribe to this observatroy you will recieve alerts from it <a href="#">Subscribe</a></div>';
+    $unsuscribe = '<div class="unsuscribe">You are subscribed to the events and alerts of this observatory <a href="#">Unsubscribe</a></div>';
     switch ($variables['view_mode']) {
         case 'user_page_view':
             $suscribe = '';
