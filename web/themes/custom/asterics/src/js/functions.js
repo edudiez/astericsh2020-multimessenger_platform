@@ -88,8 +88,8 @@
 /* PASSEM DEL FOLLOW / UNFOLLOW A SUSCRIBE / UNSUSCRIBE */
     
     function suscribeControl() {
-        const suscribeMarkup = $('<div class="suscribe">If you suscribe to this observatroy you will recieve alerts from it <a href="#">Suscribe</a></div>')
-        const unSuscribeMarkup = $('<div class="unsuscribe">You are suscribed to the events and alerts of this observatory <a href="#">Unsuscribe</a></div>');
+        const suscribeMarkup = $('<div class="subscribe">If you subscribe to this observatroy you will recieve alerts from it <a href="#">Suscribe</a></div>')
+        const unSuscribeMarkup = $('<div class="unsubscribe">You are subscribed to the events and alerts of this observatory <a href="#">Unsuscribe</a></div>');
         const message = $('<div class="follow_message"><div class="box"><span class="close"></span><div id="message"></div></div></div>').hide();
         message.find('.close').click(function(){
             $(this).closest('.follow_message').fadeOut().remove();
