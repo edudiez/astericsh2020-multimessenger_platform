@@ -22,6 +22,6 @@ class SuscribeController extends ControllerBase {
         $taxonomy_term->get('field_observatory_suscribers')->removeItem($key);
         $taxonomy_term->save();
         
-        return new JsonResponse(array('message'=>"You have been unbsuscribed from ".$taxonomy_term->name->value));
+        return new JsonResponse(array('message'=>"You have been unsubscribed from ".$taxonomy_term->name->value));
     }
 }
