@@ -1180,7 +1180,7 @@ display:
           hide_empty: false
           empty_zero: true
           hide_alter_empty: true
-          webform_element_format: value
+          webform_element_format: raw
           webform_multiple_value: true
           webform_multiple_delta: 0
           plugin_id: webform_submission_field
@@ -1232,7 +1232,7 @@ display:
           hide_empty: false
           empty_zero: true
           hide_alter_empty: true
-          webform_element_format: value
+          webform_element_format: raw
           webform_multiple_value: true
           webform_multiple_delta: 0
           plugin_id: webform_submission_field
