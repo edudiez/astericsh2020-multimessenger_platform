@@ -88,7 +88,7 @@ class TimelineService {
         $legend .= '</tr></table>';
         $legend .= '<label>Scheduled Observation</label>';
         $legend .= '</div>';
-        $legend .= '<div class="made"><table class="made-wrapper"><tr><td><div class="elipse"></div></td></tr></table><div class="visibility">Visibility</div></div></div>';
+        $legend .= '<div class="made"><table class="made-wrapper"><tr><td><div class="elipse"></div></td></tr></table><div class="visibility">Visibility</div></div>';
         $legend.= '</div>';
         return $legend;
     }
