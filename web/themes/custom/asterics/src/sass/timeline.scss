@@ -1,5 +1,9 @@
 @import "mixins.scss";
 
+.view-timeline.container {
+    margin-bottom:60px;
+}
+
 #timeline {
     display:block;
     position:relative;

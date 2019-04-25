@@ -253,3 +253,7 @@ function _asterics_user_form(&$form) {
     $form['account']['notify']['#access'] = FALSE;
     $form['field_user_observatory']['#access'] = FALSE;
 }
+
+function asterics_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
+    $form['field_event_category_n_target_id']['#options']['All'] = t('- All observatories -');
+}

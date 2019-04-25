@@ -56,7 +56,9 @@
                 $('#edit-ra').val('3h 5m 38s');
                 $('#edit-dec').val('48 50 2"');
                 $('#edit-from-date').val('2019-10-01');
+                $('#edit-from-time').val('00:00:00');
                 $('#edit-to-date').val('2019-12-21');
+                $('#edit-to-time').val('00:00:00');
                 var observatory=$(this).closest('.timeline-row').attr('attr-observatory');
                 $('#edit-observatory').val(observatory);
                 if($('#edit-actions #edit-actions-schedule')) {$('#edit-actions #edit-actions-schedule').remove();}
@@ -165,6 +167,7 @@
                        $('.sid-'+sid).find('.state').find('.field-content').text('Scheduled');
                        $('.ajax-progress').remove();
                        $('.sid-'+sid).find('.schedule').remove();
+                       $('.sid-'+sid).find('.flexbox').append('<a class="button" disabled="disabled">Export to schedule</a>');
                    }
                 });
             });
