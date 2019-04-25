@@ -91,7 +91,10 @@ class AlertManager {
                 case 'petition':
                     $webform_submission = WebformSubmission::load($alert['sid']);
                     $observatory =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($webform_submission->getElementData('observatory'));
-                    $image = file_url_transform_relative(ImageStyle::load('notify')->buildUrl($observatory->field_observatory_fotografia->entity->getFileUri()));
+                    $image = null;
+                    if(isset($observatory->field_observatory_fotografia->entity)) {
+                        $image = file_url_transform_relative(ImageStyle::load('notify')->buildUrl($observatory->field_observatory_fotografia->entity->getFileUri()));
+                    }
                     $category = $observatory->getName();
                     $account = User::load($webform_submission->get('uid')->getValue()[0]['target_id']);
                     $name = 'Anonymous';
@@ -100,9 +103,12 @@ class AlertManager {
                     }
                     $data = $webform_submission->getData();
                     if(isset($data['scheduled']) && $data['scheduled']) {
-                        $markup.='<li class="aproved"><div class="image"><img src="'.$image.'" alt="notify image"></div>';
+                        $markup.='<li class="aproved">';
                     } else {
-                        $markup.='<li class="observatory"><div class="image"><img src="'.$image.'" alt="notify image"></div>';
+                        $markup.='<li class="observatory">';
+                    }
+                    if($image) {
+                        $markup.= '<div class="image"><img src="'.$image.'" alt="notify image"></div>';
                     }
                     $markup.='<div class="box">';
                     $markup.='<div class="category">'.$category.'</div>';

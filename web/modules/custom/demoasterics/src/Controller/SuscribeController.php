@@ -13,7 +13,7 @@ class SuscribeController extends ControllerBase {
         //* POTSER CONTROLAR AQUI QUE NO ESTIGUI JA SUSCRIT PER SI DE CAS *//
         $taxonomy_term->field_observatory_suscribers[] = \Drupal::currentUser()->id();
         $taxonomy_term->save();
-        return new JsonResponse(array('message'=>"You have been suscribed to ".$taxonomy_term->name->value));
+        return new JsonResponse(array('message'=>"You have been subscribed to ".$taxonomy_term->name->value));
     }   
     public function unsuscribe(TermInterface $taxonomy_term) {
         
@@ -22,6 +22,6 @@ class SuscribeController extends ControllerBase {
         $taxonomy_term->get('field_observatory_suscribers')->removeItem($key);
         $taxonomy_term->save();
         
-        return new JsonResponse(array('message'=>"You have been unsuscribed from ".$taxonomy_term->name->value));
+        return new JsonResponse(array('message'=>"You have been unsubscribed from ".$taxonomy_term->name->value));
     }
 }
