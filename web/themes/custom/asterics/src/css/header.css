@@ -1,4 +1,4 @@
-header[role="banner"] { background-color: #071c47; height: 120px; }
+header[role="banner"] { background-color: #071c47; height: 84px; }
 
 header[role="banner"] .container { padding: 15px 35px 0 70px; }
 
@@ -36,13 +36,7 @@ header[role="banner"] .user_box .user_notify .notifications { display: none; pos
 
 header[role="banner"] .user_box .user_notify ul { width: 100%; }
 
-header[role="banner"] .user_box .user_notify li { padding: 20px 10px 20px 0; margin-bottom: 0px; border-bottom: 1px solid white; font-size: 0; }
-
-header[role="banner"] .user_box .user_notify li.observatory { background-color: #f2644c; }
-
-header[role="banner"] .user_box .user_notify li.aproved { background-color: #319258; }
-
-header[role="banner"] .user_box .user_notify li.new { background-color: #53d6f9; }
+header[role="banner"] .user_box .user_notify li { padding: 20px 10px 20px 0; margin-bottom: 0px; border-bottom: 1px solid white; font-size: 0; /* &.observatory {background-color: $buttonlink;} &.aproved{background-color: $aproved;} &.new {background-color: $azul_claro;} */ }
 
 header[role="banner"] .user_box .user_notify li:nth-child(1) { border-radius: 13px 13px 0 0; }
 
@@ -96,13 +90,17 @@ header[role="banner"] .right .top { display: inline-block; vertical-align: middl
 
 header[role="banner"] .right .top .ico-search { background: url("../images/lupa-01.svg") no-repeat 0 0 transparent; width: 24px; height: 30px; cursor: pointer; display: inline-block; vertical-align: middle; }
 
-header[role="banner"] .right .top .ico-menu { cursor: pointer; display: inline-block; vertical-align: middle; margin-left: 20px; width: 35px; height: 20px; position: relative; -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); -webkit-transform-origin: center; transform-origin: center; /* &:hover { span { width: 100%!important; &:nth-child(1), &:nth-child(2) { -webkit-transform: translateY(9px) rotate(45deg); transform: translateY(9px) rotate(45deg);} &:nth-child(3) {-webkit-transform: translateY(9px) rotate(-45deg); transform: translateY(9px) rotate(-45deg);} } } */ }
+header[role="banner"] .right .top .ico-search:hover { background-image: url("../images/lupa-01-hover.svg"); }
+
+header[role="banner"] .right .top .ico-menu { cursor: pointer; display: inline-block; vertical-align: middle; margin-left: 20px; width: 35px; height: 20px; position: relative; -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); -webkit-transform-origin: center; transform-origin: center; }
 
 header[role="banner"] .right .top .ico-menu span { height: 2px; width: 100%; background: #fff; border-radius: 5px; display: block; position: absolute; top: 0; right: 0; -webkit-transition: inherit; transition: inherit; -webkit-transform: inherit; transform: inherit; }
 
 header[role="banner"] .right .top .ico-menu span:nth-child(2) { -webkit-transform: translateY(8px); transform: translateY(8px); }
 
 header[role="banner"] .right .top .ico-menu span:nth-child(3) { -webkit-transform: translateY(16px); transform: translateY(16px); }
+
+header[role="banner"] .right .top .ico-menu:hover span { background: #f2644c; }
 
 header[role="banner"] .right .top .ico-menu.active span { width: 100% !important; }
 

@@ -38,15 +38,15 @@
             <div id="observatories">
                 <ul class="main-tabs-nav">
                     <li><a href="#following">Subscriptions ({{ following }})</a></li>
-                    <!--<li><a href="#followers">Followers ({# followers #})</a></li>-->
+                    <li><a href="#observatories-list">Observatories ({{ all_observatories }})</a></li>
                         {% if user.field_user_observatory.value %}
                         <li><a href="#myobservatory">My Observatory</a></li>
                         {% else %}
                         <li class="button"><button id="newobservatori">New Observatory</button></li>
                         {% endif %}
                 </ul>
-                <div id="following">{{ observatories_list }}</div>
-                <!--<div id="followers">{# observatories_list #}</div>-->
+                <div id="following">{{ subscribed_list }}</div>
+                <div id="observatories-list">{{ observatories_list }}</div>
                 {% if user.field_user_observatory.value %}
                     <div id="myobservatory">{{ my_observatory }}</div>
                 {% endif %}

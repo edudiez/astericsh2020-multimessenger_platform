@@ -90,7 +90,11 @@
                     color:$blanc;
                     padding:18px 28px;
                 }
-                &:hover, &.ui-tabs-active {
+                &:hover {
+                    background-color:$azul_claro;
+                    border-color:$azul_claro;
+                }
+                &.ui-tabs-active {
                     background-color:$hovacttabs;
                     border-color:$hovacttabs;
                 }

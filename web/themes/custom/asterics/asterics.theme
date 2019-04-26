@@ -97,22 +97,25 @@ function asterics_preprocess_user(&$variables) {
     $vid = 'observatories';
     $terms =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree($vid);
     // LISTA OBSERVATORIES //
-    $ovlist = array();
+    $subs_list = array();
+    $all_list = array();
     foreach($terms as $term) {
         $observatory =\Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($term->tid);
-        foreach ($observatory->get('field_observatory_suscribers')->getValue() as $uid) {
-            if ($uid['target_id'] == \Drupal::currentUser()->id()) {
-                if($ovid != $term->tid) {
-                    $ovlist[] = $term->tid;
+        if($ovid != $term->tid) {
+            $all_list[] = $term->tid;
+            foreach ($observatory->get('field_observatory_suscribers')->getValue() as $uid) {
+                if ($uid['target_id'] == \Drupal::currentUser()->id()) {
+                    $subs_list[] = $term->tid;
                 }
             }
         }
     }
-    $variables['following'] = count($ovlist);
-    $variables['followers'] = count($ovlist);
-    $list = views_embed_view('observatories_list_user_page','default',implode('+',$ovlist));
-    $variables['observatories_list'] = $list;
-
+    $variables['following'] = count($subs_list);
+    $variables['all_observatories'] = count($all_list);
+    $list = views_embed_view('observatories_list_user_page','default',implode('+',$subs_list));
+    $variables['subscribed_list'] = $list;
+    $complete_list = views_embed_view('observatories_list_user_page','default',implode('+',$all_list));
+    $variables['observatories_list'] = $complete_list;
     // MY OBSERVATORI - NEW OBSERVATORI PER A LA PAGINA USUARI PROFESSIONAL //
     if($ovid) {
         $my_observatory = views_embed_view('observatories_list_user_page','default',$ovid);

@@ -24,7 +24,7 @@ main {
             float:right;
             clear:both;
             padding-right:15%;
-            margin-bottom:50px;
+            margin-bottom:106px;
         }
         .paragraph--view-mode--news {
             clear:both;
@@ -75,7 +75,7 @@ main {
     .views-element-container {
         .news {
             .view-content {
-                margin: 120px auto 0;
+                margin: 120px auto 0 25px;
                 display: flex;
                 flex-wrap: wrap;
                 justify-content:space-evenly;
@@ -192,6 +192,6 @@ main {
       select {appearance: none; font-size: 20px; line-height: normal;}
     }
     input[type="submit"] {display: none;}
-    #edit-title {background: transparent url('../images/lupa-01.svg') no-repeat right center / 20px;}
+    #edit-title {background: transparent url('../images/lupa-01.svg') no-repeat right center / 20px;&:hover{background-image:url('../images-lupa-01-hover.svg')}}
   }
 }
