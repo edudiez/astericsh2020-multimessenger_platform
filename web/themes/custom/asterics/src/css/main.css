@@ -4,7 +4,7 @@ main .paragraph--view-mode--home-superior:before { background-image: url(../imag
 
 main .paragraph--view-mode--home-superior { padding: 45px 0; }
 
-main .paragraph--view-mode--home-superior .paragraph--type--text { text-align: left; width: 55%; float: right; clear: both; padding-right: 15%; margin-bottom: 50px; }
+main .paragraph--view-mode--home-superior .paragraph--type--text { text-align: left; width: 55%; float: right; clear: both; padding-right: 15%; margin-bottom: 106px; }
 
 main .paragraph--view-mode--home-superior .paragraph--view-mode--news { clear: both; text-align: left; padding: 120px 0 45px 0; position: relative; }
 
@@ -22,7 +22,7 @@ main .paragraph--type--aladin { padding: 50px 0; }
 
 main .paragraph--type--aladin #aladin-lite-div { margin: 0 auto; }
 
-main .views-element-container .news .view-content { margin: 120px auto 0; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; width: 1200px; max-width: 100%; }
+main .views-element-container .news .view-content { margin: 120px auto 0 25px; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; width: 1200px; max-width: 100%; }
 
 main .views-element-container .news .views-row { -webkit-box-flex: 1; -ms-flex: 1 0 33%; flex: 1 0 33%; }
 
@@ -99,5 +99,7 @@ main article.teaser .teaser-wrapper .info .wrapper .date-item:last-child:after {
 .view_news .views-exposed-form input[type="submit"] { display: none; }
 
 .view_news .views-exposed-form #edit-title { background: transparent url("../images/lupa-01.svg") no-repeat right center/20px; }
+
+.view_news .views-exposed-form #edit-title:hover { background-image: url("../images-lupa-01-hover.svg"); }
 
 /*# sourceMappingURL=maps/main.css.map */

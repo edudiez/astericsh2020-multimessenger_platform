@@ -28,7 +28,9 @@
 
 .profesional #usertabs > ul:nth-child(1) li a { font-weight: 600; font-size: 18px; color: #fff; padding: 18px 28px; }
 
-.profesional #usertabs > ul:nth-child(1) li:hover, .profesional #usertabs > ul:nth-child(1) li.ui-tabs-active { background-color: #f2644c; border-color: #f2644c; }
+.profesional #usertabs > ul:nth-child(1) li:hover { background-color: #53d6f9; border-color: #53d6f9; }
+
+.profesional #usertabs > ul:nth-child(1) li.ui-tabs-active { background-color: #f2644c; border-color: #f2644c; }
 
 .profesional #usertabs #observatories, .profesional #usertabs #observations, .profesional #usertabs #newsevents { border: none; background: #f2644c; border-radius: 0; padding: 0; margin: 0; }
 

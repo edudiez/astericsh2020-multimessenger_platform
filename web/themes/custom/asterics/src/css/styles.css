@@ -61,6 +61,8 @@ body .paragraph--type--link { margin: 40px 0; }
 
 body .paragraph--type--link a { display: inline-block; width: auto; padding: 20px 30px; border-radius: 30px; color: #fff; font-weight: 300; font-size: 14px; text-transform: uppercase; background-color: #f2644c; }
 
+body .paragraph--type--link a:hover { background-color: #53d6f9; }
+
 /* MAPS */
 .geolocation-common-map { /*&:before { @include defaultBackground(); }*/ }
 
@@ -172,6 +174,12 @@ body .paragraph--type--link a { display: inline-block; width: auto; padding: 20p
 .taxonomy.observatory.user_page_view .title > div:nth-child(2) { margin-left: 30px; }
 
 .taxonomy.observatory.user_page_view .title > div:nth-child(3) { color: #1d1d1b; border-color: #1d1d1b; }
+
+.taxonomy.observatory.user_page_view .title > div a { color: #f2644c; }
+
+.taxonomy.observatory.user_page_view .title > div:hover { border: 1px solid #333; color: #333; }
+
+.taxonomy.observatory.user_page_view .title > div:hover a { color: #333; }
 
 .taxonomy.observatory.user_page_view .description { margin-bottom: 30px; }
 

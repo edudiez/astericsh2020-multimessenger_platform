@@ -88,15 +88,15 @@
 /* PASSEM DEL FOLLOW / UNFOLLOW A SUSCRIBE / UNSUSCRIBE */
     
     function suscribeControl() {
-        const suscribeMarkup = $('<div class="subscribe">If you subscribe to this observatroy you will recieve alerts from it <a href="#">Suscribe</a></div>')
-        const unSuscribeMarkup = $('<div class="unsubscribe">You are subscribed to the events and alerts of this observatory <a href="#">Unsuscribe</a></div>');
+        const suscribeMarkup = ($('.user_page_view')) ? $('<div class="subscribe"><a href="#">Suscribe</a></div>') : $('<div class="subscribe">If you subscribe to this observatroy you will recieve alerts from it <a href="#">Suscribe</a></div>')
+        const unSuscribeMarkup = ($('.user_page_view')) ? $('<div class="unsubscribe"><a href="#">Unsuscribe</a></div>') : $('<div class="unsubscribe">You are subscribed to the events and alerts of this observatory <a href="#">Unsuscribe</a></div>');
         const message = $('<div class="follow_message"><div class="box"><span class="close"></span><div id="message"></div></div></div>').hide();
         message.find('.close').click(function(){
             $(this).closest('.follow_message').fadeOut().remove();
             $('body').removeClass('no_scroll');
         })
-        suscribeButtonControl($('.suscribe a'));
-        unSuscribeButtonControl($('.unsuscribe a'));
+        suscribeButtonControl($('.suscribe'));
+        unSuscribeButtonControl($('.unsuscribe'));
         
         function suscribeButtonControl(elem) {
             elem.click(function(e) {
@@ -108,12 +108,19 @@
                    success: function(result) {
                        
                        $('body').append(message.clone(true));
-                       $('.follow_message').find('#message').append(result.message);
+                       $('.follow_message').find('#message').append(result.message);                        
+                       if ($('.user_page_view')) {
+                           $('.follow_message .close').click(function(){
+                               window.location.reload();
+                       });}
                        $('.follow_message').fadeIn();
                        $('body').addClass('no_scroll');
+                       $(".ajax-progress").remove();
                        $('#suscription-wrapper').empty();
                        $('#suscription-wrapper').append(unSuscribeMarkup);
-                       unSuscribeButtonControl($('.unsuscribe a'));
+
+                       unSuscribeButtonControl($('.unsuscribe'));
+
                    }
                });
                
@@ -130,11 +137,16 @@
                    success: function(result) {
                        $('body').append(message.clone(true));
                        $('.follow_message').find('#message').append(result.message);
+                       if ($('.user_page_view')) {
+                           $('.follow_message .close').click(function(){
+                               window.location.reload();
+                       });}
                        $('.follow_message').fadeIn();
                        $('body').addClass('no_scroll');
+                       $(".ajax-progress").remove();
                        $('#suscription-wrapper').empty();
                        $('#suscription-wrapper').append(suscribeMarkup);
-                       suscribeButtonControl($('.suscribe a'));
+                       suscribeButtonControl($('.suscribe'));
                    }
                });
             });

@@ -1,7 +1,7 @@
 @import "mixins.scss";
 header[role="banner"] {
     background-color:$blaufons;
-    height:120px;
+    height:84px;
     .container {
         padding:15px 35px 0 70px;
     }
@@ -40,9 +40,11 @@ header[role="banner"] {
             ul {width: 100%;}
             li {
                 padding: 20px 10px 20px 0; margin-bottom: 0px; border-bottom: 1px solid white; font-size: 0;
+                /*
                 &.observatory {background-color: $buttonlink;}
                 &.aproved{background-color: $aproved;}
                 &.new {background-color: $azul_claro;}
+                */
                 &:nth-child(1) {border-radius: 13px 13px 0 0;}
                 &:nth-last-child(1) {/*border-radius: 0 0 13px 13px;*/ border-bottom: 0;}
             }
@@ -115,6 +117,7 @@ header[role="banner"] {
                 width:24px;
                 height:30px;
                 cursor:pointer;display:inline-block; vertical-align:middle;
+                &:hover{background-image:url('../images/lupa-01-hover.svg')}
             }
             .ico-menu {
                 cursor:pointer;display:inline-block; vertical-align:middle; margin-left:20px; width: 35px; height: 20px; position: relative; -webkit-transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); -webkit-transform-origin: center; transform-origin: center;
@@ -135,16 +138,13 @@ header[role="banner"] {
                     &:nth-child(2) {-webkit-transform: translateY(8px); transform: translateY(8px);}
                     &:nth-child(3) {-webkit-transform: translateY(16px); transform: translateY(16px);}
                 }
-                /*
+                
                 &:hover {
                     span {
-                        width: 100%!important;
-                            &:nth-child(1),
-                            &:nth-child(2) { -webkit-transform: translateY(9px) rotate(45deg); transform: translateY(9px) rotate(45deg);}
-                            &:nth-child(3) {-webkit-transform: translateY(9px) rotate(-45deg); transform: translateY(9px) rotate(-45deg);}
+                        background: $buttonlink;
                     }
                 }
-                */
+                
                 &.active {
                     span {
                         width: 100%!important;
