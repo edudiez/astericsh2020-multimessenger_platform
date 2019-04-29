@@ -169,17 +169,15 @@ body .paragraph--type--link a:hover { background-color: #53d6f9; }
 
 .taxonomy.observatory.user_page_view .title h2 { font-size: 30px; font-weight: 700; color: #071c47; display: inline-block; vertical-align: middle; margin: 0; max-width: 580px; }
 
-.taxonomy.observatory.user_page_view .title > div { display: inline-block; vertical-align: middle; font-size: 14px; border: 1px solid #f2644c; color: #f2644c; padding: 7px 20px; border-radius: 20px; text-transform: uppercase; font-family: 'rob_l'; margin-left: 20px; cursor: pointer; }
+.taxonomy.observatory.user_page_view .title .suscribe a, .taxonomy.observatory.user_page_view .title .unsuscribe a { vertical-align: middle; font-size: 14px; border: 1px solid #f2644c; color: #f2644c; padding: 7px 20px; border-radius: 20px; text-transform: uppercase; font-family: 'rob_l'; margin-left: 20px; cursor: pointer; }
+
+.taxonomy.observatory.user_page_view .title .suscribe a:hover, .taxonomy.observatory.user_page_view .title .unsuscribe a:hover { border: 1px solid #333; color: #333; }
+
+.taxonomy.observatory.user_page_view .title > div { display: inline-block; /* vertical-align: middle; font-size: 14px; border: 1px solid $buttonlink; color: $buttonlink; padding: 7px 20px; border-radius: 20px; text-transform: uppercase; font-family: 'rob_l'; margin-left: 20px; cursor: pointer;*/ /* a {color: $buttonlink;} &:hover { border: 1px solid #333; color: #333; a{color:#333;} } */ }
 
 .taxonomy.observatory.user_page_view .title > div:nth-child(2) { margin-left: 30px; }
 
 .taxonomy.observatory.user_page_view .title > div:nth-child(3) { color: #1d1d1b; border-color: #1d1d1b; }
-
-.taxonomy.observatory.user_page_view .title > div a { color: #f2644c; }
-
-.taxonomy.observatory.user_page_view .title > div:hover { border: 1px solid #333; color: #333; }
-
-.taxonomy.observatory.user_page_view .title > div:hover a { color: #333; }
 
 .taxonomy.observatory.user_page_view .description { margin-bottom: 30px; }
 
